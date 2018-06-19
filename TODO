@@ -1,0 +1,6 @@
+ADD
+	JSON functions
+	names of standard modules like "rtree"; create statements for these modules
+
+IMPROVE
+	do not surround table names in parentheses when JOINing
