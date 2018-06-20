@@ -12,6 +12,8 @@
 		<property name="message" value="Block ends with an empty line."/>
 	</module>
 
+	<module name="NewlineAtEndOfFile"/>
+
 	<module name="TreeWalker">
 		<property name="tabWidth" value="4"/>
 

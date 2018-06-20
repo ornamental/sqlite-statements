@@ -46,6 +46,7 @@
                 <configuration>
                     <configLocation>src/config/checkstyle.xml</configLocation>
                     <consoleOutput>true</consoleOutput>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
                 </configuration>
                 <executions>
                     <execution>
