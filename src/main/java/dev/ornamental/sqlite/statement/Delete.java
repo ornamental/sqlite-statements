@@ -34,7 +34,7 @@ public final class Delete {
 		Ordered orderBy(SqlExpression sortingKey, SortingOrder order);
 
 		/**
-		 * Adds a <code>LIMIT</code> clause to the <code>DELETE</code> statement.<br/>
+		 * Adds a <code>LIMIT</code> clause to the <code>DELETE</code> statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param limitExpression the expression returning the maximum number of rows to delete
 		 * @return the <code>DELETE</code> statement ending with
@@ -43,7 +43,7 @@ public final class Delete {
 		LimitedNoOffset limit(SqlExpression limitExpression);
 
 		/**
-		 * Adds a <code>LIMIT</code> clause to the <code>DELETE</code> statement.<br/>
+		 * Adds a <code>LIMIT</code> clause to the <code>DELETE</code> statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param maxRows maximum number of rows to delete
 		 * @return the <code>DELETE</code> statement ending with the <code>LIMIT <em>limit</em></code>
@@ -90,9 +90,9 @@ public final class Delete {
 
 	/**
 	 * Represents a <code>DELETE</code> statement without filtering, deleted row limitation,
-	 * nor index use directive:<br/>
+	 * nor index use directive:<br>
 	 * <code><strong>[WITH <em>commonTableExpression</em>]
-	 * DELETE FROM [<em>schemaName</em>.]<em>tableName</em></strong></code>.<br/>
+	 * DELETE FROM [<em>schemaName</em>.]<em>tableName</em></strong></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class All extends NotFiltered {
@@ -110,23 +110,23 @@ public final class Delete {
 		}
 
 		/**
-		 * Adds a <code>INDEXED BY</code> clause to the <code>DELETE</code> statement.<br/>
+		 * Adds a <code>INDEXED BY</code> clause to the <code>DELETE</code> statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param indexName the name of the index to force the use of
-		 * @return the <code>DELETE</code> statement with enforced index use:<br/>
+		 * @return the <code>DELETE</code> statement with enforced index use:<br>
 		 * <code>[WITH <em>commonTableExpression</em>] DELETE FROM [<em>schemaName</em>.]<em>tableName</em>
-		 * <strong>INDEXED BY <em>indexName</em></strong></code><br/>
+		 * <strong>INDEXED BY <em>indexName</em></strong></code><br>
 		 */
 		public WithIndexDirective indexedBy(CharSequence indexName) {
 			return new WithIndexDirective(this, indexName);
 		}
 
 		/**
-		 * Adds a <code>NOT INDEXED</code> clause to the <code>DELETE</code> statement.<br/>
+		 * Adds a <code>NOT INDEXED</code> clause to the <code>DELETE</code> statement.<br>
 		 * The result is a complete SQL statement.
-		 * @return the <code>DELETE</code> statement with forbidden index use:<br/>
+		 * @return the <code>DELETE</code> statement with forbidden index use:<br>
 		 * <code>[WITH <em>commonTableExpression</em>] DELETE FROM [<em>schemaName</em>.]<em>tableName</em>
-		 * <strong>NOT INDEXED</strong></code><br/>
+		 * <strong>NOT INDEXED</strong></code><br>
 		 */
 		public WithIndexDirective notIndexed() {
 			return new WithIndexDirective(this, null);
@@ -154,7 +154,7 @@ public final class Delete {
 	}
 
 	/**
-	 * Represents a <code>DELETE</code> statement without filtering nor deleted row limitation.<br/>
+	 * Represents a <code>DELETE</code> statement without filtering nor deleted row limitation.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class WithIndexDirective extends NotFiltered {
@@ -258,7 +258,7 @@ public final class Delete {
 
 	/**
 	 * Represents a <code>DELETE</code>statement with a <code>LIMIT</code> clause
-	 * but no offset specified.<br/>
+	 * but no offset specified.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class LimitedNoOffset implements TriggerStatement {
@@ -286,7 +286,7 @@ public final class Delete {
 		}
 
 		/**
-		 * Adds an <code>OFFSET</code> clause to the <code>DELETE</code> statement.<br/>
+		 * Adds an <code>OFFSET</code> clause to the <code>DELETE</code> statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param offsetExpression the expression returning the offset value
 		 * @return the <code>DELETE</code> statement finalized with an <code>OFFSET</code>
@@ -297,7 +297,7 @@ public final class Delete {
 		}
 
 		/**
-		 * Adds an <code>OFFSET</code> clause to the <code>DELETE</code> statement.<br/>
+		 * Adds an <code>OFFSET</code> clause to the <code>DELETE</code> statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param offset the offset value
 		 * @return the <code>DELETE</code> statement finalized with an <code>OFFSET</code>
@@ -333,7 +333,7 @@ public final class Delete {
 	}
 
 	/**
-	 * Represents a <code>DELETE</code> statement ending with an <code>OFFSET</code> clause.<br/>
+	 * Represents a <code>DELETE</code> statement ending with an <code>OFFSET</code> clause.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class LimitedWithOffset implements TriggerStatement {
@@ -364,7 +364,7 @@ public final class Delete {
 	}
 
 	/**
-	 * Represents a <code>DELETE</code> statement with a filtering <code>WHERE</code> clause.<br/>
+	 * Represents a <code>DELETE</code> statement with a filtering <code>WHERE</code> clause.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class Filtered extends NotLimited {

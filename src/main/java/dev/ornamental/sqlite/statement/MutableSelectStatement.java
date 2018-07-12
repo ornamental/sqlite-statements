@@ -2,7 +2,7 @@ package dev.ornamental.sqlite.statement;
 
 /**
  * This is a mutable implementation of the {@link SelectStatement} interface. It may be
- * used to replace the <code>SELECT</code> statement (expression) used in other statement.<br/>
+ * used to replace the <code>SELECT</code> statement (expression) used in other statement.<br>
  * All the {@link SelectStatement} methods are redirected to the currently wrapped backing instance.
  */
 public final class MutableSelectStatement implements SelectStatement {

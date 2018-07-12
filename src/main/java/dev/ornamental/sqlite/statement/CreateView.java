@@ -3,7 +3,7 @@ package dev.ornamental.sqlite.statement;
 import java.util.Arrays;
 
 /**
- * Represents a complete <code>CREATE VIEW</code> statement:<br/>
+ * Represents a complete <code>CREATE VIEW</code> statement:<br>
  * <code><strong>CREATE [TEMPORARY] VIEW [IF NOT EXISTS]
  * [<em>schemaName</em>.]<em>viewName</em>[(<em>columnName<sub>0</sub></em>{,
  * <em>columnName<sub>i</sub></em>})] AS <em>selectStatement</em></strong></code>.
@@ -11,7 +11,7 @@ import java.util.Arrays;
 public final class CreateView implements ExplicableStatement {
 
 	/**
-	 * Represents the initial part of a <code>CREATE VIEW</code> statement, namely<br/>
+	 * Represents the initial part of a <code>CREATE VIEW</code> statement, namely<br>
 	 * <code><strong>CREATE [TEMPORARY] VIEW [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>viewName</em></strong></code>.
 	 */
@@ -37,7 +37,7 @@ public final class CreateView implements ExplicableStatement {
 		 * explicitly specifying the names of the view columns.
 		 * @param columnNames the names to be assigned to the view columns
 		 * @return a partial <code>CREATE VIEW</code> statement from which only the <code>AS</code>
-		 * close is missing:<br/>
+		 * close is missing:<br>
 		 * <code>CREATE [TEMPORARY] VIEW [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>viewName</em><strong>(<em>columnName<sub>0</sub></em>{,
 		 * <em>columnName<sub>i</sub></em>})</strong></code>
@@ -51,7 +51,7 @@ public final class CreateView implements ExplicableStatement {
 		 * explicitly specifying the names of the view columns.
 		 * @param columnNames the names to be assigned to the view columns
 		 * @return a partial <code>CREATE VIEW</code> statement from which only the <code>AS</code>
-		 * close is missing:<br/>
+		 * close is missing:<br>
 		 * <code>CREATE [TEMPORARY] VIEW [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>viewName</em><strong>(<em>columnName<sub>0</sub></em>{,
 		 * <em>columnName<sub>i</sub></em>})</strong></code>
@@ -61,7 +61,7 @@ public final class CreateView implements ExplicableStatement {
 		}
 
 		/**
-		 * Specifies the view contents by supplying a <code>SELECT</code> (or <code>VALUES</code>) statement.<br/>
+		 * Specifies the view contents by supplying a <code>SELECT</code> (or <code>VALUES</code>) statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param selectStatement the statement defining the contents of the view
 		 * @return the complete <code>CREATE VIEW</code> statement using the specified <code>SELECT</code>
@@ -93,7 +93,7 @@ public final class CreateView implements ExplicableStatement {
 	}
 
 	/**
-	 * Represents a partial <code>CREATE VIEW</code> statement with explicitly named view columns:<br/>
+	 * Represents a partial <code>CREATE VIEW</code> statement with explicitly named view columns:<br>
 	 * <code><strong>CREATE [TEMPORARY] VIEW [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>tableName</em>(<em>columnName<sub>0</sub></em>{,
 	 * <em>columnName<sub>i</sub></em>})</strong></code>.
@@ -110,7 +110,7 @@ public final class CreateView implements ExplicableStatement {
 		}
 
 		/**
-		 * Specifies the view contents by supplying a <code>SELECT</code> (or <code>VALUES</code>) statement.<br/>
+		 * Specifies the view contents by supplying a <code>SELECT</code> (or <code>VALUES</code>) statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param selectStatement the statement defining the contents of the view
 		 * @return the complete <code>CREATE VIEW</code> statement using the specified <code>SELECT</code>

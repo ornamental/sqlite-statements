@@ -4,7 +4,7 @@ package dev.ornamental.sqlite.statement;
  * The common interface for the flavours of <code>SELECT</code> and <code>VALUE</code> statements.
  * Each such statement also represents an SQL expression as long as it returns a single value
  * (single column is also acceptable in SQLite, but only the first value will be used in this case).
- * When used as an expression, the statement is enclosed in parentheses.<br/>
+ * When used as an expression, the statement is enclosed in parentheses.<br>
  * All the implementations are complete SQL statements and complete SQL expressions.
  */
 public interface SelectStatement extends ExplicableStatement, SqlExpression, TriggerStatement {

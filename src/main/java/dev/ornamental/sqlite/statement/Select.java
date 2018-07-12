@@ -12,7 +12,7 @@ public final class Select {
 
 	/**
 	 * This interface is implemented by the classes representing <code>SELECT</code>
-	 * statements having no <code>LIMIT</code> clause.<br/>
+	 * statements having no <code>LIMIT</code> clause.<br>
 	 * All the implementations are complete SQL statements and expressions.
 	 */
 	public interface NotLimited extends SelectStatement {
@@ -21,7 +21,7 @@ public final class Select {
 		NotLimited copy();
 
 		/**
-		 * Adds a <code>LIMIT</code> clause to the statement.<br/>
+		 * Adds a <code>LIMIT</code> clause to the statement.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param maxRows the maximum number of rows to be fetched
 		 * @return the <code>SELECT</code> statement with a <code>LIMIT</code> clause
@@ -32,7 +32,7 @@ public final class Select {
 		}
 
 		/**
-		 * Adds a <code>LIMIT</code> clause to the statement.<br/>
+		 * Adds a <code>LIMIT</code> clause to the statement.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param limitExpression the expression determining the maximum number of rows to be fetched
 		 * @return the <code>SELECT</code> statement with a <code>LIMIT</code> clause
@@ -53,7 +53,7 @@ public final class Select {
 
 		/**
 		 * Adds an <code>ORDER BY</code> sorting term with the default sorting order
-		 * (creating an <code>ORDER BY</code> clause is this is the first sorting term).<br/>
+		 * (creating an <code>ORDER BY</code> clause is this is the first sorting term).<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param sortingKey the expression to sort by the value of
 		 * @return the <code>SELECT</code> statement ending with a <code>ORDER BY</code>
@@ -63,7 +63,7 @@ public final class Select {
 
 		/**
 		 * Adds an <code>ORDER BY</code> sorting term with the specified sorting order
-		 * (creating an <code>ORDER BY</code> clause is this is the first sorting term).<br/>
+		 * (creating an <code>ORDER BY</code> clause is this is the first sorting term).<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param sortingKey the expression to sort by the value of
 		 * @param order the sorting order
@@ -75,7 +75,7 @@ public final class Select {
 
 	/**
 	 * This interface is implemented by the classes representing <code>SELECT</code>
-	 * statements having no <code>ORDER BY</code> clause.<br/>
+	 * statements having no <code>ORDER BY</code> clause.<br>
 	 * All the implementations are complete SQL statements and expressions.
 	 */
 	public interface NotSorted extends NotLimited, Sortable {
@@ -104,16 +104,16 @@ public final class Select {
 		/**
 		 * Applies the <code>UNION</code> compound operator to this <code>SELECT</code> statement
 		 * and another <code>SELECT</code> (or <code>VALUES</code>) statement with no
-		 * <code>ORDER BY</code> or <code>LIMIT</code> clause.<br/>
+		 * <code>ORDER BY</code> or <code>LIMIT</code> clause.<br>
 		 * <strong>Note</strong> that if the passed statement already is a compound statement, the order
 		 * of compound operations may be not the one expected as SQLite has no compound
 		 * statement precedence or ability to reorder the compound operator evaluation order
-		 * using parentheses.<br/>
+		 * using parentheses.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param select the <code>SELECT</code> (or <code>VALUES</code>) statement
-		 * @return the compound <code>SELECT</code> statement having the form<br/>
+		 * @return the compound <code>SELECT</code> statement having the form<br>
 		 * <code><strong><em>selectOperand<sub>L</sub></em> UNION
-		 * <em>selectOperand<sub>R</sub></em></strong></code><br/>
+		 * <em>selectOperand<sub>R</sub></em></strong></code><br>
 		 * where <code><em>selectOperand<sub>L</sub></em></code> is this statement and
 		 * <code><em>selectOperand<sub>R</sub></em></code> is the one passed as the parameter
 		 */
@@ -127,16 +127,16 @@ public final class Select {
 		/**
 		 * Applies the <code>UNION ALL</code> compound operator to this <code>SELECT</code> statement
 		 * and another <code>SELECT</code> (or <code>VALUES</code>) statement with no
-		 * <code>ORDER BY</code> or <code>LIMIT</code> clause.<br/>
+		 * <code>ORDER BY</code> or <code>LIMIT</code> clause.<br>
 		 * <strong>Note</strong> that if the passed statement already is a compound statement, the order
 		 * of compound operations may be not the one expected as SQLite has no compound
 		 * statement precedence or ability to reorder the compound operator evaluation order
-		 * using parentheses.<br/>
+		 * using parentheses.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param select the <code>SELECT</code> (or <code>VALUES</code>) statement
-		 * @return the compound <code>SELECT</code> statement having the form<br/>
+		 * @return the compound <code>SELECT</code> statement having the form<br>
 		 * <code><strong><em>selectOperand<sub>L</sub></em> UNION ALL
-		 * <em>selectOperand<sub>R</sub></em></strong></code><br/>
+		 * <em>selectOperand<sub>R</sub></em></strong></code><br>
 		 * where <code><em>selectOperand<sub>L</sub></em></code> is this statement and
 		 * <code><em>selectOperand<sub>R</sub></em></code> is the one passed as the parameter
 		 */
@@ -150,16 +150,16 @@ public final class Select {
 		/**
 		 * Applies the <code>INTERSECT</code> compound operator to this <code>SELECT</code> statement
 		 * and another <code>SELECT</code> (or <code>VALUES</code>) statement with no
-		 * <code>ORDER BY</code> or <code>LIMIT</code> clause.<br/>
+		 * <code>ORDER BY</code> or <code>LIMIT</code> clause.<br>
 		 * <strong>Note</strong> that if the passed statement already is a compound statement, the order
 		 * of compound operations may be not the one expected as SQLite has no compound
 		 * statement precedence or ability to reorder the compound operator evaluation order
-		 * using parentheses.<br/>
+		 * using parentheses.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param select the <code>SELECT</code> (or <code>VALUES</code>) statement
-		 * @return the compound <code>SELECT</code> statement having the form<br/>
+		 * @return the compound <code>SELECT</code> statement having the form<br>
 		 * <code><strong><em>selectOperand<sub>L</sub></em> INTERSECT
-		 * <em>selectOperand<sub>R</sub></em></strong></code><br/>
+		 * <em>selectOperand<sub>R</sub></em></strong></code><br>
 		 * where <code><em>selectOperand<sub>L</sub></em></code> is this statement and
 		 * <code><em>selectOperand<sub>R</sub></em></code> is the one passed as the parameter
 		 */
@@ -173,16 +173,16 @@ public final class Select {
 		/**
 		 * Applies the <code>EXCEPT</code> compound operator to this <code>SELECT</code> statement
 		 * and another <code>SELECT</code> (or <code>VALUES</code>) statement with no
-		 * <code>ORDER BY</code> or <code>LIMIT</code> clause.<br/>
+		 * <code>ORDER BY</code> or <code>LIMIT</code> clause.<br>
 		 * <strong>Note</strong> that if the passed statement already is a compound statement, the order
 		 * of compound operations may be not the one expected as SQLite has no compound
 		 * statement precedence or ability to reorder the compound operator evaluation order
-		 * using parentheses.<br/>
+		 * using parentheses.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param select the <code>SELECT</code> (or <code>VALUES</code>) statement
-		 * @return the compound <code>SELECT</code> statement having the form<br/>
+		 * @return the compound <code>SELECT</code> statement having the form<br>
 		 * <code><strong><em>selectOperand<sub>L</sub></em> EXCEPT
-		 * <em>selectOperand<sub>R</sub></em></strong></code><br/>
+		 * <em>selectOperand<sub>R</sub></em></strong></code><br>
 		 * where <code><em>selectOperand<sub>L</sub></em></code> is this statement and
 		 * <code><em>selectOperand<sub>R</sub></em></code> is the one passed as the parameter
 		 */
@@ -236,7 +236,7 @@ public final class Select {
 
 	/**
 	 * This interface is implemented by the classes representing <code>SELECT</code>
-	 * statements having no <code>GROUP BY</code> nor <code>LIMIT</code> clause.<br/>
+	 * statements having no <code>GROUP BY</code> nor <code>LIMIT</code> clause.<br>
 	 * All the implementations are complete SQL statements and expressions.
 	 */
 	public interface NotGrouped extends NotSorted {
@@ -245,10 +245,10 @@ public final class Select {
 		NotGrouped copy();
 
 		/**
-		 * Adds a <code>GROUP BY</code> clause to this statement.<br/>
+		 * Adds a <code>GROUP BY</code> clause to this statement.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param groupingKeys the set of expressions to perform the grouping by
-		 * @return the <code>SELECT</code> statement ending with<br/>
+		 * @return the <code>SELECT</code> statement ending with<br>
 		 * <code><strong>GROUP BY <em>groupingKey<sub>0</sub></em>{,
 		 * <em>groupingKey<sub>i</sub></em>}</strong></code>
 		 */
@@ -257,10 +257,10 @@ public final class Select {
 		}
 
 		/**
-		 * Adds a <code>GROUP BY</code> clause to this statement.<br/>
+		 * Adds a <code>GROUP BY</code> clause to this statement.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param groupingKeys the set of expressions to perform the grouping by
-		 * @return the <code>SELECT</code> statement ending with<br/>
+		 * @return the <code>SELECT</code> statement ending with<br>
 		 * <code><strong>GROUP BY <em>groupingKey<sub>0</sub></em>{,
 		 * <em>groupingKey<sub>i</sub></em>}</strong></code>
 		 */
@@ -272,7 +272,7 @@ public final class Select {
 	/**
 	 * This interface is implemented by the classes representing <code>SELECT</code>
 	 * statements having no <code>WHERE</code>, <code>GROUP BY</code>, nor <code>LIMIT</code>
-	 * clause.<br/>
+	 * clause.<br>
 	 * All the implementations are complete SQL statements and expressions.
 	 */
 	public interface NotFiltered extends NotGrouped {
@@ -281,10 +281,10 @@ public final class Select {
 		NotFiltered copy();
 
 		/**
-		 * Adds a filtering <code>WHERE</code> clause to the statement.<br/>
+		 * Adds a filtering <code>WHERE</code> clause to the statement.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param expression the filtering condition expression
-		 * @return the <code>SELECT</code> statement ending with<br/>
+		 * @return the <code>SELECT</code> statement ending with<br>
 		 * <code><strong>WHERE <em>expression</em></strong></code>
 		 */
 		default Filtered where(SqlExpression expression) {
@@ -294,7 +294,7 @@ public final class Select {
 
 	/**
 	 * Represents the simplest <code>SELECT</code> expression having
-	 * no clauses but <code>SELECT</code>.<br/>
+	 * no clauses but <code>SELECT</code>.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public static final class NoSource implements NotFiltered {
@@ -342,7 +342,7 @@ public final class Select {
 		}
 
 		/**
-		 * Adds a <code>FROM</code> clause to the statement.<br/>
+		 * Adds a <code>FROM</code> clause to the statement.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param from the table expression composed of one or more table references
 		 * and subqueries, serving as the source for the <code>SELECT</code> statement
@@ -393,7 +393,7 @@ public final class Select {
 
 	/**
 	 * Represents the <code>SELECT</code> expression having <code>FROM</code>
-	 * as the last clause.<br/>
+	 * as the last clause.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public static final class WithSource implements NotFiltered {
@@ -431,10 +431,10 @@ public final class Select {
 
 	/**
 	 * Represents two <code>SELECT</code> statements joint with a compound operator:
-	 * <code>UNION</code>, <code>UNION ALL</code>, <code>INTERSECT</code>, or <code>EXCEPT</code>.<br/>
+	 * <code>UNION</code>, <code>UNION ALL</code>, <code>INTERSECT</code>, or <code>EXCEPT</code>.<br>
 	 * Note that SQLite has no compound operator precedence nor there is a feature of reordering
 	 * the composition sequence using parentheses, so all the compound operators are always evaluated
-	 * from left to right.<br/>
+	 * from left to right.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public static final class CompoundSet implements NotSorted {
@@ -494,7 +494,7 @@ public final class Select {
 		/**
 		 * Appends a <code>SELECT</code> statement with the specified result columns.
 		 * This statement may be further supplemented with other clauses: <code>FROM</code>,
-		 * <code>GROUP BY .. [HAVING]</code>, <code>ORDER BY</code>, and <code>LIMIT .. [OFFSET]</code>.<br/>
+		 * <code>GROUP BY .. [HAVING]</code>, <code>ORDER BY</code>, and <code>LIMIT .. [OFFSET]</code>.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param columns the columns to include in the <code>SELECT</code> statement output
 		 * @return the statement being a composition of the previous <code>SELECT</code>
@@ -509,7 +509,7 @@ public final class Select {
 		/**
 		 * Appends a <code>SELECT DISTINCT</code> statement with the specified result columns.
 		 * This statement may be further supplemented with other clauses: <code>FROM</code>,
-		 * <code>GROUP BY .. [HAVING]</code>, <code>ORDER BY</code>, and <code>LIMIT .. [OFFSET]</code>.<br/>
+		 * <code>GROUP BY .. [HAVING]</code>, <code>ORDER BY</code>, and <code>LIMIT .. [OFFSET]</code>.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param columns the columns to include in the <code>SELECT</code> statement output
 		 * @return the statement being a composition of the previous <code>SELECT</code>
@@ -564,7 +564,7 @@ public final class Select {
 
 	/**
 	 * Represents a <code>SELECT</code> statement with a filtering <code>WHERE</code> clause
-	 * but no <code>GROUP BY</code> or <code>LIMIT</code> clause.<br/>
+	 * but no <code>GROUP BY</code> or <code>LIMIT</code> clause.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public static final class Filtered implements NotGrouped {
@@ -605,7 +605,7 @@ public final class Select {
 
 	/**
 	 * Represents a <code>SELECT</code> statement with a <code>GROUP BY</code> clause
-	 * but no <code>HAVING</code>, <code>ORDER BY</code>, or <code>LIMIT</code> clause.<br/>
+	 * but no <code>HAVING</code>, <code>ORDER BY</code>, or <code>LIMIT</code> clause.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public static final class GroupedNotFiltered implements NotSorted {
@@ -623,7 +623,7 @@ public final class Select {
 		}
 
 		/**
-		 * Adds a filtering <code>HAVING</code> clause to the statement.<br/>
+		 * Adds a filtering <code>HAVING</code> clause to the statement.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param condition the group filtering condition expression
 		 * @return the <code>SELECT</code> statement ending
@@ -665,7 +665,7 @@ public final class Select {
 	}
 
 	/**
-	 * Represents a <code>SELECT</code> statement ending with a <code>GROUP BY .. HAVING</code> clause.<br/>
+	 * Represents a <code>SELECT</code> statement ending with a <code>GROUP BY .. HAVING</code> clause.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public static final class GroupedFiltered implements NotSorted {
@@ -706,7 +706,7 @@ public final class Select {
 
 	/**
 	 * Represents a <code>SELECT</code> statement ending with an <code>ORDER BY</code>
-	 * clause.<br/>
+	 * clause.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public static final class Sorted implements NotLimited, Sortable {
@@ -769,7 +769,7 @@ public final class Select {
 
 	/**
 	 * Represents a <code>SELECT</code> statement ending with a <code>LIMIT</code>
-	 * clause without the <code>OFFSET</code> part.<br/>
+	 * clause without the <code>OFFSET</code> part.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public static final class LimitedNoOffset implements SelectStatement {
@@ -784,7 +784,7 @@ public final class Select {
 		}
 
 		/**
-		 * Adds an <code>OFFSET</code> clause to the statement.<br/>
+		 * Adds an <code>OFFSET</code> clause to the statement.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param offset the number determining the offset
 		 * @return the <code>SELECT</code> statement finalized with an <code>OFFSET</code> clause
@@ -794,7 +794,7 @@ public final class Select {
 		}
 
 		/**
-		 * Adds an <code>OFFSET</code> clause to the statement.<br/>
+		 * Adds an <code>OFFSET</code> clause to the statement.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param offsetExpression the expression determining the offset
 		 * @return the <code>SELECT</code> statement finalized with an <code>OFFSET</code> clause
@@ -821,7 +821,7 @@ public final class Select {
 
 	/**
 	 * Represents a <code>SELECT</code> statement ending with a <code>LIMIT .. OFFSET</code>
-	 * clause.<br/>
+	 * clause.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public static final class LimitedWithOffset implements SelectStatement {
@@ -852,7 +852,7 @@ public final class Select {
 	}
 
 	/**
-	 * Represents a <code>VALUES</code> statement.<br/>
+	 * Represents a <code>VALUES</code> statement.<br>
 	 * This is a complete SQL statement and expression.
 	 */
 	public abstract static class Values implements NotSorted {
@@ -913,51 +913,51 @@ public final class Select {
 		ValueProducer() { }
 
 		/**
-		 * Appends a <code>VALUES</code> statement returning a single column of integral values.<br/>
+		 * Appends a <code>VALUES</code> statement returning a single column of integral values.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param values the values to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>value<sub>0</sub></em>){, (<em>value<sub>i</sub></em>)}</strong></code>
 		 */
 		public abstract Select.Values values(int... values);
 
 		/**
-		 * Appends a <code>VALUES</code> statement returning a single column of integral values.<br/>
+		 * Appends a <code>VALUES</code> statement returning a single column of integral values.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param values the values to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>value<sub>0</sub></em>){, (<em>value<sub>i</sub></em>)}</strong></code>
 		 */
 		public abstract Select.Values values(long... values);
 
 		/**
-		 * Constructs a <code>VALUES</code> statement returning a single column of floating-point values.<br/>
+		 * Constructs a <code>VALUES</code> statement returning a single column of floating-point values.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param values the values to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>value<sub>0</sub></em>){, (<em>value<sub>i</sub></em>)}</strong></code>
 		 */
 		public abstract Select.Values values(float... values);
 
 		/**
-		 * Constructs a <code>VALUES</code> statement returning a single column of floating-point values.<br/>
+		 * Constructs a <code>VALUES</code> statement returning a single column of floating-point values.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param values the values to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>value<sub>0</sub></em>){, (<em>value<sub>i</sub></em>)}</strong></code>
 		 */
 		public abstract Select.Values values(double... values);
 
 		/**
-		 * Constructs a <code>VALUES</code> statement returning a single column of text values.<br/>
+		 * Constructs a <code>VALUES</code> statement returning a single column of text values.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param values the values to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>value<sub>0</sub></em>){, (<em>value<sub>i</sub></em>)}</strong></code>
 		 */
 		public Select.Values values(CharSequence... values) {
@@ -965,42 +965,42 @@ public final class Select {
 		}
 
 		/**
-		 * Constructs a <code>VALUES</code> statement returning a single column of text values.<br/>
+		 * Constructs a <code>VALUES</code> statement returning a single column of text values.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param values the values to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>value<sub>0</sub></em>){, (<em>value<sub>i</sub></em>)}</strong></code>
 		 */
 		public abstract Select.Values stringValues(Iterable<? extends CharSequence> values);
 
 		/**
-		 * Constructs a <code>VALUES</code> statement returning a single column of numeric values.<br/>
+		 * Constructs a <code>VALUES</code> statement returning a single column of numeric values.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param values the values to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>value<sub>0</sub></em>){, (<em>value<sub>i</sub></em>)}</strong></code>
 		 */
 		public abstract Select.Values numericValues(Iterable<? extends Number> values);
 
 		/**
-		 * Constructs a <code>VALUES</code> statement returning a single column of BLOBs.<br/>
+		 * Constructs a <code>VALUES</code> statement returning a single column of BLOBs.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param values the values to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>value<sub>0</sub></em>){, (<em>value<sub>i</sub></em>)}</strong></code>
 		 */
 		public abstract Select.Values blobValues(Iterable<byte[]> values);
 
 		/**
 		 * Constructs a <code>VALUES</code> statement returning a single row consisting
-		 * of the specified expressions.<br/>
+		 * of the specified expressions.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param expressions the expressions to be arranged in a single row in the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>expression<sub>0</sub></em>{, (<em>expression<sub>i</sub></em>)})</strong></code>
 		 */
 		public Select.Values valuesInRow(SqlExpression... expressions) {
@@ -1009,11 +1009,11 @@ public final class Select {
 
 		/**
 		 * Constructs a <code>VALUES</code> statement returning a single row consisting
-		 * of the specified expressions.<br/>
+		 * of the specified expressions.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param expressions the expressions to be arranged in a single row in the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>expression<sub>0</sub></em>{, <em>expression<sub>i</sub></em>})</strong></code>
 		 */
 		public Select.Values valuesInRow(Iterable<? extends SqlExpression> expressions) {
@@ -1021,11 +1021,11 @@ public final class Select {
 		}
 
 		/**
-		 * Constructs a <code>VALUES</code> statement returning the specified rows.<br/>
+		 * Constructs a <code>VALUES</code> statement returning the specified rows.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param rows the rows to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>expression<sub>0,0</sub></em>{, <em>expression<sub>0,j</sub></em>}){,
 		 * (<em>expression<sub>i,0</sub></em>{, <em>expression<sub>i,j</sub></em>})}</strong></code>
 		 */
@@ -1034,11 +1034,11 @@ public final class Select {
 		}
 
 		/**
-		 * Constructs a <code>VALUES</code> statement returning the specified rows.<br/>
+		 * Constructs a <code>VALUES</code> statement returning the specified rows.<br>
 		 * The result is a complete SQL statement and expression.
 		 * @param rows the rows to be returned by the <code>VALUES</code> statement
 		 * @return the exact result depends on the preceding part of the statement;
-		 * the appended suffix has the form<br/>
+		 * the appended suffix has the form<br>
 		 * <code><strong>VALUES (<em>expression<sub>0,0</sub></em>{, <em>expression<sub>0,j</sub></em>}){,
 		 * (<em>expression<sub>i,0</sub></em>{, <em>expression<sub>i,j</sub></em>})}</strong></code>
 		 */

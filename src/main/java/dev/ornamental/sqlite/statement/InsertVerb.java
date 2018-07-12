@@ -1,7 +1,7 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Defines the flavours of <code>INSERT</code> statements.<br/>
+ * Defines the flavours of <code>INSERT</code> statements.<br>
  * Note that from the two equivalent statements <code>INSERT OR REPLACE</code> and <code>REPLACE</code>
  * only the former is retained while both <code>INSERT</code> and <code>INSERT OR ABORT</code>
  * (which are also equivalent) are present.

@@ -1,9 +1,9 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an SQL expression having the form<br/>
- * <code><strong>EXISTS (<em>selectStatement</em>)</strong></code><br/>
- * where <code><em>selectStatement</em></code> is a <code>SELECT</code> statement.<br/>
+ * Represents an SQL expression having the form<br>
+ * <code><strong>EXISTS (<em>selectStatement</em>)</strong></code><br>
+ * where <code><em>selectStatement</em></code> is a <code>SELECT</code> statement.<br>
  * This is a complete SQL expression.
  */
 public final class ExistsExpression implements SqlExpression {

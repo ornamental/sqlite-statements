@@ -1,12 +1,12 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an SQL expression having the form<br/>
+ * Represents an SQL expression having the form<br>
  * <code><strong><em>expression</em> [NOT] LIKE|GLOB|REGEXP|MATCH
- * <em>patternExpression</em></strong></code><br/>
+ * <em>patternExpression</em></strong></code><br>
  * matching the result of evaluation of the left operand expression
  * to the result of evaluation of the pattern expression using one
- * of the algorithms defined in {@link MatchOperator}.<br/>
+ * of the algorithms defined in {@link MatchOperator}.<br>
  * It is a complete SQL expression.
  */
 public final class MatchExpression implements SqlExpression {
@@ -31,9 +31,9 @@ public final class MatchExpression implements SqlExpression {
 	/**
 	 * Adds an <code>ESCAPE</code> clause to the expression using the specified character.
 	 * @param ch the character to use as the escape symbol
-	 * @return the match expression having the form<br/>
+	 * @return the match expression having the form<br>
 	 * <code><em>expression</em> [NOT] LIKE|GLOB|REGEXP|MATCH
-	 * <em>patternExpression</em> <strong>ESCAPE <em>ch</em></strong></code><br/>
+	 * <em>patternExpression</em> <strong>ESCAPE <em>ch</em></strong></code><br>
 	 * where <code><em>ch</em></code> is the specified character
 	 */
 	public MatchEscapeExpression escape(char ch) {
@@ -43,9 +43,9 @@ public final class MatchExpression implements SqlExpression {
 	/**
 	 * Adds an <code>ESCAPE</code> clause to the expression.
 	 * @param escapeExpression the expression whose evaluation result must be used as the escape symbol
-	 * @return the match expression having the form<br/>
+	 * @return the match expression having the form<br>
 	 * <code><em>expression</em> [NOT] LIKE|GLOB|REGEXP|MATCH
-	 * <em>patternExpression</em> <strong>ESCAPE <em>escapeExpression</em></strong></code><br/>
+	 * <em>patternExpression</em> <strong>ESCAPE <em>escapeExpression</em></strong></code><br>
 	 */
 	public MatchEscapeExpression escape(SqlExpression escapeExpression) {
 		return new MatchEscapeExpression(this, escapeExpression);

@@ -30,8 +30,8 @@ public enum TransactionType {
 
 	/**
 	 * Returns the statement beginning a transaction of this type.
-	 * @return the statement of the form<br/>
-	 * <code><strong>BEGIN DEFERRED|IMMEDIATE|EXCLUSIVE TRANSACTION</strong></code><br/>
+	 * @return the statement of the form<br>
+	 * <code><strong>BEGIN DEFERRED|IMMEDIATE|EXCLUSIVE TRANSACTION</strong></code><br>
 	 * where the transaction type is defined by this enum element.
 	 */
 	public BeginTransaction beginStatement() {

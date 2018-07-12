@@ -1,7 +1,7 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents a <code>REINDEX</code> statement. It comes in three forms:<br/>
+ * Represents a <code>REINDEX</code> statement. It comes in three forms:<br>
  * <ol>
  *     <li><code><strong>REINDEX</strong></code></li>
  *     <li><code><strong>REINDEX <em>collationName</em></strong></code></li>

@@ -5,15 +5,15 @@ import java.util.Iterator;
 /**
  * This is the common ancestor class for the classes representing <code>[NOT] IN</code> expressions.
  * The specific implementations are the nested subclasses {@link ForRow}, {@link ForSelect},
- * {@link ForTable}, and {@link ForTableFunction}.<br/>
+ * {@link ForTable}, and {@link ForTableFunction}.<br>
  * Each implementation is a complete SQL expression.
  */
 public abstract class InExpression implements SqlExpression {
 
 	/**
-	 * Represents a kind of <code>[NOT] IN</code> expression having the form<br/>
+	 * Represents a kind of <code>[NOT] IN</code> expression having the form<br>
 	 * <code><strong><em>comparandExpression</em> [NOT] IN (<em>expression<sub>0</sub></em>{,
-	 * <em>expression<sub>i</sub></em>})</strong></code>.<br/>
+	 * <em>expression<sub>i</sub></em>})</strong></code>.<br>
 	 * This is a complete SQL expression.
 	 */
 	public static final class ForRow extends InExpression {
@@ -45,8 +45,8 @@ public abstract class InExpression implements SqlExpression {
 	}
 
 	/**
-	 * Represents a kind of <code>[NOT] IN</code> expression having the form<br/>
-	 * <code><strong><em>comparandExpression</em> [NOT] IN (<em>selectStatement</em>)</strong></code>.<br/>
+	 * Represents a kind of <code>[NOT] IN</code> expression having the form<br>
+	 * <code><strong><em>comparandExpression</em> [NOT] IN (<em>selectStatement</em>)</strong></code>.<br>
 	 * This is a complete SQL expression.
 	 */
 	public static final class ForSelect extends InExpression {
@@ -76,9 +76,9 @@ public abstract class InExpression implements SqlExpression {
 	}
 
 	/**
-	 * Represents a kind of <code>[NOT] IN</code> expression having the form<br/>
+	 * Represents a kind of <code>[NOT] IN</code> expression having the form<br>
 	 * <code><strong><em>comparandExpression</em> [NOT] IN
-	 * [<em>schemaName</em>.]<em>tableName</em></strong></code>.<br/>
+	 * [<em>schemaName</em>.]<em>tableName</em></strong></code>.<br>
 	 * This is a complete SQL expression.
 	 */
 	public static final class ForTable extends InExpression {
@@ -110,10 +110,10 @@ public abstract class InExpression implements SqlExpression {
 	}
 
 	/**
-	 * Represents a kind of <code>[NOT] IN</code> expression having the form<br/>
+	 * Represents a kind of <code>[NOT] IN</code> expression having the form<br>
 	 * <code><strong><em>comparandExpression</em> [NOT] IN
 	 * [<em>schemaName</em>.]<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
-	 * <em>arg<sub>i</sub></em>}])</strong></code>.<br/>
+	 * <em>arg<sub>i</sub></em>}])</strong></code>.<br>
 	 * This is a complete SQL expression.
 	 */
 	public static final class ForTableFunction extends InExpression {

@@ -2,10 +2,10 @@ package dev.ornamental.sqlite.statement;
 
 /**
  * Represents a table expression being a natural join of tables or subquery results
- * (the join columns are automatically inferred from the matching column names):<br/>
- * It has the form<br/>
+ * (the join columns are automatically inferred from the matching column names):<br>
+ * It has the form<br>
  * <code><strong>(<em>tableOrSubquery<sub>L</sub></em> NATURAL INNER|LEFT|CROSS JOIN
- * <em>tableOrSubquery<sub>R</sub></em>)</strong></code><br/>.
+ * <em>tableOrSubquery<sub>R</sub></em>)</strong></code><br>.
  */
 public final class NaturalJoin implements TableExpression {
 

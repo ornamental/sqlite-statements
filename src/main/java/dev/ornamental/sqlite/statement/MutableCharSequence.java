@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 /**
  * This is a mutable implementation of the {@link CharSequence} interface. It may be
  * used to replace the symbolic parts of statements while keeping the statements
- * structurally immutable.<br/>
+ * structurally immutable.<br>
  * All the {@link CharSequence} methods are redirected to the currently wrapped backing instance.
  */
 public final class MutableCharSequence implements CharSequence {

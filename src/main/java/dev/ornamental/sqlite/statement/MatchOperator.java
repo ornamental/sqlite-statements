@@ -8,7 +8,7 @@ public enum MatchOperator {
 	/**
 	 * The <code>LIKE</code> operator uses the percent (<code>%</code>) character to match
 	 * any number of arbitrary characters (including no characters) and the underscore (<code>_</code>)
-	 * character to match one arbitrary character.<br/>
+	 * character to match one arbitrary character.<br>
 	 * Matching is case insensitive unless set otherwise using the <code>PRAGMA case_sensitive_like</code>
 	 * statement (see {@link Pragmas#caseSensitiveLike(boolean)}).
 	 */

@@ -3,8 +3,8 @@ package dev.ornamental.sqlite.statement;
 import java.util.Iterator;
 
 /**
- * Represents an SQL expression designating a non-empty tuple of other expressions:<br/>
- * <code><strong>(<em>expression<sub>0</sub></em>{, <em>expression<sub>i</sub></em>})</strong></code><br/>
+ * Represents an SQL expression designating a non-empty tuple of other expressions:<br>
+ * <code><strong>(<em>expression<sub>0</sub></em>{, <em>expression<sub>i</sub></em>})</strong></code><br>
  * This is a complete SQL expression.
  */
 public abstract class RowExpression implements SqlExpression {

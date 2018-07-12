@@ -1,8 +1,8 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an <code>ATTACH</code> statement having the form<br/>
- * <code><strong>ATTACH <em>databaseFileNameExpression</em> AS <em>schemaName</em></strong></code><br/>
+ * Represents an <code>ATTACH</code> statement having the form<br>
+ * <code><strong>ATTACH <em>databaseFileNameExpression</em> AS <em>schemaName</em></strong></code><br>
  * attaching a database to the connection.
  */
 public final class Attach implements ExplicableStatement {

@@ -2,9 +2,9 @@ package dev.ornamental.sqlite.statement;
 
 /**
  * Represents a table expression referencing a virtual table (table-valued function call).
- * It has the form<br/>
+ * It has the form<br>
  * <code><strong>[<em>schemaName</em>.]<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
- * <em>arg<sub>i</sub></em>}])</em></strong></code>.
+ * <em>arg<sub>i</sub></em>}])</strong></code>.
  */
 public class UnaliasedVirtualTable implements TableExpression {
 
@@ -43,7 +43,7 @@ public class UnaliasedVirtualTable implements TableExpression {
 	/**
 	 * Adds an alias to the parametrized virtual table reference.
 	 * @param alias the alias to assign to the parametrized virtual table
-	 * @return the aliased virtual table reference (table-valued function call) having the form<br/>
+	 * @return the aliased virtual table reference (table-valued function call) having the form<br>
 	 * <code>[<em>schemaName</em>.]<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
 	 * <em>arg<sub>i</sub></em>}]) <strong>AS <em>alias</em></strong></code>.
 	 */

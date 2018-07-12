@@ -1,10 +1,10 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an <code>EXPLAIN</code> statement having the form<br/>
- * <code><strong>EXPLAIN [QUERY PLAN] <em>explicableSqlStatement</em></strong></code><br/>
+ * Represents an <code>EXPLAIN</code> statement having the form<br>
+ * <code><strong>EXPLAIN [QUERY PLAN] <em>explicableSqlStatement</em></strong></code><br>
  * where <code><em>explicableSqlStatement</em></code> is any SQL statement except for
- * <code>EXPLAIN</code> statements themselves.<br/>
+ * <code>EXPLAIN</code> statements themselves.<br>
  * This is a complete SQL statement.
  */
 public final class Explain implements SqlStatement {

@@ -2,7 +2,7 @@ package dev.ornamental.sqlite.statement;
 
 /**
  * Represents a table expression being a join of tables or subquery results constrained
- * by a <code>USING</code> clause:<br/>
+ * by a <code>USING</code> clause:<br>
  * <code><strong>(<em>tableOrSubquery<sub>L</sub></em> INNER|LEFT|CROSS JOIN
  * <em>tableOrSubquery<sub>R</sub></em> USING (<em>column<sub>0</sub></em>{,
  * <em>column<sub>i</sub></em>}))</strong></code>.

@@ -1,7 +1,7 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents a named SQL expression for use in <code>SELECT</code> statements.<br/>
+ * Represents a named SQL expression for use in <code>SELECT</code> statements.<br>
  * This is not an SQL expression itself.
  */
 public final class NamedResultColumn implements ResultElement {

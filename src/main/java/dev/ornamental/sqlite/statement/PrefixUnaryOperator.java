@@ -1,7 +1,7 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an SQL expression being a prefix unary operator applied to another SQL expression.<br/>
+ * Represents an SQL expression being a prefix unary operator applied to another SQL expression.<br>
  * This is a complete SQL expression.
  */
 public final class PrefixUnaryOperator implements SqlExpression {

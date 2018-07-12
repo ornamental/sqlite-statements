@@ -2,7 +2,7 @@ package dev.ornamental.sqlite.statement;
 
 /**
  * This is a mutable implementation of the {@link TableExpression} interface. It may be
- * used to replace the <code>FROM</code> clause.<br/>
+ * used to replace the <code>FROM</code> clause.<br>
  * All the {@link TableExpression} methods are redirected to the currently wrapped backing instance.
  */
 public final class MutableTableExpression implements TableExpression {

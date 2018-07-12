@@ -3,7 +3,7 @@ package dev.ornamental.sqlite.statement;
 /**
  * Represents an SQL expression having the form
  * <code><strong><em>leftExpression</em> <em>OPERATOR</em> <em>rightExpression</em></strong></code>
- * where <code><em>OPERATOR</em></code> is one of the binary operators defined in {@link Operator}.<br/>
+ * where <code><em>OPERATOR</em></code> is one of the binary operators defined in {@link Operator}.<br>
  * This is a complete SQL expression.
  */
 public final class BinaryOperator implements SqlExpression {

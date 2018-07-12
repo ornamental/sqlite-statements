@@ -135,7 +135,7 @@ public enum Operator {
 	/**
 	 * Unary postfix operator <code><strong>NOTNULL</strong></code>
 	 * (always delimited from its operand by at least one space symbol)
-	 * checks if the operand is not <code>NULL</code>.<br/>
+	 * checks if the operand is not <code>NULL</code>.<br>
 	 * This operator's alternative form <code>NOT NULL</code> is unused.
 	 */
 	NOTNULL(" NOTNULL", 3),

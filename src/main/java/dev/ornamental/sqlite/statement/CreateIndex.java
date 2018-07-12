@@ -10,7 +10,7 @@ import java.util.List;
 public final class CreateIndex {
 
 	/**
-	 * Represents the initial part of <code>CREATE INDEX</code> statement, namely<br/>
+	 * Represents the initial part of <code>CREATE INDEX</code> statement, namely<br>
 	 * <code><strong>CREATE [UNIQUE] INDEX [IF NOT EXISTS]</strong></code>.
 	 */
 	public static final class Stub {
@@ -27,7 +27,7 @@ public final class CreateIndex {
 		/**
 		 * Appends the index name to the <code>CREATE INDEX</code> statement prefix.
 		 * @param indexName the name of the index to be created
-		 * @return the initial part of <code>CREATE INDEX</code> statement containing the index name:<br/>
+		 * @return the initial part of <code>CREATE INDEX</code> statement containing the index name:<br>
 		 * <code>CREATE [UNIQUE] INDEX [IF NOT EXISTS] <strong><em>indexName</em></strong></code>
 		 */
 		public Named named(CharSequence indexName) {
@@ -38,7 +38,7 @@ public final class CreateIndex {
 		 * Appends the schema-qualified index name to the <code>CREATE INDEX</code> statement prefix.
 		 * @param schemaName the name of the target schema
 		 * @param indexName the name of the index to be created
-		 * @return the initial part of <code>CREATE INDEX</code> statement containing the index name:<br/>
+		 * @return the initial part of <code>CREATE INDEX</code> statement containing the index name:<br>
 		 * <code>CREATE [UNIQUE] INDEX [IF NOT EXISTS]
 		 * <strong><em>schemaName</em>.<em>indexName</em></strong></code>
 		 */
@@ -48,7 +48,7 @@ public final class CreateIndex {
 	}
 
 	/**
-	 * Represents the initial part of <code>CREATE INDEX</code> statement, namely<br/>
+	 * Represents the initial part of <code>CREATE INDEX</code> statement, namely<br>
 	 * <code><strong>CREATE [UNIQUE] INDEX [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>indexName</em></strong></code>.
 	 */
@@ -73,7 +73,7 @@ public final class CreateIndex {
 		 * Adds the target table name to the prefix of the <code>CREATE INDEX</code> statement
 		 * @param tableName the name of the target table of the index
 		 * @return the initial part of <code>CREATE INDEX</code> statement containing
-		 * the target table name:<br/>
+		 * the target table name:<br>
 		 * <code>CREATE [UNIQUE] INDEX [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>indexName</em> <strong>ON <em>tableName</em></strong></code>
 		 */
@@ -84,7 +84,7 @@ public final class CreateIndex {
 
 	/**
 	 * This interface contains overloaded method for adding an indexed column definition
-	 * to the index definition.<br/>
+	 * to the index definition.<br>
 	 * It may be used to add columns uniformly to the instances
 	 * of the implementing classes: {@link OnTable} not yet containing any columns
 	 * and {@link OnColumns} containing at least one column definition.
@@ -93,9 +93,9 @@ public final class CreateIndex {
 
 		/**
 		 * Adds a column from the original table to the index definition (with default
-		 * sorting order).<br/>The result is a complete SQL statement.
+		 * sorting order).<br>The result is a complete SQL statement.
 		 * @param indexedColumn the original table column name
-		 * @return a <code>CREATE INDEX</code> statement having the specified column as the last one:<br/>
+		 * @return a <code>CREATE INDEX</code> statement having the specified column as the last one:<br>
 		 * <code>CREATE [UNIQUE] INDEX [IF NOT EXISTS] [<em>schemaName</em>.]<em>indexName</em>
 		 * ON <em>tableName</em>({<em>indexedColumnDefinition<sub>i</sub></em>,
 		 * }<strong><em>indexedColumn</em></strong>)</code>
@@ -106,9 +106,10 @@ public final class CreateIndex {
 
 		/**
 		 * Adds a column from the original table to the index definition (with the specified
-		 * sorting order).<br/>The result is a complete SQL statement.
+		 * sorting order).<br>The result is a complete SQL statement.
 		 * @param indexedColumn the original table column name
-		 * @return a <code>CREATE INDEX</code> statement having the specified column as the last one:<br/>
+		 * @param order the explicit sort order to use for the indexed column
+		 * @return a <code>CREATE INDEX</code> statement having the specified column as the last one:<br>
 		 * <code>CREATE [UNIQUE] INDEX [IF NOT EXISTS] [<em>schemaName</em>.]<em>indexName</em>
 		 * ON <em>tableName</em>({<em>indexedColumnDefinition<sub>i</sub></em>,
 		 * }<strong><em>indexedColumn</em> ASC|DESC</strong>)</code>
@@ -118,11 +119,11 @@ public final class CreateIndex {
 		}
 
 		/**
-		 * Adds a computed column to the index definition (with default sorting order).<br/>
+		 * Adds a computed column to the index definition (with default sorting order).<br>
 		 * The result is a complete SQL statement.
 		 * @param indexedExpression the expression (computed column) whose value has to be indexed
 		 * @return a <code>CREATE INDEX</code> statement having the specified computed column
-		 * as the last column:<br/>
+		 * as the last column:<br>
 		 * <code>CREATE [UNIQUE] INDEX [IF NOT EXISTS] [<em>schemaName</em>.]<em>indexName</em>
 		 * ON <em>tableName</em>({<em>indexedColumnDefinition<sub>i</sub></em>,
 		 * }<strong><em>indexedExpression</em></strong>)</code>
@@ -132,11 +133,12 @@ public final class CreateIndex {
 		}
 
 		/**
-		 * Adds a computed column to the index definition (with the specified sorting order).<br/>
+		 * Adds a computed column to the index definition (with the specified sorting order).<br>
 		 * The result is a complete SQL statement.
 		 * @param indexedExpression the expression (computed column) whose value has to be indexed
+		 * @param order the explicit sort order to use for the indexed expression
 		 * @return a <code>CREATE INDEX</code> statement having the specified computed column
-		 * as the last column:<br/>
+		 * as the last column:<br>
 		 * <code>CREATE [UNIQUE] INDEX [IF NOT EXISTS] [<em>schemaName</em>.]<em>indexName</em>
 		 * ON <em>tableName</em>({<em>indexedColumnDefinition<sub>i</sub></em>,
 		 * }<strong><em>indexedExpression</em> ASC|DESC</strong>)</code>
@@ -146,7 +148,7 @@ public final class CreateIndex {
 
 	/**
 	 * Represents the initial part of a <code>CREATE INDEX</code> statement
-	 * containing the target table name but yet no indexed column definitions:<br/>
+	 * containing the target table name but yet no indexed column definitions:<br>
 	 * <code><strong>CREATE [UNIQUE] INDEX [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>indexName</em> ON <em>tableName</em></strong></code>
 	 */
@@ -203,10 +205,10 @@ public final class CreateIndex {
 
 	/**
 	 * Represents an unconstrained <code>CREATE INDEX</code> statement
-	 * (without a <code>WHERE</code> clause):<br/>
+	 * (without a <code>WHERE</code> clause):<br>
 	 * <code><strong>CREATE [UNIQUE] INDEX [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>indexName</em> ON <em>tableName</em>(<em>indexedColumnDefinition<sub>0</sub></em>{,
-	 * <em>indexedColumnDefinition<sub>i</sub></em>})</strong></code>.<br/>
+	 * <em>indexedColumnDefinition<sub>i</sub></em>})</strong></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class OnColumns implements ExplicableStatement, ColumnList {
@@ -271,9 +273,9 @@ public final class CreateIndex {
 
 		/**
 		 * Adds an index constraint condition (a <code>WHERE</code> clause) to this
-		 * <code>CREATE INDEX</code> statement.<br/>The result is a complete SQL statement.
+		 * <code>CREATE INDEX</code> statement.<br>The result is a complete SQL statement.
 		 * @param condition the condition constraining the indexed row set
-		 * @return the <code>CREATE INDEX</code> statement in its most complete form:<br/>
+		 * @return the <code>CREATE INDEX</code> statement in its most complete form:<br>
 		 * <code>CREATE [UNIQUE] INDEX [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>indexName</em> ON <em>tableName</em>(<em>indexedColumnDefinition<sub>0</sub>
 		 * </em>{, <em>indexedColumnDefinition<sub>i</sub></em>})
@@ -285,7 +287,7 @@ public final class CreateIndex {
 	}
 
 	/**
-	 * Represents a <code>CREATE INDEX</code> statement in its most complete form:<br/>
+	 * Represents a <code>CREATE INDEX</code> statement in its most complete form:<br>
 	 * <code><strong>CREATE [UNIQUE] INDEX [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>indexName</em> ON <em>tableName</em>(<em>indexedColumnDefinition<sub>0</sub>
 	 * </em>{, <em>indexedColumnDefinition<sub>i</sub></em>})

@@ -1,9 +1,9 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an SQL statement having the form<br/>
- * <code><strong>SAVEPOINT <em>savepointName</em></strong></code><br/>
- * creating a new savepoint with the designated name.<br/>
+ * Represents an SQL statement having the form<br>
+ * <code><strong>SAVEPOINT <em>savepointName</em></strong></code><br>
+ * creating a new savepoint with the designated name.<br>
  * This is a complete SQL statement.
  */
 public final class Savepoint implements ExplicableStatement {

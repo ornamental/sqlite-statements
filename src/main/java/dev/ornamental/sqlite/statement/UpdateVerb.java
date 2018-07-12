@@ -1,7 +1,7 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Defines the flavours of <code>INSERT</code> statements.<br/>
+ * Defines the flavours of <code>INSERT</code> statements.<br>
  * Note that <code>UPDATE</code> and <code>UPDATE OR ABORT</code> perform in the same manner.
  */
 public enum UpdateVerb {

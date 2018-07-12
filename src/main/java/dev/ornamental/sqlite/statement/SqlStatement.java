@@ -1,7 +1,7 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * The interface implemented by the classes representing SQL statements.<br/>
+ * The interface implemented by the classes representing SQL statements.<br>
  * Note that the statements which may be <code>EXPLAIN</code>ed implement
  * the child marker interface {@link ExplicableStatement}; the statements
  * which may be used in trigger bodies implement the {@link TriggerStatement} interface.

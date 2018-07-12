@@ -2,8 +2,8 @@ package dev.ornamental.sqlite.statement;
 
 /**
  * Represents an SQL expression referring to a table column. It may take one of the three forms
- * depending on whether schema and table are specified or omitted:<br/>
- * <code><strong>[[<em>schemaName</em>.]<em>tableName</em>.]<em>columnName</em></strong></code>.<br/>
+ * depending on whether schema and table are specified or omitted:<br>
+ * <code><strong>[[<em>schemaName</em>.]<em>tableName</em>.]<em>columnName</em></strong></code>.<br>
  * This is a complete SQL expression.
  */
 public final class ColumnExpression implements SqlExpression {

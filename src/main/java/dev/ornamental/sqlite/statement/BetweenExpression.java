@@ -1,9 +1,9 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an SQL expression having the form<br/>
+ * Represents an SQL expression having the form<br>
  * <code><strong><em>comparandExpression</em>
- * [NOT] BETWEEN <em>minExpression</em> AND <em>maxExpression</em></strong></code>.<br/>
+ * [NOT] BETWEEN <em>minExpression</em> AND <em>maxExpression</em></strong></code>.<br>
  * This is a complete SQL expression.
  */
 public final class BetweenExpression implements SqlExpression {

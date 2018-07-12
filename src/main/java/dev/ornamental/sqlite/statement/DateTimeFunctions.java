@@ -12,7 +12,7 @@ public final class DateTimeFunctions {
 	private DateTimeFunctions() { }
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>DATE(<em>dateTime</em>{, <em>modifier<sub>i</sub></em>})</strong></code>
 	 * @param dateTime the argument expression
 	 * @param modifiers the optional date and time modifier string expressions
@@ -24,7 +24,7 @@ public final class DateTimeFunctions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>DATE('now'{, <em>modifier<sub>i</sub></em>})</strong></code>
 	 * @param modifiers the optional date and time modifier string expressions
 	 * @return the <code>DATE</code> function invocation expression
@@ -35,7 +35,7 @@ public final class DateTimeFunctions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>TIME(<em>dateTime</em>{, <em>modifier<sub>i</sub></em>})</strong></code>
 	 * @param dateTime the argument expression
 	 * @param modifiers the optional date and time modifier string expressions
@@ -47,7 +47,7 @@ public final class DateTimeFunctions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>TIME('now'{, <em>modifier<sub>i</sub></em>})</strong></code>
 	 * @param modifiers the optional date and time modifier string expressions
 	 * @return the <code>TIME</code> function invocation expression
@@ -58,7 +58,7 @@ public final class DateTimeFunctions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>DATETIME(<em>dateTime</em>{, <em>modifier<sub>i</sub></em>})</strong></code>
 	 * @param dateTime the argument expression
 	 * @param modifiers the optional date and time modifier string expressions
@@ -70,7 +70,7 @@ public final class DateTimeFunctions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>DATETIME('now'{, <em>modifier<sub>i</sub></em>})</strong></code>
 	 * @param modifiers the optional date and time modifier string expressions
 	 * @return the <code>DATETIME</code> function invocation expression
@@ -81,7 +81,7 @@ public final class DateTimeFunctions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>JULIANDAY(<em>dateTime</em>{, <em>modifier<sub>i</sub></em>})</strong></code>
 	 * @param dateTime the argument expression
 	 * @param modifiers the optional date and time modifier string expressions
@@ -93,7 +93,7 @@ public final class DateTimeFunctions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>JULIANDAY('now'{, <em>modifier<sub>i</sub></em>})</strong></code>
 	 * @param modifiers the optional date and time modifier string expressions
 	 * @return the <code>JULIANDAY</code> function invocation expression
@@ -104,8 +104,9 @@ public final class DateTimeFunctions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>STRFTIME(<em>format</em>, <em>dateTime</em>{, <em>modifier<sub>i</sub></em>})</strong></code>
+	 * @param format the format string expression
 	 * @param dateTime the argument expression
 	 * @param modifiers the optional date and time modifier string expressions
 	 * @return the <code>STRFTIME</code> function invocation expression
@@ -118,8 +119,9 @@ public final class DateTimeFunctions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>STRFTIME(<em>format</em>, 'now'{, <em>modifier<sub>i</sub></em>})</strong></code>
+	 * @param format the format string expression
 	 * @param modifiers the optional date and time modifier string expressions
 	 * @return the <code>STRFTIME</code> function invocation expression
 	 */

@@ -1,7 +1,7 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents a table expression being a simple reference to a database table. It has the form<br/>
+ * Represents a table expression being a simple reference to a database table. It has the form<br>
  * <code><strong>[<em>schemaName</em>.]<em>tableName</em></strong></code>.
  */
 public final class UnaliasedTable implements TableExpression {
@@ -32,7 +32,7 @@ public final class UnaliasedTable implements TableExpression {
 	/**
 	 * Adds an alias to the table reference.
 	 * @param alias the alias to assign to the database table
-	 * @return the aliased table reference having the form<br/>
+	 * @return the aliased table reference having the form<br>
 	 * <code>[<em>schemaName</em>.]<em>tableName</em> <strong>AS <em>alias</em></strong></code>
 	 */
 	public AliasedTable as(CharSequence alias) {
@@ -42,7 +42,7 @@ public final class UnaliasedTable implements TableExpression {
 	/**
 	 * Adds an <code>INDEXED BY indexName</code> clause to the table reference.
 	 * @param indexName the index name
-	 * @return the table expression with forced index use having the form<br/>
+	 * @return the table expression with forced index use having the form<br>
 	 * <code>[<em>schemaName</em>.]<em>tableName</em> <strong>INDEXED BY <em>indexName</em></strong></code>
 	 */
 	public TableWithIndex indexedBy(CharSequence indexName) {
@@ -51,7 +51,7 @@ public final class UnaliasedTable implements TableExpression {
 
 	/**
 	 * Adds a <code>NOT INDEXED</code> clause to the table reference.
-	 * @return the table expression with forbidden index use having the form<br/>
+	 * @return the table expression with forbidden index use having the form<br>
 	 * <code>[<em>schemaName</em>.]<em>tableName</em> <strong>NOT INDEXED</strong></code>
 	 */
 	public TableWithIndex notIndexed() {

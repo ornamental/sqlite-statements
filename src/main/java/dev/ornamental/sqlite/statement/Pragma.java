@@ -6,7 +6,7 @@ import static dev.ornamental.sqlite.statement.SqlStatements.pragma;
  * Represents a <code>PRAGMA</code> statement. This base class stands for a statement
  * without arguments while the nested subclasses {@link SetBoolean}, {@link SetNumber},
  * {@link SetString}, and {@link ForName} correspond to <code>PRAGMA</code> statements
- * with a parameter.<br/>
+ * with a parameter.<br>
  * This is a complete SQL statement.
  */
 public final class Pragma implements ExplicableStatement {
@@ -14,7 +14,7 @@ public final class Pragma implements ExplicableStatement {
 	/**
 	 * Represents a <code>PRAGMA</code> statement with a boolean parameter. Boolean
 	 * parameters are rendered as <code>ON</code> for {@literal true} and <code>OFF</code>
-	 * for {@literal false} by this class.<br/>
+	 * for {@literal false} by this class.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class SetBoolean implements ExplicableStatement {
@@ -43,7 +43,7 @@ public final class Pragma implements ExplicableStatement {
 	}
 
 	/**
-	 * Represents a <code>PRAGMA</code> statement with an integral parameter.<br/>
+	 * Represents a <code>PRAGMA</code> statement with an integral parameter.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class SetNumber implements ExplicableStatement {
@@ -72,7 +72,7 @@ public final class Pragma implements ExplicableStatement {
 	}
 
 	/**
-	 * Represents a <code>PRAGMA</code> statement with text parameter.<br/>
+	 * Represents a <code>PRAGMA</code> statement with text parameter.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class SetString implements ExplicableStatement {
@@ -106,7 +106,7 @@ public final class Pragma implements ExplicableStatement {
 
 	/**
 	 * Represents a <code>PRAGMA</code> statement with a name as its parameter. This
-	 * is normally used when the parameter takes values from some enumeration.<br/>
+	 * is normally used when the parameter takes values from some enumeration.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class ForName implements ExplicableStatement {

@@ -32,7 +32,7 @@ public final class TableExpressions {
 	 * @param virtualTableName the name of the virtual table
 	 * @param args the possibly empty argument list (used for filtering
 	 * by the hidden columns of the virtual table)
-	 * @return the table expression having the form<br/>
+	 * @return the table expression having the form<br>
 	 * <code><strong><em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
 	 * <em>arg<sub>i</sub></em>}])</strong></code>
 	 */
@@ -46,7 +46,7 @@ public final class TableExpressions {
 	 * @param virtualTableName the name of the virtual table
 	 * @param args the possibly empty argument list (used for filtering
 	 * by the hidden columns of the virtual table)
-	 * @return the table expression having the form<br/>
+	 * @return the table expression having the form<br>
 	 * <code><strong><em>schemaName</em>.<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
 	 * <em>arg<sub>i</sub></em>}])</strong></code>
 	 */

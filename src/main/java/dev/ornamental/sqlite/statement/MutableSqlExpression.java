@@ -2,7 +2,7 @@ package dev.ornamental.sqlite.statement;
 
 /**
  * This is a mutable implementation of the {@link SqlExpression} interface. It may be
- * used to replace expressions used virtually anywhere in other expressions and statements.<br/>
+ * used to replace expressions used virtually anywhere in other expressions and statements.<br>
  * All the {@link SelectStatement} methods are redirected to the currently wrapped backing instance.
  */
 public final class MutableSqlExpression implements SqlExpression {

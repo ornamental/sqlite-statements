@@ -3,8 +3,8 @@ package dev.ornamental.sqlite.statement;
 import javax.xml.bind.DatatypeConverter;
 
 /**
- * The abstract ancestor of all the literal SQL expressions.<br/>
- * Contains static factory methods for the literals.<br/>
+ * The abstract ancestor of all the literal SQL expressions.<br>
+ * Contains static factory methods for the literals.<br>
  * The implementations of this class represent complete SQL expressions.
  */
 public abstract class Literal implements SqlExpression {
@@ -102,7 +102,7 @@ public abstract class Literal implements SqlExpression {
 	};
 
 	/**
-	 * Represents the <code><strong>TRUE</strong></code> literal.<br/>
+	 * Represents the <code><strong>TRUE</strong></code> literal.<br>
 	 * Note that the older versions of SQLite do not support this literal
 	 * (in which case numeric literal <code>1</code> should be used).
 	 */
@@ -115,7 +115,7 @@ public abstract class Literal implements SqlExpression {
 	};
 
 	/**
-	 * Represents the <code><strong>FALSE</strong></code> literal.<br/>
+	 * Represents the <code><strong>FALSE</strong></code> literal.<br>
 	 * Note that the older versions of SQLite do not support this literal
 	 * (in which case numeric literal <code>0</code> should be used).
 	 */
@@ -197,28 +197,31 @@ public abstract class Literal implements SqlExpression {
 	/**
 	 * Returns the SQL literal corresponding to the given numeric value.
 	 * @param value the value to wrap in an SQL literal
-	 * @return the SQL literal corresponding to the given numeric value
+	 * @return the SQL literal corresponding to the given numeric value;
+	 * <code>NULL</code> literal if the passed number is <code>null</code>
 	 */
 	public static Literal value(Number value) {
-		return new NumberLiteral(value);
+		return value == null ? NULL : new NumberLiteral(value);
 	}
 
 	/**
 	 * Returns the SQL literal corresponding to the given byte sequence.
 	 * @param value the value to wrap in an SQL literal
-	 * @return the SQL literal corresponding to the given byte sequence
+	 * @return the SQL literal corresponding to the given byte sequence;
+	 * <code>NULL</code> literal if the passed array is <code>null</code>
 	 */
 	public static Literal value(byte[] value) {
-		return new BlobLiteral(value);
+		return value == null ? NULL : new BlobLiteral(value);
 	}
 
 	/**
 	 * Returns the SQL literal corresponding to the given {@link String}.
 	 * @param value the value to wrap in an SQL literal
-	 * @return the SQL literal corresponding to the given {@link String}
+	 * @return the SQL literal corresponding to the given {@link String};
+	 * <code>NULL</code> literal if the passed object is <code>null</code>
 	 */
 	public static Literal value(String value) {
-		return new StringLiteral(value);
+		return value == null ? NULL : new StringLiteral(value);
 	}
 
 	@Override

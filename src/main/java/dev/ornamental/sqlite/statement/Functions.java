@@ -17,7 +17,7 @@ public final class Functions {
 	 * Returns an function invocation expression.
 	 * @param functionName the name of the function to invoke
 	 * @param args the function arguments
-	 * @return the expression having the form<br/>
+	 * @return the expression having the form<br>
 	 * <code><strong><em>functionName</em>([<em>arg<sub>0</sub></em>{, <em>arg<sub>i</sub></em>}])</strong></code>
 	 */
 	public static SqlExpression function(CharSequence functionName, SqlExpression... args) {
@@ -28,7 +28,7 @@ public final class Functions {
 	 * Returns an aggregate function invocation expression.
 	 * @param aggregateName the name of the function to invoke
 	 * @param args the function arguments
-	 * @return the expression having the form<br/>
+	 * @return the expression having the form<br>
 	 * <code><strong><em>aggregateName</em>([<em>arg<sub>0</sub></em>{, <em>arg<sub>i</sub></em>}])</strong></code>
 	 */
 	public static SqlExpression aggregate(CharSequence aggregateName, SqlExpression... args) {
@@ -40,7 +40,7 @@ public final class Functions {
 	 * Returns an aggregate function invocation expression with <code>DISTINCT</code> argument.
 	 * @param aggregateName the name of the function to invoke
 	 * @param argument the function argument
-	 * @return the expression having the form<br/>
+	 * @return the expression having the form<br>
 	 * <code><strong><em>aggregateName</em>(DISTINCT <em>arg<sub>i</sub></em>)</strong></code>
 	 */
 	public static SqlExpression aggregateDistinct(CharSequence aggregateName, SqlExpression argument) {
@@ -58,7 +58,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>COUNT(<em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>COUNT</code> aggregate function invocation expression
@@ -68,7 +68,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>COUNT(DISTINCT <em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>COUNT</code> aggregate function invocation expression
@@ -78,7 +78,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>MAX(<em>expression<sub>0</sub></em>{, <em>expression<sub>i</sub></em>})</strong></code>.
 	 * @param expressions the function argument(s)
 	 * @return the <code>MAX</code> aggregate function invocation expression
@@ -89,7 +89,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>MIN(<em>expression<sub>0</sub></em>{, <em>expression<sub>i</sub></em>})</strong></code>.
 	 * @param expressions the function argument(s)
 	 * @return the <code>MIN</code> function invocation expression
@@ -100,7 +100,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>AVG(<em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>AVG</code> aggregate function invocation expression
@@ -110,7 +110,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>AVG(DISTINCT <em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>AVG</code> aggregate function invocation expression
@@ -120,7 +120,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SUM(<em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>SUM</code> aggregate function invocation expression
@@ -130,7 +130,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SUM(DISTINCT <em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>SUM</code> aggregate function invocation expression
@@ -140,7 +140,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>TOTAL(<em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>TOTAL</code> aggregate function invocation expression
@@ -150,7 +150,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>TOTAL(DISTINCT <em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>TOTAL</code> aggregate function invocation expression
@@ -160,7 +160,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>GROUP_CONCAT(<em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>GROUP_CONCAT</code> aggregate function invocation expression
@@ -170,9 +170,10 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>GROUP_CONCAT(<em>expression</em>)</strong></code>.
 	 * @param expression the function argument
+	 * @param delimiterExpression the concatenation delimiter expression
 	 * @return the <code>GROUP_CONCAT</code> aggregate function invocation expression
 	 */
 	public static SqlExpression groupConcat(SqlExpression expression, SqlExpression delimiterExpression) {
@@ -180,7 +181,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>GROUP_CONCAT(<em>expression</em>, <em>delimiter</em>)</strong></code>.
 	 * @param expression the function argument defining the items to concatenate
 	 * @param delimiter the concatenation delimiter
@@ -191,7 +192,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>GROUP_CONCAT(DISTINCT <em>expression</em>)</strong></code>.
 	 * @param expression the function argument
 	 * @return the <code>GROUP_CONCAT</code> aggregate function invocation expression
@@ -201,7 +202,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>ABS(<em>expression</em>)</strong></code>
 	 * @param expression the function argument
 	 * @return the <code>ABS</code> function invocation expression
@@ -211,7 +212,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>CHANGES()</strong></code>
 	 * @return the <code>CHANGES</code> function invocation expression
 	 */
@@ -220,7 +221,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>CHAR([<em>expression<sub>1</sub></em>{, <em>expression<sub>i</sub></em>}])</strong></code>
 	 * @param expression the function arguments
 	 * @return the <code>CHAR</code> function invocation expression
@@ -230,7 +231,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>COALESCE([<em>expression<sub>1</sub></em>{, <em>expression<sub>i</sub></em>}])</strong></code>
 	 * @param expression the function arguments
 	 * @return the <code>COALESCE</code> function invocation expression
@@ -240,7 +241,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>GLOB(<em>pattern</em>, <em>string</em>)</strong></code>
 	 * @param pattern the GLOB pattern expression
 	 * @param string the expression returning the string to test
@@ -251,7 +252,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>HEX(<em>expression</em>)</strong></code>
 	 * @param expression the function argument
 	 * @return the <code>HEX</code> function invocation expression
@@ -261,7 +262,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>IFNULL(<em>arg1</em>, <em>arg2</em>)</strong></code>
 	 * @param arg1 the first argument expression
 	 * @param arg2 the second argument expression
@@ -272,7 +273,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>INSTR(<em>string</em>, <em>substring</em>)</strong></code>
 	 * @param string the string expression being searched in
 	 * @param substring the string expression being sought
@@ -283,7 +284,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LAST_INSERT_ROWID()</strong></code>
 	 * @return the <code>LAST_INSERT_ROWID</code> function invocation expression
 	 */
@@ -292,7 +293,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LENGTH(<em>expression</em>)</strong></code>
 	 * @param expression the function argument
 	 * @return the <code>LENGTH</code> function invocation expression
@@ -302,7 +303,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LIKE(<em>pattern</em>, <em>string</em>)</strong></code>
 	 * @param pattern the pattern expression
 	 * @param string the matched string expression
@@ -313,7 +314,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LIKE(<em>pattern</em>, <em>string</em>, <em>escape</em>)</strong></code>
 	 * @param pattern the pattern expression
 	 * @param string the matched string expression
@@ -325,7 +326,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LIKELIHOOD(<em>expression</em>, <em>probability</em>)</strong></code>
 	 * @param expression the function argument
 	 * @param probability the probability of the {@code expression} returning <code>TRUE</code>
@@ -336,7 +337,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LIKELY(<em>expression</em>)</strong></code>
 	 * @param expression the function argument
 	 * @return the <code>LIKELY</code> function invocation expression
@@ -346,7 +347,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LOAD_EXTENSION(<em>library</em>)</strong></code>
 	 * @param library the extension shared library name
 	 * @return the <code>LOAD_EXTENSION</code> function invocation expression
@@ -356,7 +357,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LOAD_EXTENSION(<em>library</em>, <em>entryPoint</em>)</strong></code>
 	 * @param library the extension shared library name
 	 * @param entryPoint the entry point name
@@ -367,7 +368,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LOWER(<em>expression</em>)</strong></code>
 	 * @param expression the argument expression
 	 * @return the <code>LOWER</code> function invocation expression
@@ -377,7 +378,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LTRIM(<em>string</em>)</strong></code>
 	 * @param string the string to trim from the left
 	 * @return the <code>LTRIM</code> function invocation expression
@@ -387,7 +388,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>LTRIM(<em>string</em>, <em>characters</em>)</strong></code>
 	 * @param string the string to trim from the left
 	 * @param characters the characters to remove
@@ -398,7 +399,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>NULLIF(<em>arg1</em>, <em>arg2</em>)</strong></code>
 	 * @param arg1 the first argument expression
 	 * @param arg2 the second argument expression
@@ -409,7 +410,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>PRINTF(<em>format</em>{, <em>arg<sub>i</sub></em>})</strong></code>
 	 * @param format the format spring expression
 	 * @param args the arguments to use for formatting
@@ -420,7 +421,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>RANDOM()</strong></code>
 	 * @return the <code>RANDOM</code> function invocation expression
 	 */
@@ -429,7 +430,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>RANDOMBLOB(<em>length</em>)</strong></code>
 	 * @param length the BLOB length expression
 	 * @return the <code>RANDOMBLOB</code> function invocation expression
@@ -439,7 +440,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>REPLACE(<em>original</em>, <em>searchString</em>, <em>replacement</em>)</strong></code>
 	 * @param original the string to replace in
 	 * @param searchString the substring to replace
@@ -453,7 +454,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>ROUND(<em>expression</em>)</strong></code>
 	 * @param expression the argument expression
 	 * @return the <code>ROUND</code> function invocation expression
@@ -463,7 +464,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>ROUND(<em>expression</em>, <em>digits</em>)</strong></code>
 	 * @param expression the expression whose result to round
 	 * @param digits the expression returning the number of digits to round to
@@ -474,7 +475,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>RTRIM(<em>string</em>)</strong></code>
 	 * @param string the string to trim from the right
 	 * @return the <code>RTRIM</code> function invocation expression
@@ -484,7 +485,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>RTRIM(<em>string</em>, <em>characters</em>)</strong></code>
 	 * @param string the string to trim from the right
 	 * @param characters the characters to remove
@@ -495,7 +496,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SOUNDEX(<em>string</em>)</strong></code>
 	 * @param string the string argument
 	 * @return the <code>SOUNDEX</code> function invocation expression
@@ -505,7 +506,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SQLITE_COMPILEOPTION_GET(<em>name</em>)</strong></code>
 	 * @param index the compile option index
 	 * @return the <code>SQLITE_COMPILEOPTION_GET</code> function invocation expression
@@ -515,7 +516,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SQLITE_COMPILEOPTION_USED(<em>name</em>)</strong></code>
 	 * @param name the compile option name
 	 * @return the <code>SQLITE_COMPILEOPTION_USED</code> function invocation expression
@@ -525,7 +526,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SQLITE_OFFSET(<em>columnName</em>)</strong></code>
 	 * @param columnName the column columnName
 	 * @return the <code>SQLITE_OFFSET</code> function invocation expression
@@ -535,7 +536,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SQLITE_SOURCE_ID()</strong></code>
 	 * @return the <code>SQLITE_SOURCE_ID</code> function invocation expression
 	 */
@@ -544,7 +545,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SQLITE_VERSION()</strong></code>
 	 * @return the <code>SQLITE_VERSION</code> function invocation expression
 	 */
@@ -553,7 +554,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SUBSTR(<em>string</em>, <em>from</em>)</strong></code>
 	 * @param string the string to extract the substring from
 	 * @param from the start index expression
@@ -564,7 +565,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>SUBSTR(<em>string</em>, <em>from</em>, <em>length</em>)</strong></code>
 	 * @param string the string to extract the substring from
 	 * @param from the start index expression
@@ -576,7 +577,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>TOTAL_CHANGES()</strong></code>
 	 * @return the <code>TOTAL_CHANGES</code> function invocation expression
 	 */
@@ -585,7 +586,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>TRIM(<em>string</em>)</strong></code>
 	 * @param string the string to trim
 	 * @return the <code>TRIM</code> function invocation expression
@@ -595,7 +596,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>TRIM(<em>string</em>, <em>characters</em>)</strong></code>
 	 * @param string the string to trim
 	 * @param characters the characters to remove
@@ -606,7 +607,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>TYPEOF(<em>expression</em>)</strong></code>
 	 * @param expression the expression to determine the type of
 	 * @return the <code>TYPEOF</code> function invocation expression
@@ -616,7 +617,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>UNICODE(<em>expression</em>)</strong></code>
 	 * @param expression the argument expression
 	 * @return the <code>UNICODE</code> function invocation expression
@@ -626,7 +627,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>UNLIKELY(<em>expression</em>)</strong></code>
 	 * @param expression the function argument
 	 * @return the <code>UNLIKELY</code> function invocation expression
@@ -636,7 +637,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>UPPER(<em>expression</em>)</strong></code>
 	 * @param expression the argument expression
 	 * @return the <code>UPPER</code> function invocation expression
@@ -646,7 +647,7 @@ public final class Functions {
 	}
 
 	/**
-	 * Returns the expression having the form<br/>
+	 * Returns the expression having the form<br>
 	 * <code><strong>ZEROBLOB(<em>length</em>)</strong></code>
 	 * @param length the BLOB length expression
 	 * @return the <code>ZEROBLOB</code> function invocation expression

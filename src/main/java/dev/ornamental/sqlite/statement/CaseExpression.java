@@ -18,7 +18,7 @@ public final class CaseExpression {
 
 		/**
 		 * Adds a new incomplete <code><strong>WHEN <em>conditionOrValueExpression</em> THEN</strong></code>
-		 * clause to the <code>CASE</code> expression.<br/>
+		 * clause to the <code>CASE</code> expression.<br>
 		 * Note that the instance this method is invoked on is not modified.
 		 * @param conditionOrValueExpression the clause condition expression (or value for comparison clause)
 		 * @return the incomplete <code>WHEN .. THEN</code> clause having the specified
@@ -54,7 +54,7 @@ public final class CaseExpression {
 	/**
 	 * Represents an SQL <code>CASE</code> expression to which more condition clauses
 	 * or an <code>ELSE</code> clause may be added (and at least one has already been added).
-	 * It has one of the following forms:<br/>
+	 * It has one of the following forms:<br>
 	 * <ul>
 	 *     <li><code><strong>CASE <em>comparand</em> WHEN <em>valueExpression<sub>0</sub></em>
 	 *         THEN <em>resultExpression<sub>0</sub></em> {WHEN <em>valueExpression<sub>i</sub></em>

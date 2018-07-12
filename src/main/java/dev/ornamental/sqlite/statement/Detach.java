@@ -2,7 +2,7 @@ package dev.ornamental.sqlite.statement;
 
 /**
  * Represents a <code>DETACH</code> statement removing a database (schema) from the
- * current connection:<br/>
+ * current connection:<br>
  * <code><strong>DETACH DATABASE <em>schemaName</em></strong></code>
  */
 public final class Detach implements ExplicableStatement {

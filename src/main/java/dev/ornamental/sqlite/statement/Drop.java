@@ -3,14 +3,14 @@ package dev.ornamental.sqlite.statement;
 /**
  * This is the common ancestor class for the classes representing <code>DROP</code> statements.
  * The specific implementations are the nested subclasses {@link Index}, {@link Table},
- * {@link Trigger}, and {@link View}.<br/>
+ * {@link Trigger}, and {@link View}.<br>
  * Each implementation is a complete SQL statement.
  */
 public abstract class Drop implements ExplicableStatement {
 
 	/**
-	 * Represents a <code>DROP INDEX</code> statement having the form<br/>
-	 * <code><strong>DROP INDEX [IF EXISTS] [<em>schemaName</em>.]<em>indexName</em></strong></code>.<br/>
+	 * Represents a <code>DROP INDEX</code> statement having the form<br>
+	 * <code><strong>DROP INDEX [IF EXISTS] [<em>schemaName</em>.]<em>indexName</em></strong></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class Index extends Drop {
@@ -36,8 +36,8 @@ public abstract class Drop implements ExplicableStatement {
 	}
 
 	/**
-	 * Represents a <code>DROP TABLE</code> statement having the form<br/>
-	 * <code><strong>DROP TABLE [IF EXISTS] [<em>schemaName</em>.]<em>tableName</em></strong></code>.<br/>
+	 * Represents a <code>DROP TABLE</code> statement having the form<br>
+	 * <code><strong>DROP TABLE [IF EXISTS] [<em>schemaName</em>.]<em>tableName</em></strong></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class Table extends Drop {
@@ -63,8 +63,8 @@ public abstract class Drop implements ExplicableStatement {
 	}
 
 	/**
-	 * Represents a <code>DROP TRIGGER</code> statement having the form<br/>
-	 * <code><strong>DROP TRIGGER [IF EXISTS] [<em>schemaName</em>.]<em>triggerName</em></strong></code>.<br/>
+	 * Represents a <code>DROP TRIGGER</code> statement having the form<br>
+	 * <code><strong>DROP TRIGGER [IF EXISTS] [<em>schemaName</em>.]<em>triggerName</em></strong></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class Trigger extends Drop {
@@ -90,8 +90,8 @@ public abstract class Drop implements ExplicableStatement {
 	}
 
 	/**
-	 * Represents a <code>DROP VIEW</code> statement having the form<br/>
-	 * <code><strong>DROP VIEW [IF EXISTS] [<em>schemaName</em>.]<em>viewName</em></strong></code>.<br/>
+	 * Represents a <code>DROP VIEW</code> statement having the form<br>
+	 * <code><strong>DROP VIEW [IF EXISTS] [<em>schemaName</em>.]<em>viewName</em></strong></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class View extends Drop {

@@ -17,7 +17,7 @@ public final class CteBuilderWithColumns implements Variable<CteBuilderWithColum
 
 	/**
 	 * Finishes the last common table expression definition by supplying the <code>SELECT</code>
-	 * (or <code>VALUE</code>) statement to which the CTE will correspond.<br/>
+	 * (or <code>VALUE</code>) statement to which the CTE will correspond.<br>
 	 * The result is a complete common table expression. It may be further extended by adding
 	 * another CTE starting from the {@link CommonTableExpression#andWith(CharSequence)} method invocation.
 	 * @param select the <code>SELECT</code> (or <code>VALUE</code>) statement defining the contents

@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 /**
  * Represents a table expression being an unconstrained join of tables or subquery results.
- * It has the form<br/>
+ * It has the form<br>
  * <code><strong>(<em>tableOrSubquery<sub>L</sub></em> INNER|LEFT|CROSS JOIN
- * <em>tableOrSubquery<sub>R</sub></em>)</strong></code><br/>
+ * <em>tableOrSubquery<sub>R</sub></em>)</strong></code><br>
  * thus not being suitable for <code>NATURAL JOIN</code>.
  */
 public final class Join implements TableExpression {
@@ -53,7 +53,7 @@ public final class Join implements TableExpression {
 	}
 
 	/**
-	 * Adds a join constraint in form of the following clause:<br/>
+	 * Adds a join constraint in form of the following clause:<br>
 	 * <code>USING (<em>column<sub>0</sub></em>{, <em>column<sub>i</sub></em>})</code>.
 	 * @param columns the names of the columns to use for equality comparison when joining
 	 * @return the <code>INNER|LEFT|CROSS JOIN</code> table expression having the specified
@@ -64,7 +64,7 @@ public final class Join implements TableExpression {
 	}
 
 	/**
-	 * Adds a join constraint in form of the following clause:<br/>
+	 * Adds a join constraint in form of the following clause:<br>
 	 * <code>USING (<em>column<sub>0</sub></em>{, <em>column<sub>i</sub></em>})</code>.
 	 * @param columns the names of the columns to use for equality comparison when joining
 	 * @return the <code>INNER|LEFT|CROSS JOIN</code> table expression having the specified

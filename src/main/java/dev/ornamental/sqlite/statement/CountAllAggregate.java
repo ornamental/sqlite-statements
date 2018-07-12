@@ -1,7 +1,7 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents the <code><strong>COUNT(*)</strong></code> SQL expression.<br/>
+ * Represents the <code><strong>COUNT(*)</strong></code> SQL expression.<br>
  * This is a complete SQL expression.
  */
 public final class CountAllAggregate implements SqlExpression {

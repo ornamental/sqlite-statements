@@ -12,7 +12,7 @@ public final class CreateVirtualTable {
 
 	/**
 	 * Represents the initial stage of defining a <code>CREATE VIRTUAL TABLE</code> statement.
-	 * It has the form<br/>
+	 * It has the form<br>
 	 * <code><strong>CREATE VIRTUAL TABLE [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>tableName</em></strong></code>.
 	 */
@@ -31,10 +31,10 @@ public final class CreateVirtualTable {
 		}
 
 		/**
-		 * Adds the name of the module controlling the behaviour of the virtual table to be created.<br/>
+		 * Adds the name of the module controlling the behaviour of the virtual table to be created.<br>
 		 * The result is a complete SQL statement.
 		 * @param moduleName the name of the module operating behind the virtual table
-		 * @return the <code>CREATE VIRTUAL TABLE</code> statement without module arguments:<br/>
+		 * @return the <code>CREATE VIRTUAL TABLE</code> statement without module arguments:<br>
 		 * <code>CREATE VIRTUAL TABLE [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>tableName</em> <strong>USING <em>moduleName</em></strong></code>
 		 */
@@ -60,9 +60,9 @@ public final class CreateVirtualTable {
 	}
 
 	/**
-	 * Represents a <code>CREATE VIRTUAL TABLE</code> statement without module arguments:<br/>
+	 * Represents a <code>CREATE VIRTUAL TABLE</code> statement without module arguments:<br>
 	 * <code><strong>CREATE VIRTUAL TABLE [IF NOT EXISTS]
-	 * [<em>schemaName</em>.]<em>tableName</em> USING <em>moduleName</em></strong></code>.<br/>
+	 * [<em>schemaName</em>.]<em>tableName</em> USING <em>moduleName</em></strong></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class NoArguments implements ExplicableStatement {
@@ -77,11 +77,11 @@ public final class CreateVirtualTable {
 		}
 
 		/**
-		 * Adds the arguments to pass to the module controlling the behaviour of the virtual table.<br/>
+		 * Adds the arguments to pass to the module controlling the behaviour of the virtual table.<br>
 		 * The result is a complete SQL statement.
 		 * @param args the arguments to pass to the module behind the virtual table (e. g. the virtual table
 		 * column names)
-		 * @return the most complete form of the <code>CREATE VIRTUAL TABLE</code> statement:<br/>
+		 * @return the most complete form of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
 		 * <code>CREATE VIRTUAL TABLE [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>tableName</em> USING
 		 * <em>moduleName</em><strong>(<em>argument<sub>0</sub></em>{, <em>argument<sub>i</sub></em>})</strong></code>
@@ -91,11 +91,11 @@ public final class CreateVirtualTable {
 		}
 
 		/**
-		 * Adds the arguments to pass to the module controlling the behaviour of the virtual table.<br/>
+		 * Adds the arguments to pass to the module controlling the behaviour of the virtual table.<br>
 		 * The result is a complete SQL statement.
 		 * @param args the arguments to pass to the module behind the virtual table (e. g. the virtual table
 		 * column names)
-		 * @return the most complete form of the <code>CREATE VIRTUAL TABLE</code> statement:<br/>
+		 * @return the most complete form of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
 		 * <code>CREATE VIRTUAL TABLE [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>tableName</em> USING
 		 * <em>moduleName</em><strong>(<em>argument<sub>0</sub></em>{, <em>argument<sub>i</sub></em>})</strong></code>
@@ -122,10 +122,10 @@ public final class CreateVirtualTable {
 	}
 
 	/**
-	 * Represents the most complete form of the <code>CREATE VIRTUAL TABLE</code> statement:<br/>
+	 * Represents the most complete form of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
 	 * <code><strong>CREATE VIRTUAL TABLE [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>tableName</em> USING
-	 * <em>moduleName</em>(<em>argument<sub>0</sub></em>{, <em>argument<sub>i</sub></em>})</strong></code>.<br/>
+	 * <em>moduleName</em>(<em>argument<sub>0</sub></em>{, <em>argument<sub>i</sub></em>})</strong></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class WithArguments implements ExplicableStatement {

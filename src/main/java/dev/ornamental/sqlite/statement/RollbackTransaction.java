@@ -1,10 +1,10 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an SQL statement having the form<br/>
- * <code><strong>ROLLBACK [<em>savepointName</em>]</strong></code><br/>
+ * Represents an SQL statement having the form<br>
+ * <code><strong>ROLLBACK [<em>savepointName</em>]</strong></code><br>
  * rolling back either the outer transaction (when no savepoint name is specified)
- * or to the previously created and not yet released savepoint with the designated name.<br/>
+ * or to the previously created and not yet released savepoint with the designated name.<br>
  * This is a complete SQL statement.
  */
 public final class RollbackTransaction implements ExplicableStatement {

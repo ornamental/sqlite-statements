@@ -3,7 +3,7 @@ package dev.ornamental.sqlite.statement;
 /**
  * This interface corresponds to the elements of enumerations immediately
  * following the <code>SELECT</code> keyword and defining the values
- * in the rows emitted by the <code>SELECT</code> statement execution.<br/>
+ * in the rows emitted by the <code>SELECT</code> statement execution.<br>
  * Each SQL expression ({@link SqlExpression}) is an implementation of this interface;
  * the other implementations include
  * <ul>

@@ -1,10 +1,10 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an SQL expression having the form<br/>
- * <code><strong>RAISE (IGNORE)</strong></code> or <br/>
- * <code><strong>RAISE (ROLLBACK|ABORT|FAIL, <em>message</em>)</strong></code>.<br/>
- * Use the static methods of this class to obtain expression instances.<br/>
+ * Represents an SQL expression having the form<br>
+ * <code><strong>RAISE (IGNORE)</strong></code> or <br>
+ * <code><strong>RAISE (ROLLBACK|ABORT|FAIL, <em>message</em>)</strong></code>.<br>
+ * Use the static methods of this class to obtain expression instances.<br>
  * This is a complete SQL expression only usable in <code>CREATE TRIGGER</code> statement
  * (more precisely, in the trigger body nested statements).
  */

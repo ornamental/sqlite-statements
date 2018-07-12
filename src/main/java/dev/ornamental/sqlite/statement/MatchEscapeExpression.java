@@ -1,13 +1,13 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an SQL expression having the form<br/>
+ * Represents an SQL expression having the form<br>
  * <code><strong><em>expression</em> [NOT] LIKE|GLOB|REGEXP|MATCH
- * <em>patternExpression</em> ESCAPE escapeExpression</strong></code><br/>
+ * <em>patternExpression</em> ESCAPE escapeExpression</strong></code><br>
  * matching the result of evaluation of the leftmost operand expression
  * to the result of evaluation of the pattern (middle) expression using one
  * of the algorithms defined in {@link MatchOperator}, taking into
- * account the escape character returned by the rightmost operand.<br/>
+ * account the escape character returned by the rightmost operand.<br>
  * It is a complete SQL expression.
  */
 public final class MatchEscapeExpression implements SqlExpression {

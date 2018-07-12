@@ -3,7 +3,7 @@ package dev.ornamental.sqlite.statement;
 import java.util.Iterator;
 
 /**
- * Represents an SQL expression of either scalar or aggregate function invocation.<br/>
+ * Represents an SQL expression of either scalar or aggregate function invocation.<br>
  * This is a complete SQL expression.
  */
 public final class FunctionExpression implements SqlExpression {

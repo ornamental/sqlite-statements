@@ -1,7 +1,7 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Defines the supported <code>JOIN</code> types.<br/>
+ * Defines the supported <code>JOIN</code> types.<br>
  * Note that <code>JOIN</code> and comma (<code>,</code>) are not included as they
  * are just less explicit aliases to <code>INNER JOIN</code>.
  */

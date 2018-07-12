@@ -30,8 +30,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a concatenation expression having the form<br/>
-	 * <code><strong><em>expression</em> || <em>otherExpression</em></strong></code><br/>
+	 * Creates a concatenation expression having the form<br>
+	 * <code><strong><em>expression</em> || <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the concatenation expression
@@ -41,8 +41,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a multiplication expression having the form<br/>
-	 * <code><strong><em>expression</em> * <em>otherExpression</em></strong></code><br/>
+	 * Creates a multiplication expression having the form<br>
+	 * <code><strong><em>expression</em> * <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the multiplication expression
@@ -52,8 +52,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a division expression having the form<br/>
-	 * <code><strong><em>expression</em> / <em>otherExpression</em></strong></code><br/>
+	 * Creates a division expression having the form<br>
+	 * <code><strong><em>expression</em> / <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the division expression
@@ -63,8 +63,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a residue (modulo) expression having the form<br/>
-	 * <code><strong><em>expression</em> % <em>otherExpression</em></strong></code><br/>
+	 * Creates a residue (modulo) expression having the form<br>
+	 * <code><strong><em>expression</em> % <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the residue (modulo) expression
@@ -74,8 +74,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an addition expression having the form<br/>
-	 * <code><strong><em>expression</em> + <em>otherExpression</em></strong></code><br/>
+	 * Creates an addition expression having the form<br>
+	 * <code><strong><em>expression</em> + <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the addition expression
@@ -85,8 +85,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a subtraction expression having the form<br/>
-	 * <code><strong><em>expression</em> - <em>otherExpression</em></strong></code><br/>
+	 * Creates a subtraction expression having the form<br>
+	 * <code><strong><em>expression</em> - <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the subtraction expression
@@ -96,8 +96,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a left bit shift expression having the form<br/>
-	 * <code><strong><em>expression</em> << <em>otherExpression</em></strong></code><br/>
+	 * Creates a left bit shift expression having the form<br>
+	 * <code><strong><em>expression</em> &lt;&lt; <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the left bit shift expression
@@ -107,8 +107,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a right bit shift expression having the form<br/>
-	 * <code><strong><em>expression</em> >> <em>otherExpression</em></strong></code><br/>
+	 * Creates a right bit shift expression having the form<br>
+	 * <code><strong><em>expression</em> &gt;&gt; <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the right bit shift expression
@@ -118,8 +118,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a bit AND expression having the form<br/>
-	 * <code><strong><em>expression</em> & <em>otherExpression</em></strong></code><br/>
+	 * Creates a bit AND expression having the form<br>
+	 * <code><strong><em>expression</em> &amp; <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the bit AND expression
@@ -129,8 +129,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a bit OR expression having the form<br/>
-	 * <code><strong><em>expression</em> | <em>otherExpression</em></strong></code><br/>
+	 * Creates a bit OR expression having the form<br>
+	 * <code><strong><em>expression</em> | <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the bit OR expression
@@ -140,8 +140,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a less-than comparison expression having the form<br/>
-	 * <code><strong><em>expression</em> &lt; <em>otherExpression</em></strong></code><br/>
+	 * Creates a less-than comparison expression having the form<br>
+	 * <code><strong><em>expression</em> &lt; <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the less-than comparison expression
@@ -151,8 +151,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a less-than-or-equal-to comparison expression having the form<br/>
-	 * <code><strong><em>expression</em> &lt;= <em>otherExpression</em></strong></code><br/>
+	 * Creates a less-than-or-equal-to comparison expression having the form<br>
+	 * <code><strong><em>expression</em> &lt;= <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the less-than-or-equal-to comparison expression
@@ -162,8 +162,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a greater-than comparison expression having the form<br/>
-	 * <code><strong><em>expression</em> > <em>otherExpression</em></strong></code><br/>
+	 * Creates a greater-than comparison expression having the form<br>
+	 * <code><strong><em>expression</em> &gt; <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the greater-than comparison expression
@@ -173,8 +173,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a greater-than-or-equal-to comparison expression having the form<br/>
-	 * <code><strong><em>expression</em> &gt;= <em>otherExpression</em></strong></code><br/>
+	 * Creates a greater-than-or-equal-to comparison expression having the form<br>
+	 * <code><strong><em>expression</em> &gt;= <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the greater-than-or-equal-to comparison expression
@@ -184,8 +184,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an equality expression having the form<br/>
-	 * <code><strong><em>expression</em> = <em>otherExpression</em></strong></code><br/>
+	 * Creates an equality expression having the form<br>
+	 * <code><strong><em>expression</em> = <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the equality expression
@@ -195,8 +195,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a non-equality expression having the form<br/>
-	 * <code><strong><em>expression</em> &lt;&gt; <em>otherExpression</em></strong></code><br/>
+	 * Creates a non-equality expression having the form<br>
+	 * <code><strong><em>expression</em> &lt;&gt; <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the non-equality expression
@@ -206,8 +206,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IS</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> IS <em>otherExpression</em></strong></code><br/>
+	 * Creates an <code>IS</code> expression having the form<br>
+	 * <code><strong><em>expression</em> IS <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the <code>IS</code> expression
@@ -217,8 +217,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IS NOT</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> IS NOT <em>otherExpression</em></strong></code><br/>
+	 * Creates an <code>IS NOT</code> expression having the form<br>
+	 * <code><strong><em>expression</em> IS NOT <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the <code>IS NOT</code> expression
@@ -228,8 +228,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a logical conjunction expression having the form<br/>
-	 * <code><strong><em>expression</em> AND <em>otherExpression</em></strong></code><br/>
+	 * Creates a logical conjunction expression having the form<br>
+	 * <code><strong><em>expression</em> AND <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the conjunction expression
@@ -239,8 +239,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a logical disjunction expression having the form<br/>
-	 * <code><strong><em>expression</em> OR <em>otherExpression</em></strong></code><br/>
+	 * Creates a logical disjunction expression having the form<br>
+	 * <code><strong><em>expression</em> OR <em>otherExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param otherExpression the right operand
 	 * @return the disjunction expression
@@ -250,8 +250,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>ISNULL</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> ISNULL</strong></code><br/>
+	 * Creates an <code>ISNULL</code> expression having the form<br>
+	 * <code><strong><em>expression</em> ISNULL</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @return the <code>ISNULL</code> expression
 	 */
@@ -260,8 +260,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOTNULL</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOTNULL</strong></code><br/>
+	 * Creates a <code>NOTNULL</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOTNULL</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @return the <code>NOTNULL</code> expression
 	 */
@@ -270,8 +270,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>COLLATE</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> COLLATE <em>collationName</em></strong></code><br/>
+	 * Creates a <code>COLLATE</code> expression having the form<br>
+	 * <code><strong><em>expression</em> COLLATE <em>collationName</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param collationName the name of the collation
 	 * @return the <code>COLLATE</code> expression
@@ -281,8 +281,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>COLLATE</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> COLLATE <em>collation</em></strong></code><br/>
+	 * Creates a <code>COLLATE</code> expression having the form<br>
+	 * <code><strong><em>expression</em> COLLATE <em>collation</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param collation the desired collation sequence
 	 * @return the <code>COLLATE</code> expression
@@ -292,8 +292,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>LIKE</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> LIKE <em>patternExpression</em></strong></code><br/>
+	 * Creates a <code>LIKE</code> expression having the form<br>
+	 * <code><strong><em>expression</em> LIKE <em>patternExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param patternExpression the pattern to use for matching
 	 * @return the <code>LIKE</code> expression
@@ -303,8 +303,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT LIKE</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT LIKE <em>patternExpression</em></strong></code><br/>
+	 * Creates a <code>NOT LIKE</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT LIKE <em>patternExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param patternExpression the pattern to use for matching
 	 * @return the <code>NOT LIKE</code> expression
@@ -314,8 +314,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>LIKE</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> LIKE <em>pattern</em></strong></code><br/>
+	 * Creates a <code>LIKE</code> expression having the form<br>
+	 * <code><strong><em>expression</em> LIKE <em>pattern</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param pattern the pattern to use for matching
 	 * @return the <code>LIKE</code> expression
@@ -325,8 +325,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT LIKE</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT LIKE <em>pattern</em></strong></code><br/>
+	 * Creates a <code>NOT LIKE</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT LIKE <em>pattern</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param pattern the pattern to use for matching
 	 * @return the <code>NOT LIKE</code> expression
@@ -336,8 +336,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>GLOB</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> GLOB <em>patternExpression</em></strong></code><br/>
+	 * Creates a <code>GLOB</code> expression having the form<br>
+	 * <code><strong><em>expression</em> GLOB <em>patternExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param patternExpression the pattern to use for matching
 	 * @return the <code>GLOB</code> expression
@@ -347,8 +347,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT GLOB</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT GLOB <em>patternExpression</em></strong></code><br/>
+	 * Creates a <code>NOT GLOB</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT GLOB <em>patternExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param patternExpression the pattern to use for matching
 	 * @return the <code>NOT GLOB</code> expression
@@ -358,8 +358,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>GLOB</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> GLOB <em>pattern</em></strong></code><br/>
+	 * Creates a <code>GLOB</code> expression having the form<br>
+	 * <code><strong><em>expression</em> GLOB <em>pattern</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param pattern the pattern to use for matching
 	 * @return the <code>GLOB</code> expression
@@ -369,8 +369,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT GLOB</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT GLOB <em>pattern</em></strong></code><br/>
+	 * Creates a <code>NOT GLOB</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT GLOB <em>pattern</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param pattern the pattern to use for matching
 	 * @return the <code>NOT GLOB</code> expression
@@ -380,8 +380,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>REGEXP</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> REGEXP <em>patternExpression</em></strong></code><br/>
+	 * Creates a <code>REGEXP</code> expression having the form<br>
+	 * <code><strong><em>expression</em> REGEXP <em>patternExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param patternExpression the pattern to use for matching
 	 * @return the <code>REGEXP</code> expression
@@ -391,8 +391,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT REGEXP</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT REGEXP <em>patternExpression</em></strong></code><br/>
+	 * Creates a <code>NOT REGEXP</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT REGEXP <em>patternExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param patternExpression the pattern to use for matching
 	 * @return the <code>NOT REGEXP</code> expression
@@ -402,8 +402,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>REGEXP</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> REGEXP <em>pattern</em></strong></code><br/>
+	 * Creates a <code>REGEXP</code> expression having the form<br>
+	 * <code><strong><em>expression</em> REGEXP <em>pattern</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param pattern the pattern to use for matching
 	 * @return the <code>REGEXP</code> expression
@@ -413,8 +413,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT REGEXP</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT REGEXP <em>pattern</em></strong></code><br/>
+	 * Creates a <code>NOT REGEXP</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT REGEXP <em>pattern</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param pattern the pattern to use for matching
 	 * @return the <code>NOT REGEXP</code> expression
@@ -424,8 +424,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>MATCH</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> MATCH <em>patternExpression</em></strong></code><br/>
+	 * Creates a <code>MATCH</code> expression having the form<br>
+	 * <code><strong><em>expression</em> MATCH <em>patternExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param patternExpression the pattern to use for matching
 	 * @return the <code>MATCH</code> expression
@@ -435,8 +435,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT MATCH</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT MATCH <em>patternExpression</em></strong></code><br/>
+	 * Creates a <code>NOT MATCH</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT MATCH <em>patternExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param patternExpression the pattern to use for matching
 	 * @return the <code>NOT MATCH</code> expression
@@ -446,8 +446,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>MATCH</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> MATCH <em>pattern</em></strong></code><br/>
+	 * Creates a <code>MATCH</code> expression having the form<br>
+	 * <code><strong><em>expression</em> MATCH <em>pattern</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param pattern the pattern to use for matching
 	 * @return the <code>MATCH</code> expression
@@ -457,8 +457,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT MATCH</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT MATCH <em>pattern</em></strong></code><br/>
+	 * Creates a <code>NOT MATCH</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT MATCH <em>pattern</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param pattern the pattern to use for matching
 	 * @return the <code>NOT MATCH</code> expression
@@ -468,9 +468,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>BETWEEN</code> expression having the form<br/>
+	 * Creates a <code>BETWEEN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> BETWEEN <em>minExpression</em>
-	 * AND <em>maxExpression</em></strong></code><br/>
+	 * AND <em>maxExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param minExpression the lower value bound expression
 	 * @param maxExpression the upper value bound expression
@@ -481,8 +481,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>BETWEEN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> BETWEEN <em>min</em> AND <em>max</em></strong></code><br/>
+	 * Creates a <code>BETWEEN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> BETWEEN <em>min</em> AND <em>max</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param min the lower value bound
 	 * @param max the upper value bound
@@ -493,8 +493,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>BETWEEN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> BETWEEN <em>min</em> AND <em>max</em></strong></code><br/>
+	 * Creates a <code>BETWEEN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> BETWEEN <em>min</em> AND <em>max</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param min the lower value bound
 	 * @param max the upper value bound
@@ -505,8 +505,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>BETWEEN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> BETWEEN <em>min</em> AND <em>max</em></strong></code><br/>
+	 * Creates a <code>BETWEEN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> BETWEEN <em>min</em> AND <em>max</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param min the lower value bound
 	 * @param max the upper value bound
@@ -517,9 +517,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT BETWEEN</code> expression having the form<br/>
+	 * Creates a <code>NOT BETWEEN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT BETWEEN <em>minExpression</em>
-	 * AND <em>maxExpression</em></strong></code><br/>
+	 * AND <em>maxExpression</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param minExpression the lower value bound expression
 	 * @param maxExpression the upper value bound expression
@@ -530,8 +530,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT BETWEEN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT BETWEEN <em>min</em> AND <em>max</em></strong></code><br/>
+	 * Creates a <code>NOT BETWEEN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT BETWEEN <em>min</em> AND <em>max</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param min the lower value bound
 	 * @param max the upper value bound
@@ -542,8 +542,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT BETWEEN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT BETWEEN <em>min</em> AND <em>max</em></strong></code><br/>
+	 * Creates a <code>NOT BETWEEN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT BETWEEN <em>min</em> AND <em>max</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param min the lower value bound
 	 * @param max the upper value bound
@@ -554,8 +554,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT BETWEEN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT BETWEEN <em>min</em> AND <em>max</em></strong></code><br/>
+	 * Creates a <code>NOT BETWEEN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT BETWEEN <em>min</em> AND <em>max</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param min the lower value bound
 	 * @param max the upper value bound
@@ -566,8 +566,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>CAST</code> expression having the form<br/>
-	 * <code><strong>CAST (<em>expression</em> AS <em>type</em>)</strong></code><br/>
+	 * Creates a <code>CAST</code> expression having the form<br>
+	 * <code><strong>CAST (<em>expression</em> AS <em>type</em>)</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param type the definition of the SQL type to cast the expression to
 	 * @return the <code>CAST</code> expression with the specified bounds
@@ -577,9 +577,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the expressions among whose values to search
 	 * @return the <code>IN</code> expression
@@ -589,9 +589,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the expressions among whose values to search
 	 * @return the <code>NOT IN</code> expression
@@ -601,9 +601,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the expressions among whose values to search
 	 * @return the <code>IN</code> expression
@@ -613,9 +613,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the expressions among whose values to search
 	 * @return the <code>NOT IN</code> expression
@@ -625,9 +625,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>IN</code> expression
@@ -637,9 +637,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>NOT IN</code> expression
@@ -649,9 +649,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>IN</code> expression
@@ -661,9 +661,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>NOT IN</code> expression
@@ -673,9 +673,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>IN</code> expression
@@ -685,9 +685,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>NOT IN</code> expression
@@ -697,9 +697,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>IN</code> expression
@@ -709,9 +709,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>NOT IN</code> expression
@@ -721,9 +721,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>IN</code> expression
@@ -733,9 +733,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>NOT IN</code> expression
@@ -745,9 +745,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>IN</code> expression
@@ -757,9 +757,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>NOT IN</code> expression
@@ -769,9 +769,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>IN</code> expression
@@ -782,9 +782,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>NOT IN</code> expression
@@ -795,9 +795,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>IN</code> expression
@@ -808,9 +808,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>NOT IN</code> expression
@@ -821,9 +821,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>IN</code> expression
@@ -833,9 +833,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN ([<em>value<sub>0</sub></em>{,
-	 * <em>value<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>value<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param values the values to search among
 	 * @return the <code>NOT IN</code> expression
@@ -845,8 +845,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> IN (<em>selectStatement</em>)</strong></code><br/>
+	 * Creates an <code>IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> IN (<em>selectStatement</em>)</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param selectStatement the <code>SELECT</code> statement providing the set to search in
 	 * @return the <code>IN</code> expression
@@ -856,8 +856,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> IN (<em>selectStatement</em>)</strong></code><br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> IN (<em>selectStatement</em>)</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param selectStatement the <code>SELECT</code> statement providing the set to search in
 	 * @return the <code>NOT IN</code> expression
@@ -867,8 +867,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> IN <em>tableName</em></strong></code><br/>
+	 * Creates an <code>IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> IN <em>tableName</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param tableName the name of the table to search in
 	 * @return the <code>IN</code> expression
@@ -878,8 +878,8 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT IN <em>tableName</em></strong></code><br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT IN <em>tableName</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param tableName the name of the table to search in
 	 * @return the <code>NOT IN</code> expression
@@ -889,9 +889,10 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> IN <em>schemaName</em>.<em>tableName</em></strong></code><br/>
+	 * Creates an <code>IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> IN <em>schemaName</em>.<em>tableName</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
+	 * @param schemaName the name of the schema the table belongs to
 	 * @param tableName the name of the table to search in
 	 * @return the <code>IN</code> expression
 	 */
@@ -900,9 +901,10 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
-	 * <code><strong><em>expression</em> NOT IN <em>schemaName</em>.<em>tableName</em></strong></code><br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT IN <em>schemaName</em>.<em>tableName</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
+	 * @param schemaName the name of the schema the table belongs to
 	 * @param tableName the name of the table to search in
 	 * @return the <code>NOT IN</code> expression
 	 */
@@ -911,9 +913,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN <em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
-	 * <em>arg<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>arg<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param virtualTableName the name of the virtual table to search in
 	 * @param args the arguments to pass to the virtual table (the hidden columns filtering values)
@@ -924,9 +926,9 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN <em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
-	 * <em>arg<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>arg<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
 	 * @param virtualTableName the name of the virtual table to search in
 	 * @param args the arguments to pass to the virtual table (the hidden columns filtering values)
@@ -937,10 +939,11 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates an <code>IN</code> expression having the form<br/>
+	 * Creates an <code>IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> IN <em>schemaName</em>.<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
-	 * <em>arg<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>arg<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
+	 * @param schemaName the name of the schema the virtual table is defined in
 	 * @param virtualTableName the name of the virtual table to search in
 	 * @param args the arguments to pass to the virtual table (the hidden columns filtering values)
 	 * @return the <code>IN</code> expression
@@ -950,11 +953,12 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
-	 * Creates a <code>NOT IN</code> expression having the form<br/>
+	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN
 	 * <em>schemaName</em>.<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
-	 * <em>arg<sub>i</sub></em>}])</strong></code><br/>
+	 * <em>arg<sub>i</sub></em>}])</strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
+	 * @param schemaName the name of the schema the virtual table is defined in
 	 * @param virtualTableName the name of the virtual table to search in
 	 * @param args the arguments to pass to the virtual table (the hidden columns filtering values)
 	 * @return the <code>NOT IN</code> expression

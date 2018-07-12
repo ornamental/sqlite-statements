@@ -17,10 +17,10 @@ public final class CreateTable {
 	public interface ColumnList {
 
 		/**
-		 * Adds a new column to the table definition without specifying its type.<br/>
+		 * Adds a new column to the table definition without specifying its type.<br>
 		 * The result is a complete SQL statement.
 		 * @param columnName the name of the column to add
-		 * @return a <code>CREATE TABLE</code> statement ending with an untyped column definition:<br/>
+		 * @return a <code>CREATE TABLE</code> statement ending with an untyped column definition:<br>
 		 * <code>CREATE [TEMPORARY] TABLE [IF NOT EXISTS] <em>tableName</em>
 		 * ({<em>columnDefinition<sub>i</sub>,</em>} <strong><em>columnName</em></strong>)</code>
 		 */
@@ -28,7 +28,7 @@ public final class CreateTable {
 	}
 
 	/**
-	 * Represents the initial part of a <code>CREATE TABLE</code> statement, namely<br/>
+	 * Represents the initial part of a <code>CREATE TABLE</code> statement, namely<br>
 	 * <code><strong>CREATE [TEMPORARY] TABLE [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>tableName</em></strong></code>.
 	 */
@@ -51,11 +51,11 @@ public final class CreateTable {
 
 		/**
 		 * Completes the <code>CREATE TABLE</code> statement by defining the <code>SELECT</code>
-		 * statement the table and its initial content are based on.<br/>
+		 * statement the table and its initial content are based on.<br>
 		 * The result is a complete SQL statement.
 		 * @param selectStatement the <code>SELECT</code> statement defining the column names and the initial
 		 * content (rows) of the new table
-		 * @return the <code>CREATE TABLE</code> statement having the form<br/>
+		 * @return the <code>CREATE TABLE</code> statement having the form<br>
 		 * <code>CREATE [TEMPORARY] TABLE [IF NOT EXISTS] [<em>schemaName</em>.]<em>tableName</em>
 		 * <strong>AS <em>selectStatement</em></strong></code>
 		 */
@@ -90,7 +90,7 @@ public final class CreateTable {
 	}
 
 	/**
-	 * Represents a <code>CREATE TABLE</code> statement having the form<br/>
+	 * Represents a <code>CREATE TABLE</code> statement having the form<br>
 	 * <code><strong>CREATE [TEMPORARY] TABLE [IF NOT EXISTS] [<em>schemaName</em>.]<em>tableName</em>
 	 * AS <em>selectStatement</em></strong></code>
 	 */
@@ -156,7 +156,7 @@ public final class CreateTable {
 	public abstract static class ConstraintList implements ExplicableStatement {
 
 		/**
-		 * Initializes the addition of a new unnamed table constraint.<br/>
+		 * Initializes the addition of a new unnamed table constraint.<br>
 		 * The result does not represent a complete SQL statement.
 		 * @return the new table constraint stub
 		 */
@@ -165,7 +165,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Initializes the addition of a new named table constraint.<br/>
+		 * Initializes the addition of a new named table constraint.<br>
 		 * The result does not represent a complete SQL statement.
 		 * @param constraintName the name of the new table constraint
 		 * @return the new table constraint stub
@@ -175,7 +175,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Adds a <code><strong>WITHOUT ROWID</strong></code> clause to the statement.<br/>
+		 * Adds a <code><strong>WITHOUT ROWID</strong></code> clause to the statement.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>CREATE TABLE</code> statement ending with a <code>WITHOUT ROWID</code> clause
 		 */
@@ -203,7 +203,7 @@ public final class CreateTable {
 	public abstract static class ColumnConstraintList extends ConstraintList implements ColumnList {
 
 		/**
-		 * Initializes the addition of a new unnamed column constraint to the last added column.<br/>
+		 * Initializes the addition of a new unnamed column constraint to the last added column.<br>
 		 * The result does not represent a complete SQL statement.
 		 * @return the new column constraint stub
 		 */
@@ -212,7 +212,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Initializes the addition of a new named column constraint to the last added column.<br/>
+		 * Initializes the addition of a new named column constraint to the last added column.<br>
 		 * The result does not represent a complete SQL statement.
 		 * @param constraintName the name of the new column constraint
 		 * @return the new column constraint stub
@@ -231,9 +231,9 @@ public final class CreateTable {
 	}
 
 	/**
-	 * Represents a <code>CREATE TABLE</code> statement ending with an untyped column definition:<br/>
+	 * Represents a <code>CREATE TABLE</code> statement ending with an untyped column definition:<br>
 	 * <code><strong>CREATE [TEMPORARY] TABLE [IF NOT EXISTS] [<em>schemaName</em>.]<em>tableName</em>
-	 * ({<em>columnDefinition<sub>i</sub></em>, }<em>columnName</em>)</strong></code>.<br/>
+	 * ({<em>columnDefinition<sub>i</sub></em>, }<em>columnName</em>)</strong></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class UntypedColumn extends ColumnConstraintList {
@@ -281,7 +281,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Adds a type definition to the last added column.<br/>
+		 * Adds a type definition to the last added column.<br>
 		 * The result represents a complete SQL statement.
 		 * @param typeDefinition the type definition
 		 * @return a <code>CREATE TABLE</code> statement ending with a typed column definition
@@ -292,7 +292,7 @@ public final class CreateTable {
 	}
 
 	/**
-	 * Represents a <code>CREATE TABLE</code> statement ending with a typed column definition.<br/>
+	 * Represents a <code>CREATE TABLE</code> statement ending with a typed column definition.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class TypedColumn extends ColumnConstraintList {
@@ -339,7 +339,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a primary key constraint with default sorting order.<br/>
+		 * Makes the new column constraint a primary key constraint with default sorting order.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
 		 * a primary key constraint
@@ -349,7 +349,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a primary key constraint with the specified sorting order.<br/>
+		 * Makes the new column constraint a primary key constraint with the specified sorting order.<br>
 		 * The result is a complete SQL statement.
 		 * @param order the desired sorting order of the primary key index
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
@@ -360,7 +360,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a non-nullability constraint.<br/>
+		 * Makes the new column constraint a non-nullability constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
 		 * a non-nullability constraint
@@ -371,7 +371,7 @@ public final class CreateTable {
 
 		/**
 		 * Makes the new column constraint a non-nullability constraint with a specific action to
-		 * be taken upon constraint violation.<br/>
+		 * be taken upon constraint violation.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the action to be taken upon constraint violation
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
@@ -382,7 +382,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a uniqueness constraint.<br/>
+		 * Makes the new column constraint a uniqueness constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
 		 * a uniqueness constraint
@@ -393,7 +393,7 @@ public final class CreateTable {
 
 		/**
 		 * Makes the new column constraint a uniqueness constraint with a specific action to
-		 * be taken upon constraint violation.<br/>
+		 * be taken upon constraint violation.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the action to be taken upon constraint violation
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
@@ -404,7 +404,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a <code>CHECK</code> constraint.<br/>
+		 * Makes the new column constraint a <code>CHECK</code> constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param condition the condition which must hold in order for the constraint to be satisfied
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
@@ -415,7 +415,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a default value constraint.<br/>
+		 * Makes the new column constraint a default value constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param defaultValue the value to be set when it is not specified explicitly (also used when
 		 * applying the {@link ForeignKeyAction#SET_DEFAULT} referential action)
@@ -427,7 +427,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a default value constraint.<br/>
+		 * Makes the new column constraint a default value constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param defaultValue the value to be set when it is not specified explicitly (also used when
 		 * applying the {@link ForeignKeyAction#SET_DEFAULT} referential action)
@@ -439,7 +439,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a default value constraint.<br/>
+		 * Makes the new column constraint a default value constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param defaultValue the value to be set when it is not specified explicitly (also used when
 		 * applying the {@link ForeignKeyAction#SET_DEFAULT} referential action)
@@ -451,7 +451,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a default value constraint.<br/>
+		 * Makes the new column constraint a default value constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param defaultValue the value to be set when it is not specified explicitly (also used when
 		 * applying the {@link ForeignKeyAction#SET_DEFAULT} referential action); may be {@literal null}
@@ -464,7 +464,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a default value constraint.<br/>
+		 * Makes the new column constraint a default value constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param defaultValue the value to be set when it is not specified explicitly (also used when
 		 * applying the {@link ForeignKeyAction#SET_DEFAULT} referential action); may be {@literal null}
@@ -477,7 +477,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a default value constraint.<br/>
+		 * Makes the new column constraint a default value constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param defaultValue the value to be set when it is not specified explicitly (also used when
 		 * applying the {@link ForeignKeyAction#SET_DEFAULT} referential action); may be {@literal null}
@@ -490,7 +490,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a <code>DEFAULT NULL</code> constraint.<br/>
+		 * Makes the new column constraint a <code>DEFAULT NULL</code> constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
 		 * a default value constraint
@@ -500,7 +500,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a <code>DEFAULT CURRENT_TIME</code> constraint.<br/>
+		 * Makes the new column constraint a <code>DEFAULT CURRENT_TIME</code> constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
 		 * a default value constraint
@@ -510,7 +510,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a <code>DEFAULT CURRENT_DATE</code> constraint.<br/>
+		 * Makes the new column constraint a <code>DEFAULT CURRENT_DATE</code> constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
 		 * a default value constraint
@@ -520,7 +520,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a <code>DEFAULT CURRENT_TIMESTAMP</code> constraint.<br/>
+		 * Makes the new column constraint a <code>DEFAULT CURRENT_TIMESTAMP</code> constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
 		 * a default value constraint
@@ -530,7 +530,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a default value constraint.<br/>
+		 * Makes the new column constraint a default value constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param defaultValue the SQL expression used to calculate the default value each time
 		 * it is needed
@@ -542,7 +542,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Makes the new column constraint a collation constraint.<br/>
+		 * Makes the new column constraint a collation constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param collation the collation to be applied to the last added column
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
@@ -554,7 +554,7 @@ public final class CreateTable {
 
 		/**
 		 * Makes the new column constraint a foreign key constraint. The last added column
-		 * references the primary key of the specified referenced table.<br/>
+		 * references the primary key of the specified referenced table.<br>
 		 * The result is a complete SQL statement.
 		 * @param foreignTableName the foreign table name
 		 * @return the <code>CREATE TABLE</code> statement whose last column definition contains
@@ -566,7 +566,7 @@ public final class CreateTable {
 
 		/**
 		 * Makes the new column constraint a foreign key constraint. The last added column
-		 * references the specified column of the specified referenced table.<br/>
+		 * references the specified column of the specified referenced table.<br>
 		 * The result is a complete SQL statement.
 		 * @param foreignTableName the foreign table name
 		 * @param foreignColumnName the referenced column of the foreign table
@@ -620,7 +620,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Adds an <code>ON CONFLICT</code> clause to the primary key column constraint definition.<br/>
+		 * Adds an <code>ON CONFLICT</code> clause to the primary key column constraint definition.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the action to be taken on primary key violation
 		 * @return a <code>CREATE TABLE</code> statement whose last column has a primary key constraint
@@ -631,7 +631,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Adds an <code>AUTOINCREMENT</code> clause to the primary key column constraint definition.<br/>
+		 * Adds an <code>AUTOINCREMENT</code> clause to the primary key column constraint definition.<br>
 		 * The result is a complete SQL statement.
 		 * @return a <code>CREATE TABLE</code> statement whose last column has a primary key constraint
 		 * with an <code>AUTOINCREMENT</code> clause
@@ -670,7 +670,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Adds an <code>AUTOINCREMENT</code> clause to the primary key column constraint definition.<br/>
+		 * Adds an <code>AUTOINCREMENT</code> clause to the primary key column constraint definition.<br>
 		 * The result is a complete SQL statement.
 		 * @return a <code>CREATE TABLE</code> statement whose last column has a primary key constraint
 		 * with an <code>AUTOINCREMENT</code> clause
@@ -870,7 +870,7 @@ public final class CreateTable {
 
 		/**
 		 * Adds a <code>DEFERRABLE INITIALLY DEFERRED</code> clause to the foreign key
-		 * constraint on the last added column.<br/>
+		 * constraint on the last added column.<br>
 		 * The result is a complete SQL statement.
 		 * @return a <code>CREATE TABLE</code> statement whose last column definition has a foreign
 		 * key constraint with <code>DEFERRABLE INITIALLY DEFERRED</code> behaviour
@@ -881,7 +881,7 @@ public final class CreateTable {
 
 		/**
 		 * Adds a <code>NOT DEFERRABLE INITIALLY IMMEDIATE</code> clause to the foreign key
-		 * constraint on the last added column.<br/>
+		 * constraint on the last added column.<br>
 		 * The result is a complete SQL statement.
 		 * @return a <code>CREATE TABLE</code> statement whose last column definition has a foreign
 		 * key constraint with <code>NOT DEFERRABLE INITIALLY IMMEDIATE</code> behaviour
@@ -892,7 +892,7 @@ public final class CreateTable {
 
 		/**
 		 * Adds an <code>ON DELETE</code> referential action clause to the foreign key
-		 * constraint on the last added column.<br/>
+		 * constraint on the last added column.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the action to be taken when the referenced row is deleted
 		 * @return a <code>CREATE TABLE</code> statement whose last column definition has a foreign
@@ -904,7 +904,7 @@ public final class CreateTable {
 
 		/**
 		 * Adds an <code>ON UPDATE</code> referential action clause to the foreign key
-		 * constraint on the last added column.<br/>
+		 * constraint on the last added column.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the action to be taken when the referenced column is updated
 		 * @return a <code>CREATE TABLE</code> statement whose last column definition has a foreign
@@ -917,7 +917,7 @@ public final class CreateTable {
 
 	/**
 	 * Represents a <code>CREATE TABLE</code> statement whose last column definition has a foreign
-	 * key constraint with no additional clauses specified.<br/>
+	 * key constraint with no additional clauses specified.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class ColumnFk extends ColumnFkDeferrable {
@@ -955,7 +955,7 @@ public final class CreateTable {
 	 * Represents a <code>CREATE TABLE</code> statement whose last column definition ends with
 	 * a foreign key constraint whose last clause is either an <code>ON DELETE</code> or
 	 * an <code>ON UPDATE</code> referential action clause. Note that SQLite allows adding more
-	 * than one such clause for each of the two events but uses only the last specified action.<br/>
+	 * than one such clause for each of the two events but uses only the last specified action.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class ColumnFkAction extends ColumnFkDeferrable {
@@ -992,7 +992,7 @@ public final class CreateTable {
 	/**
 	 * Represents a <code>CREATE TABLE</code> statement whose last column definition has a foreign
 	 * key constraint with either a <code>NOT DEFERRABLE INITIALLY IMMEDIATE</code> or
-	 * a <code>DEFERRABLE INITIALLY DEFERRED</code> clause specified.<br/>
+	 * a <code>DEFERRABLE INITIALLY DEFERRED</code> clause specified.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class ColumnFkTiming extends ColumnConstraintList {
@@ -1022,7 +1022,7 @@ public final class CreateTable {
 
 	/**
 	 * Represents the initial stage of adding a table constraint to a <code>CREATE TABLE</code>
-	 * statement.<br/>
+	 * statement.<br>
 	 * This is not a complete SQL statement.
 	 */
 	public static final class ConstraintStub {
@@ -1071,7 +1071,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Adds a <code>CHECK</code> constraint to the <code>CREATE TABLE</code> constraint.<br/>
+		 * Adds a <code>CHECK</code> constraint to the <code>CREATE TABLE</code> constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param condition the condition to check upon table inserts and updates
 		 * @return a <code>CREATE TABLE</code> ending with a <code>CHECK</code> table constraint
@@ -1103,7 +1103,7 @@ public final class CreateTable {
 	public interface UniqueKeyColumnList {
 
 		/**
-		 * Adds a column to a uniqueness or primary key constraint.<br/>
+		 * Adds a column to a uniqueness or primary key constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param column the name of the column to add to the constraint
 		 * @return the <code>CREATE TABLE</code> statement ending with
@@ -1112,7 +1112,7 @@ public final class CreateTable {
 		UniqueColumn addColumn(CharSequence column);
 
 		/**
-		 * Adds a column with specified collation to a uniqueness or primary key constraint.<br/>
+		 * Adds a column with specified collation to a uniqueness or primary key constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param column the name of the column to add to the constraint
 		 * @param collation the collation sequence to use when enforcing the constraint
@@ -1122,7 +1122,7 @@ public final class CreateTable {
 		UniqueColumn addColumn(CharSequence column, Collation collation);
 
 		/**
-		 * Adds a column with specified sorting order to a uniqueness or primary key constraint.<br/>
+		 * Adds a column with specified sorting order to a uniqueness or primary key constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param column the name of the column to add to the constraint
 		 * @param order the sorting order used for the column
@@ -1132,7 +1132,7 @@ public final class CreateTable {
 		UniqueColumn addColumn(CharSequence column, SortingOrder order);
 
 		/**
-		 * Adds a column with specified collation and sorting order to a uniqueness or primary key constraint.<br/>
+		 * Adds a column with specified collation and sorting order to a uniqueness or primary key constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param column the name of the column to add to the constraint
 		 * @param collation the collation sequence to use when enforcing the constraint
@@ -1193,7 +1193,7 @@ public final class CreateTable {
 
 	/**
 	 * Represents a <code>CREATE TABLE</code> statement with its last table constraint
-	 * being a uniqueness constraint or a primary key constraint without an <code>ON CONFLICT</code> clause.<br/>
+	 * being a uniqueness constraint or a primary key constraint without an <code>ON CONFLICT</code> clause.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class UniqueColumn extends ConstraintList implements UniqueKeyColumnList {
@@ -1251,7 +1251,7 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Adds an <code>ON CONFLICT</code> clause to the table constraint.<br/>
+		 * Adds an <code>ON CONFLICT</code> clause to the table constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the action to take upon the constraint violation
 		 * @return the <code>CREATE TABLE</code> statement having the specified
@@ -1300,7 +1300,7 @@ public final class CreateTable {
 
 	/**
 	 * Represents a <code>CREATE TABLE</code> statement with its last table constraint
-	 * being a uniqueness constraint or a primary key constraint with an <code>ON CONFLICT</code> clause.<br/>
+	 * being a uniqueness constraint or a primary key constraint with an <code>ON CONFLICT</code> clause.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class UniqueColumnConflict extends ConstraintList {
@@ -1345,7 +1345,7 @@ public final class CreateTable {
 
 		/**
 		 * Defines the referenced table. If the referenced columns are not specified on the next
-		 * step, the foreign column tuple will be inferred from the table's primary key.<br/>
+		 * step, the foreign column tuple will be inferred from the table's primary key.<br>
 		 * The result is a complete SQL statement.
 		 * @param foreignTableName the name of the foreign table
 		 * @return the <code>CREATE TABLE</code> statement whose last table constraint is
@@ -1380,7 +1380,7 @@ public final class CreateTable {
 	 * The common ancestor class for the <code>CREATE TABLE</code> statements whose
 	 * last table constraint is a foreign key constrain which may be supplemented
 	 * with a <code>[NOT] DEFERRABLE</code> clause and, by consequence, with
-	 * <code>ON DELETE</code> and <code>ON UPDATE</code> referential action clauses.<br/>
+	 * <code>ON DELETE</code> and <code>ON UPDATE</code> referential action clauses.<br>
 	 * This is a complete SQL statement.
 	 */
 	public abstract static class FkDeferrable extends ConstraintList {
@@ -1390,7 +1390,7 @@ public final class CreateTable {
 
 		/**
 		 * Adds a <code>DEFERRABLE INITIALLY DEFERRED</code> clause to the foreign key
-		 * constraint.<br/>
+		 * constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @return a <code>CREATE TABLE</code> statement whose last table constraint is a foreign
 		 * key constraint with <code>DEFERRABLE INITIALLY DEFERRED</code> behaviour
@@ -1401,7 +1401,7 @@ public final class CreateTable {
 
 		/**
 		 * Adds a <code>NOT DEFERRABLE INITIALLY IMMEDIATE</code> clause to the foreign key
-		 * constraint.<br/>
+		 * constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @return a <code>CREATE TABLE</code> statement whose last table constraint is a foreign
 		 * key constraint with <code>NOT DEFERRABLE INITIALLY IMMEDIATE</code> behaviour
@@ -1412,7 +1412,7 @@ public final class CreateTable {
 
 		/**
 		 * Adds an <code>ON DELETE</code> referential action clause to the foreign key
-		 * constraint.<br/>
+		 * constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the action to be taken when the referenced row is deleted
 		 * @return a <code>CREATE TABLE</code> statement whose last table constraint is a foreign
@@ -1424,7 +1424,7 @@ public final class CreateTable {
 
 		/**
 		 * Adds an <code>ON UPDATE</code> referential action clause to the foreign key
-		 * constraint.<br/>
+		 * constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the action to be taken when the referenced columns are updated
 		 * @return a <code>CREATE TABLE</code> statement whose last table constraint is a foreign
@@ -1437,9 +1437,9 @@ public final class CreateTable {
 
 	/**
 	 * Represents a <code>CREATE TABLE</code> statement whose last table constraint is
-	 * a foreign key constraint having the form<br/>
+	 * a foreign key constraint having the form<br>
 	 * <code>FOREIGN KEY (<em>columnName<sub>0</sub></em>{, <em>columnName<sub>i</sub></em>})
-	 * REFERENCES <em>foreignTableName</em></code>.<br/>
+	 * REFERENCES <em>foreignTableName</em></code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class FkTable extends FkDeferrable {
@@ -1454,12 +1454,12 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Specifies the referenced table columns of the foreign key table constraint.<br/>
+		 * Specifies the referenced table columns of the foreign key table constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param foreignColumnNames the names of the referenced table columns corresponding
 		 * to the previously specified foreign key columns
 		 * @return the <code>CREATE TABLE</code> statement whose last table constraint is
-		 * a foreign key constraint having the form<br/>
+		 * a foreign key constraint having the form<br>
 		 * <code>FOREIGN KEY (<em>columnName<sub>0</sub></em>{, <em>columnName<sub>i</sub></em>})
 		 * REFERENCES <em>foreignTableName</em>(<strong><em>foreignColumnName<sub>0</sub></em>{,
 		 * <em>foreignColumnName<sub>i</sub></em>}</strong>)</code>
@@ -1469,12 +1469,12 @@ public final class CreateTable {
 		}
 
 		/**
-		 * Specifies the referenced table columns of the foreign key table constraint.<br/>
+		 * Specifies the referenced table columns of the foreign key table constraint.<br>
 		 * The result is a complete SQL statement.
 		 * @param foreignColumnNames the names of the referenced table columns corresponding
 		 * to the previously specified foreign key columns
 		 * @return the <code>CREATE TABLE</code> statement whose last table constraint is
-		 * a foreign key constraint having the form<br/>
+		 * a foreign key constraint having the form<br>
 		 * <code>FOREIGN KEY (<em>columnName<sub>0</sub></em>{, <em>columnName<sub>i</sub></em>})
 		 * REFERENCES <em>foreignTableName</em>(<strong><em>foreignColumnName<sub>0</sub></em>{,
 		 * <em>foreignColumnName<sub>i</sub></em>}</strong>)</code>
@@ -1502,10 +1502,10 @@ public final class CreateTable {
 
 	/**
 	 * Represents a <code>CREATE TABLE</code> statement whose last table constraint is
-	 * a foreign key constraint having the form<br/>
+	 * a foreign key constraint having the form<br>
 	 * <code>FOREIGN KEY (<em>columnName<sub>0</sub></em>{, <em>columnName<sub>i</sub></em>})
 	 * REFERENCES <em>foreignTableName</em>(<em>foreignColumnName<sub>0</sub></em>{,
-	 * <em>foreignColumnName<sub>i</sub></em>})</code>.<br/>
+	 * <em>foreignColumnName<sub>i</sub></em>})</code>.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class FkColumns extends FkDeferrable {
@@ -1541,7 +1541,7 @@ public final class CreateTable {
 	/**
 	 * Represents a <code>CREATE TABLE</code> statement whose last table constraint is
 	 * a foreign key constraint ending with an <code>ON DELETE</code> or an <code>ON UPDATE</code>
-	 * clause.<br/>
+	 * clause.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class FkAction extends FkDeferrable {
@@ -1575,7 +1575,7 @@ public final class CreateTable {
 
 	/**
 	 * Represents a <code>CREATE TABLE</code> statement whose last table constraint is
-	 * a foreign key constraint ending with a <code>[NOT] DEFERRED</code> clause.<br/>
+	 * a foreign key constraint ending with a <code>[NOT] DEFERRED</code> clause.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class FkTiming extends ConstraintList {
@@ -1605,7 +1605,7 @@ public final class CreateTable {
 
 	/**
 	 * Represents a <code>CREATE TABLE</code> statement whose last table constraint is
-	 * a <code>CHECK</code> constraint.<br/>
+	 * a <code>CHECK</code> constraint.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class Check extends ConstraintList {

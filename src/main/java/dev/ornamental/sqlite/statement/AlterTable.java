@@ -8,8 +8,8 @@ public final class AlterTable {
 
 	/**
 	 * Represents the initial part of the <code>ALTER TABLE</code> statement,
-	 * namely the part<br/>
-	 * <code><strong>ALTER TABLE schemaName.tableName</strong></code>.<br/>
+	 * namely the part<br>
+	 * <code><strong>ALTER TABLE schemaName.tableName</strong></code>.<br>
 	 * This stub does not represent a complete SQL statement.
 	 */
 	public static final class Stub {
@@ -28,8 +28,8 @@ public final class AlterTable {
 		}
 
 		/**
-		 * Supplements the stub so that it takes the form<br/>
-		 * <code>ALTER TABLE schemaName.tableName <strong>RENAME TO newTableName</strong></code><br/>
+		 * Supplements the stub so that it takes the form<br>
+		 * <code>ALTER TABLE schemaName.tableName <strong>RENAME TO newTableName</strong></code><br>
 		 * serving to rename the table. The result is a complete SQL statement.
 		 * @param newTableName the new name of the table
 		 * @return the complete <code>ALTER TABLE</code> statement
@@ -39,10 +39,10 @@ public final class AlterTable {
 		}
 
 		/**
-		 * Supplements the stub so that it takes the form<br/>
+		 * Supplements the stub so that it takes the form<br>
 		 * <code>ALTER TABLE <em>schemaName</em>.<em>tableName</em><strong>
 		 * ADD COLUMN <em>columnName</em>
-		 * </strong></code><br/>
+		 * </strong></code><br>
 		 * serving to add a new column to the table. The result is a complete SQL statement which may
 		 * be further supplemented with column type info and column constraints.
 		 * @param columnName the name of the new column to add to the table
@@ -54,7 +54,7 @@ public final class AlterTable {
 	}
 
 	/**
-	 * Represents the <code>ALTER TABLE</code> statement variant for table renaming:<br/>
+	 * Represents the <code>ALTER TABLE</code> statement variant for table renaming:<br>
 	 * <code><strong>ALTER TABLE <em>schemaName</em>.<em>tableName</em>
 	 * RENAME TO <em>newTableName</em></strong></code>.
 	 */
@@ -92,7 +92,7 @@ public final class AlterTable {
 	}
 
 	/**
-	 * Represents the <code>ALTER TABLE</code> statement variant for adding a column to a table:<br/>
+	 * Represents the <code>ALTER TABLE</code> statement variant for adding a column to a table:<br>
 	 * <code><strong>ALTER TABLE <em>schemaName</em>.<em>tableName</em>
 	 * ADD COLUMN <em>newColumnName</em></strong></code>.
 	 */
@@ -154,8 +154,8 @@ public final class AlterTable {
 
 		/**
 		 * Makes the constrained column a primary key with the default sorting order. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>PRIMARY KEY</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>PRIMARY KEY</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a primary key constraint
 		 * on the added column
@@ -166,8 +166,8 @@ public final class AlterTable {
 
 		/**
 		 * Makes the constrained column a primary key with an explicit sorting order. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>PRIMARY KEY ASC|DESC</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>PRIMARY KEY ASC|DESC</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param order the sorting order, either ascending ({@link SortingOrder#ASC})
 		 * or descending ({@link SortingOrder#DESC})
@@ -180,8 +180,8 @@ public final class AlterTable {
 
 		/**
 		 * Disallows <code>NULL</code> values on the added column. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>NOT NULL</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>NOT NULL</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a <code>NOT NULL</code> constraint
 		 * on the added column
@@ -192,9 +192,9 @@ public final class AlterTable {
 
 		/**
 		 * Disallows <code>NULL</code> values on the added column and adds a conflict
-		 * resolution clause. The statement takes the form<br/>
+		 * resolution clause. The statement takes the form<br>
 		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>NOT NULL
-		 * ON CONFLICT ROLLBACK|ABORT|FAIL|IGNORE|REPLACE</strong></code>.<br/>
+		 * ON CONFLICT ROLLBACK|ABORT|FAIL|IGNORE|REPLACE</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the conflict resolution action; see the {@link OnConflictAction} enumeration
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a <code>NOT NULL</code> constraint
@@ -206,8 +206,8 @@ public final class AlterTable {
 
 		/**
 		 * Disallows duplicated values on the added column. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>UNIQUE</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>UNIQUE</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a uniqueness constraint
 		 * on the added column
@@ -218,9 +218,9 @@ public final class AlterTable {
 
 		/**
 		 * Disallows duplicated values on the added column and adds the conflict
-		 * resolution clause. The statement takes the form<br/>
+		 * resolution clause. The statement takes the form<br>
 		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>UNIQUE
-		 * ON CONFLICT ROLLBACK|ABORT|FAIL|IGNORE|REPLACE</strong></code>.<br/>
+		 * ON CONFLICT ROLLBACK|ABORT|FAIL|IGNORE|REPLACE</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param action the conflict resolution action; see the {@link OnConflictAction} enumeration
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a uniqueness constraint
@@ -232,8 +232,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a checking constraint to the column. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>CHECK <em>expression</em></strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>CHECK <em>expression</em></strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param condition the expression to be evaluated on execution of the
 		 * <code>INSERT</code> and <code>UPDATE</code> statements against the table
@@ -247,9 +247,9 @@ public final class AlterTable {
 
 		/**
 		 * Adds a default boolean value to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT TRUE|FALSE</strong></code>.<br/>
-		 * The result is a complete SQL statement.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT TRUE|FALSE</strong></code>.<br>
+		 * The result is a complete SQL statement.<br>
 		 * <strong>Note.</strong> As older versions of SQLite do not recognize <code>TRUE</code> and <code>FALSE</code>
 		 * as boolean literals, one may want to use the overloaded method {@link #defaultValue(long)} with
 		 * 1 or 0 as argument to achieve the same result.
@@ -263,8 +263,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a default integral value to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT <em>value</em></strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT <em>value</em></strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param value the default value
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a default value of integral type
@@ -276,8 +276,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a default floating-point value to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT <em>value</em></strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT <em>value</em></strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param value the default value
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a default value of floating-point
@@ -289,8 +289,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a default numeric value to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT <em>value</em></strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT <em>value</em></strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param value the default value; {@literal null} is admissible
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a default numeric value
@@ -302,8 +302,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a default string value to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT '<em>value</em>'</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT '<em>value</em>'</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param value the default value; {@literal null} is admissible
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a default textual value
@@ -315,9 +315,9 @@ public final class AlterTable {
 
 		/**
 		 * Adds a default string value to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT X'<em>value</em>'</strong></code><br/>
-		 * where the value is in hexadecimal notation.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT X'<em>value</em>'</strong></code><br>
+		 * where the value is in hexadecimal notation.<br>
 		 * The result is a complete SQL statement.
 		 * @param value the default value; {@literal null} is admissible
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a default textual value
@@ -329,8 +329,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a default <code>NULL</code> value to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT NULL</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT NULL</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a default <code>NULL</code> value
 		 * for the added column
@@ -341,8 +341,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a current time default to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT CURRENT_TIME</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT CURRENT_TIME</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with the current time default
 		 * for the added column
@@ -353,8 +353,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a current date default to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT CURRENT_DATE</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT CURRENT_DATE</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with the current date default
 		 * for the added column
@@ -365,8 +365,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a current timestamp default to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT CURRENT_TIMESTAMP</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT CURRENT_TIMESTAMP</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with the current timestamp default
 		 * for the added column
@@ -377,8 +377,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a calculated default to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT (<em>expression</em>)</strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>DEFAULT (<em>expression</em>)</strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param expression the expression providing the default value of the added column
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a calculated default
@@ -390,8 +390,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a collation constraint to the column definition. The statement takes
-		 * the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>COLLATE <em>collation</em></strong></code>.<br/>
+		 * the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>COLLATE <em>collation</em></strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param collation the collation to assign to the new column
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with the specified collation
@@ -403,8 +403,8 @@ public final class AlterTable {
 
 		/**
 		 * Adds a foreign key constraint referencing the primary key of another table
-		 * to the column definition. The statement takes the form<br/>
-		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>REFERENCES <em>foreignTableName</em></strong></code>.<br/>
+		 * to the column definition. The statement takes the form<br>
+		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>REFERENCES <em>foreignTableName</em></strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param foreignTableName the name of the referenced table
 		 * @return the <code>ALTER TABLE .. ADD COLUMN</code> statement with a foreign key constraint
@@ -416,9 +416,9 @@ public final class AlterTable {
 
 		/**
 		 * Adds a foreign key constraint referencing a column of another table
-		 * to the column definition. The statement takes the form<br/>
+		 * to the column definition. The statement takes the form<br>
 		 * <code>ALTER TABLE .. ADD COLUMN .. <strong>REFERENCES
-		 * <em>foreignTableName</em>.<em>foreignColumnName</em></strong></code>.<br/>
+		 * <em>foreignTableName</em>.<em>foreignColumnName</em></strong></code>.<br>
 		 * The result is a complete SQL statement.
 		 * @param foreignTableName the referenced table name
 		 * @param foreignColumnName the referenced column name

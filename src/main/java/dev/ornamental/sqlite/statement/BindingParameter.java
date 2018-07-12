@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  * where <code><em>number</em></code> is the parameter positive ordinal number
  * and <code><em>name</em></code> is a character sequence (as SQLite documentation
  * does not define the precise rules, names are expected to consist of latin letters
- * and arabic digits).<br/>
+ * and arabic digits).<br>
  * This is a complete SQL expression.
  */
 public final class BindingParameter implements SqlExpression {

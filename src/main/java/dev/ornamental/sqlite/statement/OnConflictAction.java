@@ -32,10 +32,10 @@ public enum OnConflictAction {
 
 	/**
 	 * For the primary key and uniqueness constraints this action leads to deletion of the previously
-	 * existing rows causing the conflict to occur.<br/>
+	 * existing rows causing the conflict to occur.<br>
 	 * For the non-nullity constraint, the inadmissible <code>NULL</code> value is replaced with
 	 * the default value for the column (if it has none or the default is <code>NULL</code>,
-	 * works as {@link #ABORT}).<br/>
+	 * works as {@link #ABORT}).<br>
 	 * For a check constraint this action is equivalent to {@link #ABORT}.
 	 */
 	REPLACE

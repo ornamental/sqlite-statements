@@ -11,9 +11,9 @@ public final class CreateTrigger implements ExplicableStatement {
 	 * Represents the initial stage of construction of a <code>CREATE TRIGGER</code> statement.
 	 * Contains the trigger name and optional schema name as well as the flags indicating
 	 * if the trigger will be temporary and if its existence must be checked before the creation.
-	 * The corresponding part of the statement is<br/>
+	 * The corresponding part of the statement is<br>
 	 * <code><strong>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
-	 * [<em>schemaName</em>.]<em>triggerName</em></strong></code>.<br/>
+	 * [<em>schemaName</em>.]<em>triggerName</em></strong></code>.<br>
 	 * Note that though SQLite allows not specifying the trigger timing using one of the keywords
 	 * <code>BEFORE</code>, <code>AFTER</code>, or <code>INSTEAD OF</code>, defaulting
 	 * to the <code>BEFORE</code> case, this is not supported here for the sake of class hierarchy
@@ -39,7 +39,7 @@ public final class CreateTrigger implements ExplicableStatement {
 
 		/**
 		 * Specifies that the trigger must be executed before the triggering changes are made.
-		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br/>
+		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br>
 		 * <code>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>triggerName</em> <strong>BEFORE</strong></code>
 		 */
@@ -49,7 +49,7 @@ public final class CreateTrigger implements ExplicableStatement {
 
 		/**
 		 * Specifies that the trigger must be executed after the triggering changes are made.
-		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br/>
+		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br>
 		 * <code>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>triggerName</em> <strong>AFTER</strong></code>
 		 */
@@ -59,7 +59,7 @@ public final class CreateTrigger implements ExplicableStatement {
 
 		/**
 		 * Specifies that the trigger must be executed instead of making the triggering changes.
-		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br/>
+		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br>
 		 * <code>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>triggerName</em> <strong>INSTEAD OF</strong></code>
 		 */
@@ -89,7 +89,7 @@ public final class CreateTrigger implements ExplicableStatement {
 	}
 
 	/**
-	 * Represents the initial part of a <code>CREATE TRIGGER</code> statement, namely<br/>
+	 * Represents the initial part of a <code>CREATE TRIGGER</code> statement, namely<br>
 	 * <code><strong>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>triggerName</em> BEFORE|AFTER|INSTEAD OF</strong></code>.
 	 */
@@ -106,7 +106,7 @@ public final class CreateTrigger implements ExplicableStatement {
 
 		/**
 		 * Specifies that the triggering change is row deletion.
-		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br/>
+		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br>
 		 * <code>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>triggerName</em> BEFORE|AFTER|INSTEAD OF <strong>DELETE</strong></code>
 		 */
@@ -116,7 +116,7 @@ public final class CreateTrigger implements ExplicableStatement {
 
 		/**
 		 * Specifies that the triggering change is row insertion.
-		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br/>
+		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br>
 		 * <code>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>triggerName</em> BEFORE|AFTER|INSTEAD OF <strong>INSERT</strong></code>
 		 */
@@ -126,7 +126,7 @@ public final class CreateTrigger implements ExplicableStatement {
 
 		/**
 		 * Specifies that the triggering change is row update.
-		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br/>
+		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br>
 		 * <code>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>triggerName</em> BEFORE|AFTER|INSTEAD OF <strong>UPDATE</strong></code>
 		 */
@@ -138,7 +138,7 @@ public final class CreateTrigger implements ExplicableStatement {
 		 * Specifies that the triggering change is row update concerning at least one of the columns
 		 * named as this method's parameters.
 		 * @param columns the names of table columns whose update will cause the trigger to fire
-		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br/>
+		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br>
 		 * <code>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>triggerName</em> BEFORE|AFTER|INSTEAD OF
 		 * <strong>UPDATE OF <em>columnName<sub>0</sub></em>{, <em>columnName<sub>i</sub></em>}</strong></code>
@@ -151,7 +151,7 @@ public final class CreateTrigger implements ExplicableStatement {
 		 * Specifies that the triggering change is row update concerning at least one of the columns
 		 * named as this method's parameters.
 		 * @param columns the names of table columns whose update will cause the trigger to fire
-		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br/>
+		 * @return the initial part of a <code>CREATE TRIGGER</code> statement having the form<br>
 		 * <code>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 		 * [<em>schemaName</em>.]<em>triggerName</em> BEFORE|AFTER|INSTEAD OF
 		 * <strong>UPDATE OF <em>columnName<sub>0</sub></em>{, <em>columnName<sub>i</sub></em>}</strong></code>
@@ -199,6 +199,7 @@ public final class CreateTrigger implements ExplicableStatement {
 
 		/**
 		 * Specifies the table whose modification is meant to fire the trigger.
+		 * @param schemaName the name of the schema containing the target table
 		 * @param tableName the name of the table watched by the trigger
 		 * @return the initial part of a <code>CREATE TRIGGER</code> statement ending with
 		 * an <code>ON <em>schemaName</em>.<em>tableName</em></code> clause
@@ -226,7 +227,7 @@ public final class CreateTrigger implements ExplicableStatement {
 
 	/**
 	 * Represents the initial part of a <code>CREATE TRIGGER</code> statement with <code>ON UPDATE OF</code>
-	 * triggering event:<br/>
+	 * triggering event:<br>
 	 * <code><strong>CREATE [TEMPORARY] TRIGGER [IF NOT EXISTS]
 	 * [<em>schemaName</em>.]<em>triggerName</em> BEFORE|AFTER|INSTEAD OF
 	 *UPDATE OF <em>columnName<sub>0</sub></em>{, <em>columnName<sub>i</sub></em>}</strong></code>.
@@ -289,7 +290,7 @@ public final class CreateTrigger implements ExplicableStatement {
 		}
 
 		/**
-		 * Adds a trigger body (the statement sequence to be executed if the trigger fires).<br/>
+		 * Adds a trigger body (the statement sequence to be executed if the trigger fires).<br>
 		 * The result is a complete SQL statement.
 		 * @param statements the sequence of statements to be executed by the trigger
 		 * @return the <code>CREATE TRIGGER</code> statement with the supplied statements comprising its body
@@ -299,7 +300,7 @@ public final class CreateTrigger implements ExplicableStatement {
 		}
 
 		/**
-		 * Adds a trigger body (the statement sequence to be executed if the trigger fires).<br/>
+		 * Adds a trigger body (the statement sequence to be executed if the trigger fires).<br>
 		 * The result is a complete SQL statement.
 		 * @param statements the sequence of statements to be executed by the trigger
 		 * @return the <code>CREATE TRIGGER</code> statement with the supplied statements comprising its body
@@ -340,7 +341,7 @@ public final class CreateTrigger implements ExplicableStatement {
 		}
 
 		/**
-		 * Adds a trigger body (the statement sequence to be executed if the trigger fires).<br/>
+		 * Adds a trigger body (the statement sequence to be executed if the trigger fires).<br>
 		 * The result is a complete SQL statement.
 		 * @param statements the sequence of statements to be executed by the trigger
 		 * @return the <code>CREATE TRIGGER</code> statement with the supplied statements comprising its body
@@ -350,7 +351,7 @@ public final class CreateTrigger implements ExplicableStatement {
 		}
 
 		/**
-		 * Adds a trigger body (the statement sequence to be executed if the trigger fires).<br/>
+		 * Adds a trigger body (the statement sequence to be executed if the trigger fires).<br>
 		 * The result is a complete SQL statement.
 		 * @param statements the sequence of statements to be executed by the trigger
 		 * @return the <code>CREATE TRIGGER</code> statement with the supplied statements comprising its body

@@ -12,7 +12,7 @@ public final class Update {
 
 	/**
 	 * Represents the initial stage of construction of an <code>UPDATE</code> statement,
-	 * namely the part<br/>
+	 * namely the part<br>
 	 * <code><strong>[WITH <em>cte</em>] UPDATE [OR REPLACE|ROLLBACK|ABORT|FAIL|IGNORE]</strong></code>.
 	 */
 	public static final class Verb {
@@ -29,7 +29,7 @@ public final class Update {
 		/**
 		 * Appends the target table name to the statement being built.
 		 * @param tableName the target table name
-		 * @return the initial part of an <code>UPDATE</code> statement having the form<br/>
+		 * @return the initial part of an <code>UPDATE</code> statement having the form<br>
 		 * <code>[WITH <em>cte</em>] UPDATE [OR REPLACE|ROLLBACK|ABORT|FAIL|IGNORE]
 		 * <strong>INTO <em>tableName</em></strong></code>
 		 */
@@ -41,7 +41,7 @@ public final class Update {
 		 * Appends the target table name to the statement being built.
 		 * @param schemaName the name of the schema containing the target table
 		 * @param tableName the target table name
-		 * @return the initial part of an <code>UPDATE</code> statement having the form<br/>
+		 * @return the initial part of an <code>UPDATE</code> statement having the form<br>
 		 * <code>[WITH <em>cte</em>] UPDATE [OR REPLACE|ROLLBACK|ABORT|FAIL|IGNORE]
 		 * <strong>INTO <em>schemaName</em>.<em>tableName</em></strong></code>
 		 */
@@ -78,7 +78,7 @@ public final class Update {
 		Ordered orderBy(SqlExpression sortingKey, SortingOrder order);
 
 		/**
-		 * Adds a <code>LIMIT</code> clause.<br/>
+		 * Adds a <code>LIMIT</code> clause.<br>
 		 * The result is a complete SQL statement.
 		 * @param limitExpression the expression determining the maximum number of rows to update
 		 * @return the <code>UPDATE</code> statement with a <code>LIMIT</code> clause
@@ -86,7 +86,7 @@ public final class Update {
 		LimitedNoOffset limit(SqlExpression limitExpression);
 
 		/**
-		 * Adds a <code>LIMIT</code> clause.<br/>
+		 * Adds a <code>LIMIT</code> clause.<br>
 		 * The result is a complete SQL statement.
 		 * @param maxRows the maximum number of rows to update
 		 * @return the <code>UPDATE</code> statement with a <code>LIMIT</code> clause
@@ -96,7 +96,7 @@ public final class Update {
 
 	/**
 	 * The interface implemented by the classes representing the <code>UPDATE</code>
-	 * statements having no <code>LIMIT</code> clause.<br/>
+	 * statements having no <code>LIMIT</code> clause.<br>
 	 * All the implementations are complete SQL statements.
 	 */
 	public interface NotLimited extends Sortable, TriggerStatement {
@@ -183,7 +183,7 @@ public final class Update {
 	}
 
 	/**
-	 * Represents a prefix of an <code>UPDATE</code> statement having the form<br/>
+	 * Represents a prefix of an <code>UPDATE</code> statement having the form<br>
 	 * <code><strong>[WITH <em>cte</em>] UPDATE [OR REPLACE|ROLLBACK|ABORT|FAIL|IGNORE]
 	 * INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>.
 	 */
@@ -207,7 +207,7 @@ public final class Update {
 		/**
 		 * Adds an <code>INDEXED BY</code> clause forcing the use of a the specified index.
 		 * @param indexName the name of the index to force the use of
-		 * @return the prefix of an <code>UPDATE</code> statement having the form<br/>
+		 * @return the prefix of an <code>UPDATE</code> statement having the form<br>
 		 * <code>[WITH <em>cte</em>] UPDATE [OR REPLACE|ROLLBACK|ABORT|FAIL|IGNORE]
 		 * INTO [<em>schemaName</em>.]<em>tableName</em> <strong>INDEXED BY <em>indexName</em></strong></code>
 		 */
@@ -217,7 +217,7 @@ public final class Update {
 
 		/**
 		 * Adds a <code>NOT INDEXED</code> clause forbidding index use.
-		 * @return the prefix of an <code>UPDATE</code> statement having the form<br/>
+		 * @return the prefix of an <code>UPDATE</code> statement having the form<br>
 		 * <code>[WITH <em>cte</em>] UPDATE [OR REPLACE|ROLLBACK|ABORT|FAIL|IGNORE]
 		 * INTO [<em>schemaName</em>.]<em>tableName</em> <strong>NOT INDEXED</strong></code>
 		 */
@@ -276,7 +276,7 @@ public final class Update {
 
 	/**
 	 * Represents an <code>UPDATE</code> statement without a <code>WHERE</code> clause
-	 * nor a row count limitation clause.<br/>
+	 * nor a row count limitation clause.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class NotFiltered implements NotLimited, AssignmentList {
@@ -312,7 +312,7 @@ public final class Update {
 		}
 
 		/**
-		 * Adds a filtering condition (a <code>WHERE</code> clause) to the <code>UPDATE</code> statement.<br/>
+		 * Adds a filtering condition (a <code>WHERE</code> clause) to the <code>UPDATE</code> statement.<br>
 		 * The result is a complete <code>UPDATE</code> statement.
 		 * @param condition the filtering condition expression
 		 * @return the <code>UPDATE</code> statement ending with a <code>WHERE</code> clause
@@ -353,7 +353,7 @@ public final class Update {
 
 	/**
 	 * Represents an <code>UPDATE</code> statement ending with a <code>WHERE</code> clause
-	 * but without a row count limitation clause.<br/>
+	 * but without a row count limitation clause.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class Filtered implements NotLimited {
@@ -487,7 +487,7 @@ public final class Update {
 		}
 
 		/**
-		 * Adds an <code>OFFSET</code> clause defining the limited range of rows to be updated.<br/>
+		 * Adds an <code>OFFSET</code> clause defining the limited range of rows to be updated.<br>
 		 * The result is a complete SQL statement.
 		 * @param offsetExpression the expression determining the offset
 		 * @return the <code>UPDATE</code> statement finalized with a <code>LIMIT .. OFFSET</code> clause
@@ -497,7 +497,7 @@ public final class Update {
 		}
 
 		/**
-		 * Adds an <code>OFFSET</code> clause defining the limited range of rows to be updated.<br/>
+		 * Adds an <code>OFFSET</code> clause defining the limited range of rows to be updated.<br>
 		 * The result is a complete SQL statement.
 		 * @param offset the number determining the offset
 		 * @return the <code>UPDATE</code> statement finalized with a <code>LIMIT .. OFFSET</code> clause
@@ -529,7 +529,7 @@ public final class Update {
 	}
 
 	/**
-	 * Represents an <code>UPDATE</code> statement having a <code>LIMIT .. OFFSET</code> clause.<br/>
+	 * Represents an <code>UPDATE</code> statement having a <code>LIMIT .. OFFSET</code> clause.<br>
 	 * This is a complete SQL statement.
 	 */
 	public static final class LimitedWithOffset implements TriggerStatement {

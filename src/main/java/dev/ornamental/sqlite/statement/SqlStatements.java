@@ -10,10 +10,10 @@ public final class SqlStatements {
 	private SqlStatements() { }
 
 	/**
-	 * Constructs an <code>EXPLAIN</code> statement from the statement which is to be explained.<br/>
+	 * Constructs an <code>EXPLAIN</code> statement from the statement which is to be explained.<br>
 	 * The result is a complete SQL statement.
 	 * @param statement the statement to be explained
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>EXPLAIN <em>statement</em></strong></code>
 	 */
 	public static Explain explain(ExplicableStatement statement) {
@@ -22,10 +22,10 @@ public final class SqlStatements {
 
 	/**
 	 * Constructs an <code>EXPLAIN QUERY PLAN</code> statement from the statement\
-	 * whose execution plan is to be explained.<br/>
+	 * whose execution plan is to be explained.<br>
 	 * The result is a complete SQL statement.
 	 * @param statement the statement whose execution plan is to be explained
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>EXPLAIN QUERY PLAN <em>statement</em></strong></code>
 	 */
 	public static Explain explainQueryPlan(ExplicableStatement statement) {
@@ -35,7 +35,7 @@ public final class SqlStatements {
 	/**
 	 * Creates an <code>ALTER TABLE</code> statement stub for the specified target table.
 	 * @param tableName the name of the table to alter
-	 * @return the initial part of the <code>ALTER TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>ALTER TABLE</code> statement:<br>
 	 * <code><strong>ALTER TABLE <em>tableName</em></strong></code>
 	 */
 	public static AlterTable.Stub alterTable(CharSequence tableName) {
@@ -44,8 +44,9 @@ public final class SqlStatements {
 
 	/**
 	 * Creates an <code>ALTER TABLE</code> statement stub for the specified target table.
+	 * @param schemaName the name of the schema containing the target table
 	 * @param tableName the name of the table to alter
-	 * @return the initial part of the <code>ALTER TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>ALTER TABLE</code> statement:<br>
 	 * <code><strong>ALTER TABLE <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static AlterTable.Stub alterTable(CharSequence schemaName, CharSequence tableName) {
@@ -53,12 +54,12 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Creates an <code>ANALYZE</code> statement for the specified schema, table, or index.<br/>
+	 * Creates an <code>ANALYZE</code> statement for the specified schema, table, or index.<br>
 	 * If there is an ambiguity, use the qualified object name
-	 * ({@link #analyze(CharSequence, CharSequence)}).<br/>
+	 * ({@link #analyze(CharSequence, CharSequence)}).<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaOrTableOrIndex the name of the schema, table, or index to analyze
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>ANALYZE <em>schemaOrTableOrIndex</em></strong></code>
 	 */
 	public static Analyze analyze(CharSequence schemaOrTableOrIndex) {
@@ -66,11 +67,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Creates an <code>ANALYZE</code> statement for the specified schema, table, or index.<br/>
+	 * Creates an <code>ANALYZE</code> statement for the specified schema, table, or index.<br>
 	 * The result is a complete SQL statement.
 	 * @param schema the name of the schema containing the object to analyze
 	 * @param tableOrIndex the name of the table or index to analyze
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>ANALYZE <em>schema</em>.<em>tableOrIndex</em></strong></code>
 	 */
 	public static Analyze analyze(CharSequence schema, CharSequence tableOrIndex) {
@@ -80,7 +81,7 @@ public final class SqlStatements {
 	/**
 	 * Creates an <code>ATTACH</code> statement stub for the specified target database.
 	 * @param databaseFileName the name of the database file to attach
-	 * @return the initial part of the <code>ATTACH</code> statement:<br/>
+	 * @return the initial part of the <code>ATTACH</code> statement:<br>
 	 * <code><strong>ATTACH <em>databaseFileName</em></strong></code>
 	 */
 	public static Attach.Stub attach(String databaseFileName) {
@@ -91,7 +92,7 @@ public final class SqlStatements {
 	 * Creates an <code>ATTACH</code> statement stub for the specified target database.
 	 * @param databaseFileNameExpression the epression determining the name
 	 * of the database file to attach
-	 * @return the initial part of the <code>ATTACH</code> statement:<br/>
+	 * @return the initial part of the <code>ATTACH</code> statement:<br>
 	 * <code><strong>ATTACH <em>databaseFileNameExpression</em></strong></code>
 	 */
 	public static Attach.Stub attach(SqlExpression databaseFileNameExpression) {
@@ -99,7 +100,7 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code><strong>BEGIN TRANSACTION</strong></code> statement.<br/>
+	 * Returns the <code><strong>BEGIN TRANSACTION</strong></code> statement.<br>
 	 * This is a complete SQL statement.
 	 * @return the <code><strong>BEGIN TRANSACTION</strong></code> statement
 	 */
@@ -108,7 +109,7 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code><strong>BEGIN DEFERRED TRANSACTION</strong></code> statement.<br/>
+	 * Returns the <code><strong>BEGIN DEFERRED TRANSACTION</strong></code> statement.<br>
 	 * This is a complete SQL statement.
 	 * @return the <code><strong>BEGIN DEFERRED TRANSACTION</strong></code> statement
 	 */
@@ -117,7 +118,7 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code><strong>BEGIN IMMEDIATE TRANSACTION</strong></code> statement.<br/>
+	 * Returns the <code><strong>BEGIN IMMEDIATE TRANSACTION</strong></code> statement.<br>
 	 * This is a complete SQL statement.
 	 * @return the <code><strong>BEGIN IMMEDIATE TRANSACTION</strong></code> statement
 	 */
@@ -126,7 +127,7 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code><strong>BEGIN EXCLUSIVE TRANSACTION</strong></code> statement.<br/>
+	 * Returns the <code><strong>BEGIN EXCLUSIVE TRANSACTION</strong></code> statement.<br>
 	 * This is a complete SQL statement.
 	 * @return the <code><strong>BEGIN EXCLUSIVE TRANSACTION</strong></code> statement
 	 */
@@ -135,7 +136,7 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code><strong>COMMIT TRANSACTION</strong></code> statement.<br/>
+	 * Returns the <code><strong>COMMIT TRANSACTION</strong></code> statement.<br>
 	 * This is a complete SQL statement.
 	 * @return the <code><strong>COMMIT TRANSACTION</strong></code> statement
 	 */
@@ -182,7 +183,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TABLE</code> statement.
 	 * @param tableName the name of the table to create
-	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br>
 	 * <code><strong>CREATE TABLE <em>tableName</em></strong></code>
 	 */
 	public static CreateTable.Stub createTable(CharSequence tableName) {
@@ -193,7 +194,7 @@ public final class SqlStatements {
 	 * Returns the initial part of a <code>CREATE TABLE</code> statement.
 	 * @param schemaName the name of the schema to contain the new table
 	 * @param tableName the name of the table to create
-	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br>
 	 * <code><strong>CREATE TABLE <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static CreateTable.Stub createTable(CharSequence schemaName, CharSequence tableName) {
@@ -203,7 +204,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TABLE</code> statement.
 	 * @param tableName the name of the table to create
-	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br>
 	 * <code><strong>CREATE TABLE IF NOT EXISTS <em>tableName</em></strong></code>
 	 */
 	public static CreateTable.Stub createTableIfNotExists(CharSequence tableName) {
@@ -214,7 +215,7 @@ public final class SqlStatements {
 	 * Returns the initial part of a <code>CREATE TABLE</code> statement.
 	 * @param schemaName the name of the schema to contain the new table
 	 * @param tableName the name of the table to create
-	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br>
 	 * <code><strong>CREATE TABLE IF NOT EXISTS <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static CreateTable.Stub createTableIfNotExists(CharSequence schemaName, CharSequence tableName) {
@@ -224,7 +225,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TEMPORARY TABLE</code> statement.
 	 * @param tableName the name of the temporary table to create
-	 * @return the initial part of the <code>CREATE TEMPORARY TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TEMPORARY TABLE</code> statement:<br>
 	 * <code><strong>CREATE TEMPORARY TABLE <em>tableName</em></strong></code>
 	 */
 	public static CreateTable.Stub createTemporaryTable(CharSequence tableName) {
@@ -234,7 +235,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TEMPORARY TABLE</code> statement.
 	 * @param tableName the name of the temporary table to create
-	 * @return the initial part of the <code>CREATE TEMPORARY TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TEMPORARY TABLE</code> statement:<br>
 	 * <code><strong>CREATE TEMPORARY TABLE IF NOT EXISTS <em>tableName</em></strong></code>
 	 */
 	public static CreateTable.Stub createTemporaryTableIfNotExists(CharSequence tableName) {
@@ -244,7 +245,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TRIGGER</code> statement.
 	 * @param triggerName the name of the trigger to create
-	 * @return the initial part of the <code>CREATE TRIGGER</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TRIGGER</code> statement:<br>
 	 * <code><strong>CREATE TRIGGER <em>triggerName</em></strong></code>
 	 */
 	public static CreateTrigger.Stub createTrigger(CharSequence triggerName) {
@@ -254,7 +255,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TRIGGER</code> statement.
 	 * @param triggerName the name of the trigger to create
-	 * @return the initial part of the <code>CREATE TRIGGER</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TRIGGER</code> statement:<br>
 	 * <code><strong>CREATE TRIGGER IF NOT EXISTS <em>triggerName</em></strong></code>
 	 */
 	public static CreateTrigger.Stub createTriggerIfNotExists(CharSequence triggerName) {
@@ -265,7 +266,7 @@ public final class SqlStatements {
 	 * Returns the initial part of a <code>CREATE TRIGGER</code> statement.
 	 * @param schemaName the name of the schema to contain the new trigger
 	 * @param triggerName the name of the trigger to create
-	 * @return the initial part of the <code>CREATE TRIGGER</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TRIGGER</code> statement:<br>
 	 * <code><strong>CREATE TRIGGER <em>schemaName</em>.<em>triggerName</em></strong></code>
 	 */
 	public static CreateTrigger.Stub createTrigger(CharSequence schemaName, CharSequence triggerName) {
@@ -276,7 +277,7 @@ public final class SqlStatements {
 	 * Returns the initial part of a <code>CREATE TRIGGER</code> statement.
 	 * @param schemaName the name of the schema to contain the new trigger
 	 * @param triggerName the name of the trigger to create
-	 * @return the initial part of the <code>CREATE TRIGGER</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TRIGGER</code> statement:<br>
 	 * <code><strong>CREATE TRIGGER IF NOT EXISTS <em>schemaName</em>.<em>triggerName</em></strong></code>
 	 */
 	public static CreateTrigger.Stub createTriggerIfNotExists(CharSequence schemaName, CharSequence triggerName) {
@@ -286,7 +287,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TEMPORARY TRIGGER</code> statement.
 	 * @param triggerName the name of the trigger to create
-	 * @return the initial part of the <code>CREATE TEMPORARY TRIGGER</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TEMPORARY TRIGGER</code> statement:<br>
 	 * <code><strong>CREATE TEMPORARY TRIGGER <em>triggerName</em></strong></code>
 	 */
 	public static CreateTrigger.Stub createTemporaryTrigger(CharSequence triggerName) {
@@ -296,7 +297,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TEMPORARY TRIGGER</code> statement.
 	 * @param triggerName the name of the trigger to create
-	 * @return the initial part of the <code>CREATE TEMPORARY TRIGGER</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TEMPORARY TRIGGER</code> statement:<br>
 	 * <code><strong>CREATE TEMPORARY TRIGGER IF NOT EXISTS <em>triggerName</em></strong></code>
 	 */
 	public static CreateTrigger.Stub createTemporaryTriggerIfNotExists(CharSequence triggerName) {
@@ -306,7 +307,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE VIEW</code> statement.
 	 * @param viewName the name of the view to create
-	 * @return the initial part of the <code>CREATE VIEW</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE VIEW</code> statement:<br>
 	 * <code><strong>CREATE VIEW <em>viewName</em></strong></code>
 	 */
 	public static CreateView.Stub createView(CharSequence viewName) {
@@ -316,7 +317,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE VIEW</code> statement.
 	 * @param viewName the name of the view to create
-	 * @return the initial part of the <code>CREATE VIEW</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE VIEW</code> statement:<br>
 	 * <code><strong>CREATE VIEW IF NOT EXISTS <em>viewName</em></strong></code>
 	 */
 	public static CreateView.Stub createViewIfNotExists(CharSequence viewName) {
@@ -327,7 +328,7 @@ public final class SqlStatements {
 	 * Returns the initial part of a <code>CREATE VIEW</code> statement.
 	 * @param schemaName the name of the schema to contain the new view
 	 * @param viewName the name of the view to create
-	 * @return the initial part of the <code>CREATE VIEW</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE VIEW</code> statement:<br>
 	 * <code><strong>CREATE VIEW <em>schemaName</em>.<em>viewName</em></strong></code>
 	 */
 	public static CreateView.Stub createView(CharSequence schemaName, CharSequence viewName) {
@@ -338,7 +339,7 @@ public final class SqlStatements {
 	 * Returns the initial part of a <code>CREATE VIEW</code> statement.
 	 * @param schemaName the name of the schema to contain the new view
 	 * @param viewName the name of the view to create
-	 * @return the initial part of the <code>CREATE VIEW</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE VIEW</code> statement:<br>
 	 * <code><strong>CREATE VIEW IF NOT EXISTS <em>schemaName</em>.<em>viewName</em></strong></code>
 	 */
 	public static CreateView.Stub createViewIfNotExists(CharSequence schemaName, CharSequence viewName) {
@@ -348,7 +349,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TEMPORARY VIEW</code> statement.
 	 * @param viewName the name of the view to create
-	 * @return the initial part of the <code>CREATE TEMPORARY VIEW</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TEMPORARY VIEW</code> statement:<br>
 	 * <code><strong>CREATE TEMPORARY VIEW <em>viewName</em></strong></code>
 	 */
 	public static CreateView.Stub createTemporaryView(CharSequence viewName) {
@@ -358,7 +359,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE TEMPORARY VIEW</code> statement.
 	 * @param viewName the name of the view to create
-	 * @return the initial part of the <code>CREATE TEMPORARY VIEW</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE TEMPORARY VIEW</code> statement:<br>
 	 * <code><strong>CREATE TEMPORARY VIEW IF NOT EXISTS <em>viewName</em></strong></code>
 	 */
 	public static CreateView.Stub createTemporaryViewIfNotExists(CharSequence viewName) {
@@ -368,7 +369,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE VIRTUAL TABLE</code> statement.
 	 * @param tableName the name of the virtual table to create
-	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
 	 * <code><strong>CREATE VIRTUAL TABLE <em>tableName</em></strong></code>
 	 */
 	public static CreateVirtualTable.Stub createVirtualTable(CharSequence tableName) {
@@ -379,7 +380,7 @@ public final class SqlStatements {
 	 * Returns the initial part of a <code>CREATE VIRTUAL TABLE</code> statement.
 	 * @param schemaName the name of the schema to contain the new virtual table
 	 * @param tableName the name of the virtual table to create
-	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
 	 * <code><strong>CREATE VIRTUAL TABLE <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static CreateVirtualTable.Stub createVirtualTable(CharSequence schemaName, CharSequence tableName) {
@@ -389,7 +390,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>CREATE VIRTUAL TABLE</code> statement.
 	 * @param tableName the name of the virtual table to create
-	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
 	 * <code><strong>CREATE VIRTUAL TABLE IF NOT EXISTS <em>tableName</em></strong></code>
 	 */
 	public static CreateVirtualTable.Stub createVirtualTableIfNotExists(CharSequence tableName) {
@@ -400,7 +401,7 @@ public final class SqlStatements {
 	 * Returns the initial part of a <code>CREATE VIRTUAL TABLE</code> statement.
 	 * @param schemaName the name of the schema to contain the new virtual table
 	 * @param tableName the name of the virtual table to create
-	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br/>
+	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
 	 * <code><strong>CREATE VIRTUAL TABLE IF NOT EXISTS <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static CreateVirtualTable.Stub createVirtualTableIfNotExists(
@@ -410,10 +411,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the basic form of <code>DELETE</code> statement clearing the table contents.<br/>
+	 * Returns the basic form of <code>DELETE</code> statement clearing the table contents.<br>
 	 * The result is a complete SQL statement.
 	 * @param tableName the name of the table to perform deletion from
-	 * @return the minimal form of <code>DELETE</code> statement:<br/>
+	 * @return the minimal form of <code>DELETE</code> statement:<br>
 	 * <code><strong>DELETE FROM <em>tableName</em></strong></code>
 	 */
 	public static Delete.All deleteFrom(CharSequence tableName) {
@@ -421,11 +422,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the basic form of <code>DELETE</code> statement clearing the table contents.<br/>
+	 * Returns the basic form of <code>DELETE</code> statement clearing the table contents.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema containing the target table
 	 * @param tableName the name of the table to perform deletion from
-	 * @return the minimal form of <code>DELETE</code> statement:<br/>
+	 * @return the minimal form of <code>DELETE</code> statement:<br>
 	 * <code><strong>DELETE FROM <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Delete.All deleteFrom(CharSequence schemaName, CharSequence tableName) {
@@ -435,7 +436,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT INTO <em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertInto(CharSequence tableName) {
@@ -446,7 +447,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT INTO <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertInto(CharSequence schemaName, CharSequence tableName) {
@@ -456,7 +457,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of a <code>REPLACE</code> statement.
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>REPLACE</code> statement:<br/>
+	 * @return the initial part of the <code>REPLACE</code> statement:<br>
 	 * <code><strong>REPLACE INTO <em>tableName</em></strong></code>
 	 */
 	public static Insert.Into replaceInto(CharSequence tableName) {
@@ -467,7 +468,7 @@ public final class SqlStatements {
 	 * Returns the initial part of a <code>REPLACE</code> statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>REPLACE</code> statement:<br/>
+	 * @return the initial part of the <code>REPLACE</code> statement:<br>
 	 * <code><strong>REPLACE INTO <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Insert.Into replaceInto(CharSequence schemaName, CharSequence tableName) {
@@ -477,7 +478,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR REPLACE INTO <em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrReplaceInto(CharSequence tableName) {
@@ -488,7 +489,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR REPLACE INTO <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrReplaceInto(CharSequence schemaName, CharSequence tableName) {
@@ -498,7 +499,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR ABORT INTO <em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrAbortInto(CharSequence tableName) {
@@ -509,7 +510,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR ABORT INTO <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrAbortInto(CharSequence schemaName, CharSequence tableName) {
@@ -519,7 +520,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR ROLLBACK INTO <em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrRollbackInto(CharSequence tableName) {
@@ -530,7 +531,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR ROLLBACK INTO <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrRollbackInto(CharSequence schemaName, CharSequence tableName) {
@@ -540,7 +541,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR FAIL INTO <em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrFailInto(CharSequence tableName) {
@@ -551,7 +552,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR FAIL INTO <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrFailInto(CharSequence schemaName, CharSequence tableName) {
@@ -561,7 +562,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR IGNORE INTO <em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrIgnoreInto(CharSequence tableName) {
@@ -572,7 +573,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to perform insertion into
-	 * @return the initial part of the <code>INSERT</code> statement:<br/>
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR IGNORE INTO <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Insert.Into insertOrIgnoreInto(CharSequence schemaName, CharSequence tableName) {
@@ -582,7 +583,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub update(CharSequence tableName) {
@@ -593,7 +594,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub update(CharSequence schemaName, CharSequence tableName) {
@@ -603,7 +604,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR ABORT <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrAbort(CharSequence tableName) {
@@ -614,7 +615,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR ABORT <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrAbort(CharSequence schemaName, CharSequence tableName) {
@@ -624,7 +625,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR FAIL <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrFail(CharSequence tableName) {
@@ -635,7 +636,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR FAIL <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrFail(CharSequence schemaName, CharSequence tableName) {
@@ -645,7 +646,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR IGNORE <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrIgnore(CharSequence tableName) {
@@ -656,7 +657,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR IGNORE <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrIgnore(CharSequence schemaName, CharSequence tableName) {
@@ -666,7 +667,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR REPLACE<em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrReplace(CharSequence tableName) {
@@ -677,7 +678,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR REPLACE<em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrReplace(CharSequence schemaName, CharSequence tableName) {
@@ -687,7 +688,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR ROLLBACK <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrRollback(CharSequence tableName) {
@@ -698,7 +699,7 @@ public final class SqlStatements {
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
-	 * @return the initial part of the <code>UPDATE</code> statement:<br/>
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
 	 * <code><strong>UPDATE OR ROLLBACK <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrRollback(CharSequence schemaName, CharSequence tableName) {
@@ -706,10 +707,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DETACH</code> statement for the specified database.<br/>
+	 * Returns the <code>DETACH</code> statement for the specified database.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema (database) to detach
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DETACH <em>schemaName</em></strong></code>
 	 */
 	public static Detach detach(CharSequence schemaName) {
@@ -717,10 +718,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP INDEX</code> statement for the specified index.<br/>
+	 * Returns the <code>DROP INDEX</code> statement for the specified index.<br>
 	 * The result is a complete SQL statement.
 	 * @param indexName the name of the index to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP INDEX <em>indexName</em></strong></code>
 	 */
 	public static Drop.Index dropIndex(CharSequence indexName) {
@@ -728,11 +729,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP INDEX</code> statement for the specified index.<br/>
+	 * Returns the <code>DROP INDEX</code> statement for the specified index.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema containing the index
 	 * @param indexName the name of the index to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP INDEX <em>schemaName</em>.<em>indexName</em></strong></code>
 	 */
 	public static Drop.Index dropIndex(CharSequence schemaName, CharSequence indexName) {
@@ -740,10 +741,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP INDEX</code> statement for the specified index.<br/>
+	 * Returns the <code>DROP INDEX</code> statement for the specified index.<br>
 	 * The result is a complete SQL statement.
 	 * @param indexName the name of the index to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP INDEX IF EXISTS <em>indexName</em></strong></code>
 	 */
 	public static Drop.Index dropIndexIfExists(CharSequence indexName) {
@@ -751,11 +752,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP INDEX</code> statement for the specified index.<br/>
+	 * Returns the <code>DROP INDEX</code> statement for the specified index.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema containing the index
 	 * @param indexName the name of the index to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP INDEX IF EXISTS <em>schemaName</em>.<em>indexName</em></strong></code>
 	 */
 	public static Drop.Index dropIndexIfExists(CharSequence schemaName, CharSequence indexName) {
@@ -763,10 +764,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br/>
+	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br>
 	 * The result is a complete SQL statement.
 	 * @param tableName the name of the table to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP TABLE <em>tableName</em></strong></code>
 	 */
 	public static Drop.Table dropTable(CharSequence tableName) {
@@ -774,11 +775,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br/>
+	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP TABLE <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Drop.Table dropTable(CharSequence schemaName, CharSequence tableName) {
@@ -786,10 +787,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br/>
+	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br>
 	 * The result is a complete SQL statement.
 	 * @param tableName the name of the table to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP TABLE IF EXISTS <em>tableName</em></strong></code>
 	 */
 	public static Drop.Table dropTableIfExists(CharSequence tableName) {
@@ -797,11 +798,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br/>
+	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP TABLE IF EXISTS <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Drop.Table dropTableIfExists(CharSequence schemaName, CharSequence tableName) {
@@ -809,10 +810,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP TRIGGER</code> statement for the specified trigger.<br/>
+	 * Returns the <code>DROP TRIGGER</code> statement for the specified trigger.<br>
 	 * The result is a complete SQL statement.
 	 * @param triggerName the name of the trigger to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP TRIGGER <em>triggerName</em></strong></code>
 	 */
 	public static Drop.Trigger dropTrigger(CharSequence triggerName) {
@@ -820,11 +821,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP TRIGGER</code> statement for the specified trigger.<br/>
+	 * Returns the <code>DROP TRIGGER</code> statement for the specified trigger.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema containing the trigger
 	 * @param triggerName the name of the trigger to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP TRIGGER <em>schemaName</em>.<em>triggerName</em></strong></code>
 	 */
 	public static Drop.Trigger dropTrigger(CharSequence schemaName, CharSequence triggerName) {
@@ -832,10 +833,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP TRIGGER</code> statement for the specified trigger.<br/>
+	 * Returns the <code>DROP TRIGGER</code> statement for the specified trigger.<br>
 	 * The result is a complete SQL statement.
 	 * @param triggerName the name of the trigger to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP TRIGGER IF EXISTS <em>triggerName</em></strong></code>
 	 */
 	public static Drop.Trigger dropTriggerIfExists(CharSequence triggerName) {
@@ -843,11 +844,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP TRIGGER</code> statement for the specified trigger.<br/>
+	 * Returns the <code>DROP TRIGGER</code> statement for the specified trigger.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema containing the trigger
 	 * @param triggerName the name of the trigger to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP TRIGGER IF EXISTS <em>schemaName</em>.<em>triggerName</em></strong></code>
 	 */
 	public static Drop.Trigger dropTriggerIfExists(CharSequence schemaName, CharSequence triggerName) {
@@ -855,10 +856,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP VIEW</code> statement for the specified view.<br/>
+	 * Returns the <code>DROP VIEW</code> statement for the specified view.<br>
 	 * The result is a complete SQL statement.
 	 * @param viewName the name of the view to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP VIEW <em>viewName</em></strong></code>
 	 */
 	public static Drop.View dropView(CharSequence viewName) {
@@ -866,11 +867,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP VIEW</code> statement for the specified view.<br/>
+	 * Returns the <code>DROP VIEW</code> statement for the specified view.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema containing the view
 	 * @param viewName the name of the view to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP VIEW <em>schemaName</em>.<em>viewName</em></strong></code>
 	 */
 	public static Drop.View dropView(CharSequence schemaName, CharSequence viewName) {
@@ -878,10 +879,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP VIEW</code> statement for the specified view.<br/>
+	 * Returns the <code>DROP VIEW</code> statement for the specified view.<br>
 	 * The result is a complete SQL statement.
 	 * @param viewName the name of the view to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP VIEW IF EXISTS <em>viewName</em></strong></code>
 	 */
 	public static Drop.View dropViewIfExists(CharSequence viewName) {
@@ -889,11 +890,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>DROP VIEW</code> statement for the specified view.<br/>
+	 * Returns the <code>DROP VIEW</code> statement for the specified view.<br>
 	 * The result is a complete SQL statement.
 	 * @param schemaName the name of the schema containing the view
 	 * @param viewName the name of the view to drop
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>DROP VIEW IF EXISTS <em>schemaName</em>.<em>viewName</em></strong></code>
 	 */
 	public static Drop.View dropViewIfExists(CharSequence schemaName, CharSequence viewName) {
@@ -901,7 +902,7 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code><strong>REINDEX</strong></code> statement to reindex all the attached databases.<br/>
+	 * Returns the <code><strong>REINDEX</strong></code> statement to reindex all the attached databases.<br>
 	 * The result is a complete statement.
 	 * @return the <code><strong>REINDEX</strong></code> statement
 	 *
@@ -911,9 +912,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>REINDEX</code> statement for the specific collation sequence.<br/>
+	 * Returns the <code>REINDEX</code> statement for the specific collation sequence.<br>
 	 * The result is a complete statement.
-	 * @return the statement having the form<br/>
+	 * @param collation the collation sequence used to determine which indices need to be updated
+	 * @return the statement having the form<br>
 	 * <code><strong>REINDEX <em>collation</em></strong></code>
 	 */
 	public static Reindex reindex(Collation collation) {
@@ -921,10 +923,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>REINDEX</code> statement for the specific table or index.<br/>
+	 * Returns the <code>REINDEX</code> statement for the specific table or index.<br>
 	 * The result is a complete statement.
 	 * @param tableOrIndexName the name of the target table or index
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>REINDEX <em>tableOrIndexName</em></strong></code>
 	 */
 	public static Reindex reindex(CharSequence tableOrIndexName) {
@@ -932,11 +934,11 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>REINDEX</code> statement for the specific table or index.<br/>
+	 * Returns the <code>REINDEX</code> statement for the specific table or index.<br>
 	 * The result is a complete statement.
 	 * @param schemaName the name of the database containing the table or the index
 	 * @param tableOrIndexName the name of the target table or index
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>REINDEX <em>schemaName</em>.<em>tableOrIndexName</em></strong></code>
 	 */
 	public static Reindex reindex(CharSequence schemaName, CharSequence tableOrIndexName) {
@@ -944,10 +946,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>RELEASE</code> statement releasing the specified savepoint.<br/>
+	 * Returns the <code>RELEASE</code> statement releasing the specified savepoint.<br>
 	 * The result is a complete statement.
 	 * @param savepointName the name of the savepoint to release
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>RELEASE <em>savepointName</em></strong></code>
 	 */
 	public static ReleaseSavepoint releaseSavepoint(CharSequence savepointName) {
@@ -955,7 +957,7 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code><strong>ROLLBACK TRANSACTION</strong></code> statement.<br/>
+	 * Returns the <code><strong>ROLLBACK TRANSACTION</strong></code> statement.<br>
 	 * The result is a complete statement.
 	 * @return the <code><strong>ROLLBACK TRANSACTION</strong></code> statement
 	 */
@@ -964,10 +966,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>ROLLBACK TRANSACTION</code> statement for the specified savepoint.<br/>
+	 * Returns the <code>ROLLBACK TRANSACTION</code> statement for the specified savepoint.<br>
 	 * The result is a complete statement.
 	 * @param savepointName the name of the savepoint to rollback to
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>ROLLBACK TRANSACTION TO SAVEPOINT <em>savepointName</em></strong></code>
 	 */
 	public static RollbackTransaction rollbackTransactionToSavepoint(CharSequence savepointName) {
@@ -975,10 +977,10 @@ public final class SqlStatements {
 	}
 
 	/**
-	 * Returns the <code>SAVEPOINT</code> statement creating a savepoint with the specified name.<br/>
+	 * Returns the <code>SAVEPOINT</code> statement creating a savepoint with the specified name.<br>
 	 * The result is a complete statement.
 	 * @param savepointName the name of the new savepoint
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>SAVEPOINT <em>savepointName</em></strong></code>
 	 */
 	public static Savepoint savepoint(CharSequence savepointName) {
@@ -987,7 +989,7 @@ public final class SqlStatements {
 
 	/**
 	 * Returns the <code><strong>VACUUM</strong></code> statement executing the vacuuming operation on
-	 * all the attached databases.<br/>
+	 * all the attached databases.<br>
 	 * The result is a complete statement.
 	 * @return the <code><strong>VACUUM</strong></code> statement
 	 */
@@ -997,10 +999,10 @@ public final class SqlStatements {
 
 	/**
 	 * Returns the <code>VACUUM</code> statement executing the vacuuming operation on the specified
-	 * database.<br/>
+	 * database.<br>
 	 * The result is a complete statement.
 	 * @param schemaName the name of the database (schema) to perform vacuuming of
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>VACUUM <em>schemaName</em></strong></code>
 	 */
 	public static Vacuum vacuum(CharSequence schemaName) {
@@ -1010,7 +1012,7 @@ public final class SqlStatements {
 	/**
 	 * Returns the <code>PRAGMA</code> statement with specified command name and no argument.
 	 * @param pragmaName the name of the <code>PRAGMA</code> command
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>PRAGMA <em>pragmaName</em></strong></code>
 	 */
 	public static Pragma pragma(String pragmaName) {
@@ -1022,7 +1024,7 @@ public final class SqlStatements {
 	 * without an argument.
 	 * @param schemaName the name of the target database (schema)
 	 * @param pragmaName the name of the <code>PRAGMA</code> command
-	 * @return the statement having the form<br/>
+	 * @return the statement having the form<br>
 	 * <code><strong>PRAGMA <em>schemaName</em>.<em>pragmaName</em></strong></code>
 	 */
 	public static Pragma pragma(CharSequence schemaName, String pragmaName) {

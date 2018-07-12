@@ -72,7 +72,7 @@ public final class SqlExpressions {
 	 * @param schemaName the table schema name
 	 * @param tableName the table name
 	 * @param columnName the referenced column
-	 * @return the expression having the form<br/>
+	 * @return the expression having the form<br>
 	 * <code><strong><em>schemaName</em>.<em>tableName</em>.<em>columnName</em></strong></code>
 	 */
 	public static SqlExpression column(CharSequence schemaName, CharSequence tableName, CharSequence columnName) {
@@ -83,7 +83,7 @@ public final class SqlExpressions {
 	 * Returns the expression referring to a column of a source table.
 	 * @param tableName the table name
 	 * @param columnName the referenced column
-	 * @return the expression having the form<br/>
+	 * @return the expression having the form<br>
 	 * <code><strong><em>tableName</em>.<em>columnName</em></strong></code>
 	 */
 	public static SqlExpression column(CharSequence tableName, CharSequence columnName) {
@@ -245,7 +245,7 @@ public final class SqlExpressions {
 	}
 
 	/**
-	 * Returns an expression having the form<br/>
+	 * Returns an expression having the form<br>
 	 * <code><strong>EXISTS (<em>selectStatement</em>)</strong></code>.
 	 * @param selectStatement the <code>SELECT</code> (or <code>VALUES</code>) statement whose result
 	 * is to be checked for emptiness
@@ -256,7 +256,7 @@ public final class SqlExpressions {
 	}
 
 	/**
-	 * Returns an expression having the form<br/>
+	 * Returns an expression having the form<br>
 	 * <code><strong>NOT EXISTS (<em>selectStatement</em>)</strong></code>.
 	 * @param selectStatement the <code>SELECT</code> (or <code>VALUES</code>) statement whose result
 	 * is to be checked for emptiness
@@ -286,7 +286,7 @@ public final class SqlExpressions {
 	}
 
 	/**
-	 * Returns the <code>CAST</code> expression having the form<br/>
+	 * Returns the <code>CAST</code> expression having the form<br>
 	 * <code><strong>CAST (<em>expression</em> AS <em>type</em>)</strong></code>.
 	 * @param expression the expression to cast explicitly
 	 * @param type the type to cast to

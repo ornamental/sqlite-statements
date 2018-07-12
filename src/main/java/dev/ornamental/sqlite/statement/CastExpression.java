@@ -1,9 +1,9 @@
 package dev.ornamental.sqlite.statement;
 
 /**
- * Represents an SQL expression having the form<br/>
+ * Represents an SQL expression having the form<br>
  * <code><strong>CAST (<em>expression</em> AS <em>type</em>)</strong></code>
- * explicitly casting the given expression to the given type.<br/>
+ * explicitly casting the given expression to the given type.<br>
  * This is a complete SQL expression.
  */
 public final class CastExpression implements SqlExpression {

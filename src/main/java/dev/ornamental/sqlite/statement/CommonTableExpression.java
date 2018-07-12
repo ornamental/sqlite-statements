@@ -39,13 +39,13 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	/**
 	 * Defines the values to select. You may use {@link SqlExpression} instances as well
 	 * as instances returned by {@link ResultElements#all()} and {@link ResultElements#allOf(CharSequence)}
-	 * methods.<br/>
+	 * methods.<br>
 	 * The result is a complete SQL statement (expression) as long as the selected values do not
 	 * refer to an unspecified table (in which case a <code>FROM</code> clause will have to be specified).
 	 * @param columns the definitions of columns to include in the <code>SELECT</code> clause
-	 * @return the <code>SELECT</code> statement having the form<br/>
+	 * @return the <code>SELECT</code> statement having the form<br>
 	 * <code><strong>WITH <em>cte</em> SELECT <em>resultColumn<sub>0</sub></em>
-	 * {, <em>resultColumn<sub>i</sub></em>}</strong></code><br/>
+	 * {, <em>resultColumn<sub>i</sub></em>}</strong></code><br>
 	 * where <code><em>resultColumn<sub>i</sub></em></code> is either an expression,
 	 * or an asterisk with optional table name qualifier (<code><strong>[<em>tableName</em>.]*</strong></code>)
 	 * and <code><em>cte</em></code> is this common table expression
@@ -55,7 +55,18 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	}
 
 	/**
-	 * @see #select(ResultElement...)
+	 * Defines the values to select. You may use {@link SqlExpression} instances as well
+	 * as instances returned by {@link ResultElements#all()} and {@link ResultElements#allOf(CharSequence)}
+	 * methods.<br>
+	 * The result is a complete SQL statement (expression) as long as the selected values do not
+	 * refer to an unspecified table (in which case a <code>FROM</code> clause will have to be specified).
+	 * @param columns the definitions of columns to include in the <code>SELECT</code> clause
+	 * @return the <code>SELECT</code> statement having the form<br>
+	 * <code><strong>WITH <em>cte</em> SELECT <em>resultColumn<sub>0</sub></em>
+	 * {, <em>resultColumn<sub>i</sub></em>}</strong></code><br>
+	 * where <code><em>resultColumn<sub>i</sub></em></code> is either an expression,
+	 * or an asterisk with optional table name qualifier (<code><strong>[<em>tableName</em>.]*</strong></code>)
+	 * and <code><em>cte</em></code> is this common table expression
 	 */
 	public Select.NoSource select(Iterable<? extends ResultElement> columns) {
 		return new Select.NoSource(this, false, columns);
@@ -64,13 +75,13 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	/**
 	 * Defines the values to select with result row deduplication. You may use {@link SqlExpression}
 	 * instances as well as instances returned by {@link ResultElements#all()} and
-	 * {@link ResultElements#allOf(CharSequence)} methods.<br/>
+	 * {@link ResultElements#allOf(CharSequence)} methods.<br>
 	 * The result is a complete SQL statement (expression) as long as the selected values do not
 	 * refer to an unspecified table (in which case a <code>FROM</code> clause will have to be specified).
 	 * @param columns the definitions of columns to include in the <code>SELECT</code> clause
-	 * @return the <code>SELECT</code> statement having the form<br/>
+	 * @return the <code>SELECT</code> statement having the form<br>
 	 * <code><strong>WITH <em>cte</em> SELECT DISCTINCT <em>resultColumn<sub>0</sub></em>
-	 * {, <em>resultColumn<sub>i</sub></em>}</strong></code><br/>
+	 * {, <em>resultColumn<sub>i</sub></em>}</strong></code><br>
 	 * where <code><em>resultColumn<sub>i</sub></em></code> is either an expression,
 	 * or an asterisk with optional table name qualifier (<code><strong>[<em>tableName</em>.]*</strong></code>)
 	 * and <code><em>cte</em></code> is this common table expression
@@ -80,7 +91,18 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	}
 
 	/**
-	 * @see #selectDistinct(ResultElement...)
+	 * Defines the values to select with result row deduplication. You may use {@link SqlExpression}
+	 * instances as well as instances returned by {@link ResultElements#all()} and
+	 * {@link ResultElements#allOf(CharSequence)} methods.<br>
+	 * The result is a complete SQL statement (expression) as long as the selected values do not
+	 * refer to an unspecified table (in which case a <code>FROM</code> clause will have to be specified).
+	 * @param columns the definitions of columns to include in the <code>SELECT</code> clause
+	 * @return the <code>SELECT</code> statement having the form<br>
+	 * <code><strong>WITH <em>cte</em> SELECT DISCTINCT <em>resultColumn<sub>0</sub></em>
+	 * {, <em>resultColumn<sub>i</sub></em>}</strong></code><br>
+	 * where <code><em>resultColumn<sub>i</sub></em></code> is either an expression,
+	 * or an asterisk with optional table name qualifier (<code><strong>[<em>tableName</em>.]*</strong></code>)
+	 * and <code><em>cte</em></code> is this common table expression
 	 */
 	public Select.NoSource selectDistinct(Iterable<? extends ResultElement> columns) {
 		return new Select.NoSource(this, true, columns);
@@ -88,13 +110,13 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns the simplest <code>DELETE</code> statement preceded by this common table expression,
-	 * namely<br/>
+	 * namely<br>
 	 * <code><strong>WITH <em>cte</em> DELETE FROM <em>tableName</em></strong></code>. Though in such
 	 * a statement the <code>WITH</code> clause is useless, it may serve as a base for more complex
 	 * filtered and/or limited <code>DELETE</code> statement.
 	 * @param tableName the name of the table to delete rows from
-	 * @return the <code>DELETE</code> statement having the form<br/>
-	 * <code><strong>WITH <em>cte</em> DELETE FROM <em>tableName</em></strong></code><br/>
+	 * @return the <code>DELETE</code> statement having the form<br>
+	 * <code><strong>WITH <em>cte</em> DELETE FROM <em>tableName</em></strong></code><br>
 	 * where <code><em>cte</em></code> is this common table expression
 	 */
 	public Delete.All deleteFrom(CharSequence tableName) {
@@ -103,14 +125,14 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns the simplest <code>DELETE</code> statement preceded by this common table expression,
-	 * namely<br/>
+	 * namely<br>
 	 * <code><strong>WITH <em>cte</em> DELETE FROM <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * Though in such a statement the <code>WITH</code> clause is useless, it may serve as a base for more
 	 * complex filtered and/or limited <code>DELETE</code> statement.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to delete rows from
-	 * @return the <code>DELETE</code> statement having the form<br/>
-	 * <code><strong>WITH <em>cte</em> DELETE FROM <em>schemaName</em>.<em>tableName</em></strong></code><br/>
+	 * @return the <code>DELETE</code> statement having the form<br>
+	 * <code><strong>WITH <em>cte</em> DELETE FROM <em>schemaName</em>.<em>tableName</em></strong></code><br>
 	 * where <code><em>cte</em></code> is this common table expression
 	 */
 	public Delete.All deleteFrom(CharSequence schemaName, CharSequence tableName) {
@@ -119,7 +141,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT INTO <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to insert rows into
 	 * @return the <code>INSERT</code> statement stub  using this common table expression
@@ -130,7 +152,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT INTO <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to insert rows into
@@ -142,7 +164,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns a <code>REPLACE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> REPLACE INTO <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to replace rows in
 	 * @return the <code>REPLACE</code> statement stub  using this common table expression
@@ -153,7 +175,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns a <code>REPLACE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> REPLACE INTO <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to replace rows in
@@ -165,7 +187,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR REPLACE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR REPLACE INTO <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to insert rows into
 	 * @return the <code>INSERT OR REPLACE</code> statement stub  using this common table expression
@@ -176,7 +198,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR REPLACE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR REPLACE INTO <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to insert rows into
@@ -188,7 +210,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR ABORT</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR ABORT INTO <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to insert rows into
 	 * @return the <code>INSERT OR ABORT</code> statement stub  using this common table expression
@@ -199,7 +221,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR ABORT</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR ABORT INTO <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to insert rows into
@@ -211,7 +233,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR ROLLBACK</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR ROLLBACK INTO <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to insert rows into
 	 * @return the <code>INSERT OR ROLLBACK</code> statement stub  using this common table expression
@@ -222,7 +244,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR ROLLBACK</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR ROLLBACK INTO <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to insert rows into
@@ -234,7 +256,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR FAIL</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR FAIL INTO <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to insert rows into
 	 * @return the <code>INSERT OR FAIL</code> statement stub  using this common table expression
@@ -245,7 +267,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR FAIL</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR FAIL INTO <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to insert rows into
@@ -257,7 +279,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR IGNORE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR IGNORE INTO <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to insert rows into
 	 * @return the <code>INSERT OR IGNORE</code> statement stub  using this common table expression
@@ -268,7 +290,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>INSERT OR IGNORE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR IGNORE INTO <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to insert rows into
@@ -280,7 +302,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to update rows in
 	 * @return the <code>UPDATE</code> statement stub  using this common table expression
@@ -291,7 +313,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to update rows in
@@ -303,7 +325,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR ABORT</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR ABORT <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to update rows in
 	 * @return the <code>UPDATE OR ABORT</code> statement stub  using this common table expression
@@ -314,7 +336,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR ABORT</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR ABORT <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to update rows in
@@ -326,7 +348,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR FAIL</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR FAIL <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to update rows in
 	 * @return the <code>UPDATE OR FAIL</code> statement stub  using this common table expression
@@ -337,7 +359,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR FAIL</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR FAIL <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to update rows in
@@ -349,7 +371,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR IGNORE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR IGNORE <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to update rows in
 	 * @return the <code>UPDATE OR IGNORE</code> statement stub  using this common table expression
@@ -360,7 +382,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR IGNORE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR IGNORE <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to update rows in
@@ -372,7 +394,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR REPLACE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR REPLACE <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to update rows in
 	 * @return the <code>UPDATE OR REPLACE</code> statement stub  using this common table expression
@@ -383,7 +405,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR REPLACE</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR REPLACE <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to update rows in
@@ -395,7 +417,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR ROLLBACK</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR ROLLBACK <em>tableName</em></strong></code>.
 	 * @param tableName the name of the table to update rows in
 	 * @return the <code>UPDATE OR ROLLBACK</code> statement stub  using this common table expression
@@ -406,7 +428,7 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 
 	/**
 	 * Returns an <code>UPDATE OR ROLLBACK</code> statement stub using this common table expression.
-	 * It corresponds to the following part of the statement:<br/>
+	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR ROLLBACK <em>schemaName</em>.<em>tableName</em></strong></code>.
 	 * @param schemaName the name of the schema containing the table
 	 * @param tableName the name of the table to update rows in

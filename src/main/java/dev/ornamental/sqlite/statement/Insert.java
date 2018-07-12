@@ -12,8 +12,8 @@ import java.util.List;
 public final class Insert {
 
 	/**
-	 * Represents the initial stage of construction of an <code>INSERT</code> statement, namely the part<br/>
-	 * <code><strong>[WITH <em>cte</em>] INSERT [OR REPLACE|ABORT|FAIL|ROLLBACK|IGNORE]</strong></code><br/>
+	 * Represents the initial stage of construction of an <code>INSERT</code> statement, namely the part<br>
+	 * <code><strong>[WITH <em>cte</em>] INSERT [OR REPLACE|ABORT|FAIL|ROLLBACK|IGNORE]</strong></code><br>
 	 * (or <code><strong>[WITH <em>cte</em>] REPLACE</strong></code>
 	 * which is the same as <code>[WITH <em>cte</em>] INSERT OR REPLACE</code>).
 	 */
@@ -53,7 +53,7 @@ public final class Insert {
 		/**
 		 * Complements the <code>INSERT</code> statement stub with a
 		 * <code>DEFAULT VALUES</code> clause: the inserted values will be the corresponding
-		 * columns' defaults.<br/>
+		 * columns' defaults.<br>
 		 * The result is a complete SQL statement.
 		 * @return the <code>INSERT</code> statement for inserting the default values into the target table
 		 */
@@ -64,7 +64,7 @@ public final class Insert {
 		/**
 		 * Complements the <code>INSERT</code> statement stub with a
 		 * <code>SELECT</code> or <code>VALUES</code> clause: the inserted values will be taken
-		 * from the result of a <code>SELECT</code> (or a <code>VALUES</code>) statement.<br/>
+		 * from the result of a <code>SELECT</code> (or a <code>VALUES</code>) statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param selectStatement the <code>SELECT</code> (or <code>VALUES</code>) statement
 		 * being the source of the rows to insert
@@ -86,7 +86,7 @@ public final class Insert {
 
 		/**
 		 * Complements the <code>INSERT</code> statement stub with a <code>VALUES</code> clause
-		 * with explicitly specified rows to insert.<br/>
+		 * with explicitly specified rows to insert.<br>
 		 * The result is a complete SQL statement
 		 * @param rows the rows to insert into the table
 		 * @return the <code>INSERT .. VALUES</code> statement
@@ -97,7 +97,7 @@ public final class Insert {
 
 		/**
 		 * Complements the <code>INSERT</code> statement stub with a <code>VALUES</code> clause
-		 * with explicitly specified rows to insert.<br/>
+		 * with explicitly specified rows to insert.<br>
 		 * The result is a complete SQL statement
 		 * @param rows the rows to insert into the table
 		 * @return the <code>INSERT .. VALUES</code> statement
@@ -310,7 +310,7 @@ public final class Insert {
 	public interface ValuesList {
 
 		/**
-		 * Adds a new value tuple to the <code>VALUES</code> clause of the <code>INSERT</code> statement.<br/>
+		 * Adds a new value tuple to the <code>VALUES</code> clause of the <code>INSERT</code> statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param row the expressions used to evaluate the values for insertion
 		 * @return the <code>INSERT .. VALUES</code> statement having the specified
@@ -321,7 +321,7 @@ public final class Insert {
 		}
 
 		/**
-		 * Adds a new value tuple to the <code>VALUES</code> clause of the <code>INSERT</code> statement.<br/>
+		 * Adds a new value tuple to the <code>VALUES</code> clause of the <code>INSERT</code> statement.<br>
 		 * The result is a complete SQL statement.
 		 * @param row the expressions used to evaluate the values for insertion
 		 * @return the <code>INSERT .. VALUES</code> statement having the specified

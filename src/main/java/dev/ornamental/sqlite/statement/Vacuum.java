@@ -2,8 +2,8 @@ package dev.ornamental.sqlite.statement;
 
 /**
  * Executes the vacuuming process on a specific database or on all the attached databases.
- * It has the form<br/>
- * <code><strong>VACUUM [<em>schemaName</em>]</strong></code>.<br/>
+ * It has the form<br>
+ * <code><strong>VACUUM [<em>schemaName</em>]</strong></code>.<br>
  * This is a complete SQL statement.
  */
 public final class Vacuum implements ExplicableStatement {
