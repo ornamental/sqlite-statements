@@ -31,6 +31,11 @@ public abstract class Table implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		return false;
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
 		table.appendTo(receptacle);
 	}
