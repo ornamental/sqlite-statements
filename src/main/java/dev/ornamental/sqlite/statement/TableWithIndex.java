@@ -24,6 +24,11 @@ public final class TableWithIndex implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		return false;
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
 		table.appendTo(receptacle);
 		appendIndexDirective(receptacle, indexName);

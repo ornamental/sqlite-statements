@@ -15,6 +15,11 @@ public final class AliasedSelect implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		return false;
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
 		select.appendTo(receptacle);
 		receptacle.append(" AS ");

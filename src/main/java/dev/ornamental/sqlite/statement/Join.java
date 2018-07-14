@@ -24,13 +24,15 @@ public final class Join implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		return true;
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
-		receptacle.append('('); // TODO [LOW] both arguments are not always necessarily enclosed in parentheses
-		left.appendTo(receptacle);
-		receptacle.append(')');
-		receptacle.append(' ').append(type.toString()).append(' ').append('(');
-		right.appendTo(receptacle);
-		receptacle.append(')');
+		SqliteUtilities.parentheses(receptacle, left.isJoin(), left::appendTo);
+		receptacle.append(' ').append(type.toString()).append(' ');
+		SqliteUtilities.parentheses(receptacle, right.isJoin(), right::appendTo);
 	}
 
 	@Override

@@ -18,6 +18,11 @@ public final class JoinOn implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		return true;
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
 		previous.appendTo(receptacle);
 		receptacle.append(" ON ");

@@ -7,6 +7,12 @@ package dev.ornamental.sqlite.statement;
 public interface TableExpression {
 
 	/**
+	 * Indicates if the table expression is a <code>JOIN</code>.
+	 * @return <code>true</code> if and only if the table expression is a <code>JOIN</code>
+	 */
+	boolean isJoin();
+
+	/**
 	 * Appends the table expression representation to the specified {@link StringBuilder} instance.
 	 * @param receptacle the {@link StringBuilder} instance receiving the output
 	 */
@@ -77,5 +83,14 @@ public interface TableExpression {
 	 */
 	default Join crossJoin(TableExpression other) {
 		return new Join(this, other, JoinType.CROSS);
+	}
+
+	/**
+	 * Adds an alias to this table expression.
+	 * @param alias the alias to add
+	 * @return the aliased table expression
+	 */
+	default TableExpression alias(CharSequence alias) {
+		return new AliasedTableExpression(this, alias);
 	}
 }

@@ -54,7 +54,7 @@ public final class InsertTest {
 		).addCase(
 			"INSERT OR ROLLBACK INTO \"OrderDigest\"(\"orderId\", \"customerName\", \"timestamp\") "
 				+ "SELECT \"Order\".\"id\", \"name\", \"Order\".\"creationTime\" "
-				+ "FROM (\"Order\") INNER JOIN (\"Customer\") ON \"customerId\" = \"Customer\".\"id\" "
+				+ "FROM \"Order\" INNER JOIN \"Customer\" ON \"customerId\" = \"Customer\".\"id\" "
 				+ "WHERE \"timestamp\" >= "
 					+ "(SELECT \"timestamp\" FROM \"SyncTime\" WHERE \"sync\" = 'OrderDigest')",
 

@@ -33,6 +33,12 @@ public final class MutableTableExpression implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		checkContent();
+		return tableExpression.isJoin();
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
 		checkContent();
 		tableExpression.appendTo(receptacle);

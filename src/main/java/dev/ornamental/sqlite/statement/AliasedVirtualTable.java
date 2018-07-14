@@ -18,6 +18,11 @@ public final class AliasedVirtualTable implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		return false;
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
 		previous.appendTo(receptacle);
 		receptacle.append(" AS ");

@@ -16,6 +16,11 @@ public final class UnaliasedTable implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		return false;
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
 		SqliteUtilities.appendQuotedName(receptacle, schemaName, tableName);
 	}
@@ -35,7 +40,8 @@ public final class UnaliasedTable implements TableExpression {
 	 * @return the aliased table reference having the form<br>
 	 * <code>[<em>schemaName</em>.]<em>tableName</em> <strong>AS <em>alias</em></strong></code>
 	 */
-	public AliasedTable as(CharSequence alias) {
+	@Override
+	public AliasedTable alias(CharSequence alias) {
 		return new AliasedTable(this, alias);
 	}
 

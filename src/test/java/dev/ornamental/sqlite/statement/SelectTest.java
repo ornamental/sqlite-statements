@@ -33,7 +33,7 @@ public final class SelectTest {
 				+ "WHERE \"parentId\" ISNULL "
 				+ "UNION ALL "
 				+ "SELECT *, \"path\" || '/' || \"name\" "
-				+ "FROM (\"MapFeature\") INNER JOIN (\"Feature\") "
+				+ "FROM \"MapFeature\" INNER JOIN \"Feature\" "
 					+ "ON \"MapFeature\".\"parentId\" = \"Feature\".\"id\"), "
 			+ "\"LeafFeature\" AS ("
 				+ "SELECT * FROM \"Feature\" "
@@ -41,7 +41,7 @@ public final class SelectTest {
 					+ "SELECT 1 FROM \"MapFeature\" "
 					+ "WHERE \"MapFeature\".\"parentId\" = \"Feature\".\"id\")) "
 			+ "SELECT \"primitiveName\", \"path\" "
-			+ "FROM (\"LeafFeature\" AS \"leaf\") INNER JOIN (\"Mapping\" AS \"map\") USING (\"kind\") "
+			+ "FROM \"LeafFeature\" AS \"leaf\" INNER JOIN \"Mapping\" AS \"map\" USING (\"kind\") "
 			+ "WHERE \"map\".\"kind\" <> 0 AND \"leaf\".\"styleId\" NOTNULL",
 
 			with("Mapping").ofColumns("kind", "primitiveName").as(
@@ -64,7 +64,7 @@ public final class SelectTest {
 					select(value(1)).from(table("MapFeature"))
 					.where(column("MapFeature", "parentId").eq(column("Feature", "id")))))
 			).select(column("primitiveName"), column("path"))
-				.from(table("LeafFeature").as("leaf").innerJoin(table("Mapping").as("map")).using("kind"))
+				.from(table("LeafFeature").alias("leaf").innerJoin(table("Mapping").alias("map")).using("kind"))
 				.where(column("map", "kind").neq(value(0)).and(column("leaf", "styleId").isNotNull()))
 		).addCase(
 			"SELECT \"address\" FROM \"EmailAddress\" WHERE \"domain\" = 'domain1' "

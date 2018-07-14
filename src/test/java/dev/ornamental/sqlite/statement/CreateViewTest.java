@@ -40,7 +40,7 @@ public final class CreateViewTest {
 		).addCase(
 			"CREATE VIEW IF NOT EXISTS \"OrdersByCountry\" AS "
 				+ "SELECT \"countryCode\", COUNT(*) AS \"orderCount\" "
-				+ "FROM (\"Customer\") INNER JOIN (\"Order\") "
+				+ "FROM \"Customer\" INNER JOIN \"Order\" "
 					+ "ON \"Customer\".\"id\" = \"customerId\" "
 				+ "GROUP BY \"countryCode\"",
 

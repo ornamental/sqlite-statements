@@ -21,6 +21,11 @@ public class UnaliasedVirtualTable implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		return false;
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
 		SqliteUtilities.appendQuotedName(receptacle, schemaName, tableName);
 		if (args != null) {
@@ -47,6 +52,7 @@ public class UnaliasedVirtualTable implements TableExpression {
 	 * <code>[<em>schemaName</em>.]<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
 	 * <em>arg<sub>i</sub></em>}]) <strong>AS <em>alias</em></strong></code>.
 	 */
+	@Override
 	public AliasedVirtualTable alias(CharSequence alias) {
 		return new AliasedVirtualTable(this, alias);
 	}

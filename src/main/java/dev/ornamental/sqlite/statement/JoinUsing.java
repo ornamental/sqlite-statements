@@ -19,6 +19,11 @@ public final class JoinUsing implements TableExpression {
 	}
 
 	@Override
+	public boolean isJoin() {
+		return true;
+	}
+
+	@Override
 	public void appendTo(StringBuilder receptacle) {
 		previous.appendTo(receptacle);
 		if (columns.iterator().hasNext()) {

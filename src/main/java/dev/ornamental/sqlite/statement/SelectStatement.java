@@ -28,12 +28,12 @@ public interface SelectStatement extends ExplicableStatement, SqlExpression, Tri
 	}
 
 	/**
-	 * Adds an alias to the statement; aliased <code>SELECT</code> and <code>VALUE</code> statements
+	 * Adds a table alias to the statement; aliased <code>SELECT</code> and <code>VALUE</code> statements
 	 * may be used as parts of table expression in <code>FROM</code> clauses.
 	 * @param alias the alias assigned to the row set to which this statement would evaluate
 	 * @return the aliased statement
 	 */
-	default TableExpression alias(String alias) {
+	default TableExpression alias(CharSequence alias) {
 		return new AliasedSelect(this, alias);
 	}
 }

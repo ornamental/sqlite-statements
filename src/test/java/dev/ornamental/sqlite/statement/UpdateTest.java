@@ -75,7 +75,7 @@ public final class UpdateTest {
 			updateOrFail("Track").set(
 				new String[] {"title", "duration"},
 				select(column("title"), column("duration"))
-					.from(table("temp", "Reimported").as("r"))
+					.from(table("temp", "Reimported").alias("r"))
 					.where(column("r", "hash").eq(column("Track", "md5"))))
 		).addCase(
 			"WITH \"TopRatedBook\" AS ("
