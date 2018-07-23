@@ -5,8 +5,8 @@ to the extent allowed by Java syntax.
 ## Usage
 It is presumed that when one wants to build a statement, one performs `import static` of the necessary methods 
 from one or more of the classes mentioned in the table below. These methods serve as entry points for construction 
-of statements and there parts such as SQL expressions.
-One than uses chained method calls to complete the statement. As soon as all the necessary statement clauses 
+of statements and their parts such as SQL expressions.
+One then uses chained method calls to complete the statement. As soon as all the necessary statement clauses 
 are supplied, one invokes the `SqlStatement::build()` or `SqlStatement::build(StringBuilder)` method to produce
 the string representation of the statement.
 
@@ -28,6 +28,77 @@ For some examples, see the test classes.
 | `OnConflictAction` | Enumeration of possible statement behaviours in case of constraint violation. |
 | `ForeignKeyAction` | Enumeration of possible referential actions. |
 | `Collation` | Enumeration of standard collations and a method creating references to the custom ones. |
+
+## Minimizing the number of string literals
+Many methods require schema, table, or column names to be supplied as arguments. As using literals
+increases the probability of typos, the `Table` class was created to attenuate this problem. Here is an
+example of how one is supposed to use the class.
+
+<details>
+	<summary>The example</summary>
+    
+Suppose there is a table defined in this way:
+```sql
+CREATE TABLE "File" ("id" INTEGER PRIMARY KEY AUTOINCREMENT, "name" VARCHAR NOT NULL, 
+"sinceVersion" INTEGER NOT NULL, "fullSize" INTEGER NOT NULL, "unusedBytes" INTEGER NOT NULL)
+```
+The corresponding class is defined like this:    
+```java
+final class FileTable extends Table {
+	
+	// add public final String fields for each field name
+	public final String id = "id";
+	public final String name = "name";
+	public final String sinceVersion = "sinceVersion";
+	public final String fullSize = "fullSize";
+	public final String unusedBytes = "unusedBytes";
+
+	private final Map<String, SqlExpression> columns =
+		Stream.of(id, name, sinceVersion, fullSize, unusedBytes)
+			.collect(Collectors.toMap(Function.identity(), columnFactory));
+
+	public FileTable() {
+		super("File"); // pass the table name (or schema name and table name)
+	}
+
+	// add methods for each column expression
+	public SqlExpression id() {
+		return columns.get(id);
+	}
+
+	public SqlExpression name() {
+		return columns.get(name);
+	}
+
+	public SqlExpression sinceVersion() {
+		return columns.get(sinceVersion);
+	}
+
+	public SqlExpression fullSize() {
+		return columns.get(fullSize);
+	}
+
+	public SqlExpression unusedBytes() {
+		return columns.get(unusedBytes);
+	}	
+}
+```
+
+An instance of this class is created where the table is used:
+```java
+private final FileTable file = new FileTable();
+```
+The variable is used like this:
+```java
+long unusedBytes = 1_000_000L;
+int key = 1;
+// use the table variable where a table is expected
+// use the public fields where an unqualified field name is expected
+// use the public methods where an expression is expected
+update(file).set(file.unusedBytes, value(unusedBytes)).where(file.id().eq(value(key)));
+```
+(this will produce `UPDATE "File" SET "unusedBytes" = 1000000 WHERE "File"."id" = 1`).
+</details>
 
 ## Limitations
 * The builders are mostly based on SQLite syntax diagrams (see [here](https://www.sqlite.org/syntax/sql-stmt.html)). 

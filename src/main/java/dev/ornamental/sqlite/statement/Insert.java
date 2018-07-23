@@ -46,6 +46,15 @@ public final class Insert {
 		public Into into(CharSequence schemaName, CharSequence tableName) {
 			return new Into(cte, verb, schemaName, tableName);
 		}
+
+		/**
+		 * Adds the name of the target table to the incomplete <code>INSERT</code> statement.
+		 * @param table the target table
+		 * @return the initial part of the <code>INSERT</code> statement with the table name specified
+		 */
+		public Into into(Table table) {
+			return into(table.schemaName(), table.tableName());
+		}
 	}
 
 	private abstract static class Incomplete {

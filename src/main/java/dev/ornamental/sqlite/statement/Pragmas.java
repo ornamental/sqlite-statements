@@ -19,7 +19,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.application_id</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.application_id</code><br>
 	 * retrieving the application ID of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA application_id</code> statement
@@ -30,7 +30,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA application_id(value)</code><br>
+	 * <code>PRAGMA application_id(<em>value</em>)</code><br>
 	 * setting the application ID of the main database.
 	 * @param value the value to be set by the <code>PRAGMA</code>
 	 * @return the <code>PRAGMA application_id</code> statement
@@ -41,7 +41,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.application_id(value)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.application_id(<em>value</em>)</code><br>
 	 * setting the application ID of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param value the value to be set by the <code>PRAGMA</code>
@@ -63,7 +63,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.auto_vacuum</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.auto_vacuum</code><br>
 	 * retrieving the auto-vacuum status of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA auto_vacuum</code> statement
@@ -85,7 +85,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.auto_vacuum(NONE|FULL|INCREMENTAL)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.auto_vacuum(NONE|FULL|INCREMENTAL)</code><br>
 	 * setting the auto-vacuum status of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param mode the mode to switch to
@@ -128,7 +128,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA busy_timeout(milliseconds)</code><br>
+	 * <code>PRAGMA busy_timeout(<em>milliseconds</em>)</code><br>
 	 * setting the value of busy timeout.
 	 * @param milliseconds a positive value for the busy timeout, in milliseconds,
 	 * or {@literal null} to turn the busy timeout handlers off
@@ -154,7 +154,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.cache_size</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.cache_size</code><br>
 	 * retrieving the cache size of the specified database, in pages.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA cache_size</code> statement
@@ -165,7 +165,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA cache_size(±size)</code><br>
+	 * <code>PRAGMA cache_size(±<em>size</em>)</code><br>
 	 * setting the cache size of the main database, either in pages or in kibibytes.
 	 * @param size the numeric value of cache size
 	 * @param unit the unit corresponding to the cache size value
@@ -177,7 +177,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.cache_size(±size)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.cache_size(±<em>size</em>)</code><br>
 	 * setting the cache size of the specified database, either in pages or in kibibytes.
 	 * @param schemaName the name of the target schema
 	 * @param size the numeric value of cache size
@@ -202,7 +202,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.cache_spill</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.cache_spill</code><br>
 	 * retrieving the minimum number of pages used by the cache of the specified database
 	 * in order for cache spilling to occur.
 	 * @param schemaName the name of the target schema
@@ -225,7 +225,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA cache_spill(pagesThreshold)</code><br>
+	 * <code>PRAGMA cache_spill(<em>pagesThreshold</em>)</code><br>
 	 * setting the minimum number of pages used by the cache of the main database
 	 * in order for cache spilling to occur.
 	 * @param pagesThreshold the value to be set by the <code>PRAGMA</code>
@@ -237,7 +237,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.cache_spill(pagesThreshold)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.cache_spill(<em>pagesThreshold</em>)</code><br>
 	 * setting the minimum number of pages used by the cache of the specified database
 	 * in order for cache spilling to occur.
 	 * @param schemaName the name of the target schema
@@ -333,7 +333,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.data_version</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.data_version</code><br>
 	 * retrieving the connection-bound identifier of the last commit of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA data_version</code> statement
@@ -386,7 +386,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA encoding(databaseEncoding)</code><br>
+	 * <code>PRAGMA encoding(<em>databaseEncoding</em>)</code><br>
 	 * setting the encoding that will be used upon the creation of the main database.<br>
 	 * Note that once an encoding has been set for a database, it cannot be changed.
 	 * Databases created by the <code>ATTACH</code> command always use the same encoding as the main database.
@@ -410,7 +410,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.foreign_key_check</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.foreign_key_check</code><br>
 	 * checking all the tables in the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA foreign_key_check</code> statement
@@ -421,9 +421,9 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA foreign_key_check(tableName)</code><br>
+	 * <code>PRAGMA foreign_key_check(<em>tableName</em>)</code><br>
 	 * checking the specified table in the main database.
-	 * @param tableName the name of target table
+	 * @param tableName the name of the target table
 	 * @return the <code>PRAGMA foreign_key_check</code> statement
 	 */
 	public static Pragma.ForName foreignKeyCheckTable(CharSequence tableName) {
@@ -432,10 +432,10 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.foreign_key_check(tableName)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.foreign_key_check(<em>tableName</em>)</code><br>
 	 * checking the specified table in the specified database.
 	 * @param schemaName the name of the target schema
-	 * @param tableName the name of target table
+	 * @param tableName the name of the target table
 	 * @return the <code>PRAGMA foreign_key_check</code> statement
 	 */
 	public static Pragma.ForName foreignKeyCheckTable(CharSequence schemaName, CharSequence tableName) {
@@ -444,9 +444,20 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA foreign_key_list(tableName)</code><br>
+	 * <code>PRAGMA [<em>schemaName</em>.]foreign_key_check(<em>tableName</em>)</code><br>
+	 * checking the specified table in the specified database.
+	 * @param table the target table
+	 * @return the <code>PRAGMA foreign_key_check</code> statement
+	 */
+	public static Pragma.ForName foreignKeyCheckTable(Table table) {
+		return foreignKeyCheckTable(table.schemaName(), table.tableName());
+	}
+
+	/**
+	 * Produces the statement<br>
+	 * <code>PRAGMA foreign_key_list(<em>tableName</em>)</code><br>
 	 * enumerating all the foreign keys of the specified table of the main database.
-	 * @param tableName the name of target table
+	 * @param tableName the name of the target table
 	 * @return the <code>PRAGMA foreign_key_list</code> statement
 	 */
 	public static Pragma.ForName foreignKeyList(CharSequence tableName) {
@@ -455,14 +466,25 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.foreign_key_list(tableName)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.foreign_key_list(<em>tableName</em>)</code><br>
 	 * enumerating all the foreign keys of the specified table of the specified database.
 	 * @param schemaName the name of the target schema
-	 * @param tableName the name of target table
+	 * @param tableName the name of the target table
 	 * @return the <code>PRAGMA foreign_key_list</code> statement
 	 */
 	public static Pragma.ForName foreignKeyList(CharSequence schemaName, CharSequence tableName) {
 		return SqlStatements.pragma(schemaName, Pragma.Name.FOREIGN_KEY_LIST).forName(tableName);
+	}
+
+	/**
+	 * Produces the statement<br>
+	 * <code>PRAGMA [<em>schemaName</em>.]foreign_key_list(<em>tableName</em>)</code><br>
+	 * enumerating all the foreign keys of the specified table of the specified database.
+	 * @param table the target table
+	 * @return the <code>PRAGMA foreign_key_list</code> statement
+	 */
+	public static Pragma.ForName foreignKeyList(Table table) {
+		return foreignKeyList(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -498,7 +520,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.freelist_count</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.freelist_count</code><br>
 	 * returning the number of unused pages in the specified database file.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA freelist_count</code> statement
@@ -571,7 +593,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.incremental_vacuum</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.incremental_vacuum</code><br>
 	 * performing the full vacuum operation on the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA incremental_vacuum</code> statement
@@ -582,7 +604,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA incremental_vacuum(maxPages)</code><br>
+	 * <code>PRAGMA incremental_vacuum(<em>maxPages</em>)</code><br>
 	 * performing a partial vacuum operation on the main database.
 	 * @param maxPages the value to be set by the <code>PRAGMA</code>
 	 * @return the <code>PRAGMA incremental_vacuum</code> statement
@@ -596,7 +618,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.incremental_vacuum(maxPages)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.incremental_vacuum(<em>maxPages</em>)</code><br>
 	 * performing a partial vacuum operation on the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param maxPages the value to be set by the <code>PRAGMA</code>
@@ -608,7 +630,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA index_info(indexName)</code><br>
+	 * <code>PRAGMA index_info(<em>indexName</em>)</code><br>
 	 * returning index data for the specified index of the main database.
 	 * @param indexName the name of the target index
 	 * @return the <code>PRAGMA index_info</code> statement
@@ -619,7 +641,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.index_info(indexName)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.index_info(<em>indexName</em>)</code><br>
 	 * returning index data for the specified index of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param indexName the name of the target index
@@ -631,9 +653,9 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <br>
+	 * <code>PRAGMA index_list(<em>tableName</em>)</code><br>
 	 * returning the indices for the specified table of the main database.
-	 * @param tableName the name of target table
+	 * @param tableName the name of the target table
 	 * @return the <code>PRAGMA index_list</code> statement
 	 */
 	public static Pragma.ForName indexList(CharSequence tableName) {
@@ -642,10 +664,10 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.index_list(tableName)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.index_list(<em>tableName</em>)</code><br>
 	 * returning the indices for the specified table of the specified database.
 	 * @param schemaName the name of the target schema
-	 * @param tableName the name of target table
+	 * @param tableName the name of the target table
 	 * @return the <code>PRAGMA index_list</code> statement
 	 */
 	public static Pragma.ForName indexList(CharSequence schemaName, CharSequence tableName) {
@@ -654,7 +676,18 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA index_xinfo(indexName)</code><br>
+	 * <code>PRAGMA [schemaName.]index_list(<em>tableName</em>)</code><br>
+	 * returning the indices for the specified table of the specified database.
+	 * @param table the target table
+	 * @return the <code>PRAGMA index_list</code> statement
+	 */
+	public static Pragma.ForName indexList(Table table) {
+		return indexList(table.schemaName(), table.tableName());
+	}
+
+	/**
+	 * Produces the statement<br>
+	 * <code>PRAGMA index_xinfo(<em>indexName</em>)</code><br>
 	 * returning index data for the specified index of the main database.
 	 * @param indexName the name of the target index
 	 * @return the <code>PRAGMA index_xinfo</code> statement
@@ -665,7 +698,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.index_xinfo(indexName)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.index_xinfo(<em>indexName</em>)</code><br>
 	 * returning index data for the specified index of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param indexName the name of the target index
@@ -687,7 +720,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.integrity_check</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.integrity_check</code><br>
 	 * initiating the integrity check of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA integrity_check</code> statement
@@ -698,7 +731,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA integrity_check(maxErrors)</code><br>
+	 * <code>PRAGMA integrity_check(<em>maxErrors</em>)</code><br>
 	 * initiating the main database integrity check with non-default error count limit.
 	 * @param maxErrors the maximum number of errors to report
 	 * @return the <code>PRAGMA integrity_check</code> statement
@@ -709,7 +742,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.integrity_check(maxErrors)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.integrity_check(<em>maxErrors</em>)</code><br>
 	 * initiating the integrity check of the specified database with non-default error count limit.
 	 * @param schemaName the name of the target schema
 	 * @param maxErrors the maximum number of errors to report
@@ -731,7 +764,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.journal_mode</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.journal_mode</code><br>
 	 * returning the journal mode for the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA journal_mode</code> statement
@@ -753,7 +786,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.journal_mode(DELETE|TRUNCATE|PERSIST| MEMORY|WAL|OFF)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.journal_mode(DELETE|TRUNCATE|PERSIST| MEMORY|WAL|OFF)</code><br>
 	 * setting the journal mode for the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param mode the mode to switch to
@@ -775,7 +808,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.journal_size_limit</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.journal_size_limit</code><br>
 	 * returning the journal size limit of the specified database, in bytes, or -1 if there is no limit.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA journal_size_limit</code> statement
@@ -786,7 +819,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA journal_size_limit(limit)</code><br>
+	 * <code>PRAGMA journal_size_limit(<em>limit</em>)</code><br>
 	 * setting the journal size limit of the main database, in bytes, or removing such limit.
 	 * @param limit the maximum journal size, in bytes, or {@literal null} to remove the limit
 	 * @return the <code>PRAGMA journal_size_limit</code> statement
@@ -797,7 +830,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.journal_size_limit(limit)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.journal_size_limit(<em>limit</em>)</code><br>
 	 * setting the journal size limit of the specified database, in bytes, or removing such limit.
 	 * @param schemaName the name of the target schema
 	 * @param limit the maximum journal size, in bytes, or {@literal null} to remove the limit
@@ -851,7 +884,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.locking_mode</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.locking_mode</code><br>
 	 * returning the locking mode (NORMAL or EXCLUSIVE) of the connection to the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA locking_mode</code> statement
@@ -862,7 +895,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.locking_mode(NORMAL|EXCLUSIVE)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.locking_mode(NORMAL|EXCLUSIVE)</code><br>
 	 * setting the locking mode of the connection to the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param mode the mode to switch to
@@ -884,7 +917,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA max_page_count(pageCount)</code><br>
+	 * <code>PRAGMA max_page_count(<em>pageCount</em>)</code><br>
 	 * sets the maximum page count in the main database (but no less than the current page count).
 	 * @param pageCount the value to be set by the <code>PRAGMA</code>
 	 * @return the <code>PRAGMA max_page_count</code> statement
@@ -898,7 +931,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.max_page_count</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.max_page_count</code><br>
 	 * retrieving the maximum page count in the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA max_page_count</code> statement
@@ -909,7 +942,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.max_page_count(pageCount)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.max_page_count(<em>pageCount</em>)</code><br>
 	 * sets the maximum page count in the specified database (but no less than the current page count).
 	 * @param schemaName the name of the target schema
 	 * @param pageCount the value to be set by the <code>PRAGMA</code>
@@ -934,7 +967,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA mmap_size(bytes)</code><br>
+	 * <code>PRAGMA mmap_size(<em>bytes</em>)</code><br>
 	 * setting the maximum number of bytes used for memory-mapped I/O on the main database.
 	 * @param bytes the desired size limit for memory-mapped I/O buffers, (zero to disable I/O mapping)
 	 * @return the <code>PRAGMA mmap_size</code> statement
@@ -949,7 +982,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.mmap_size</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.mmap_size</code><br>
 	 * retrieving the maximum number of bytes used for memory-mapped I/O on the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA mmap_size</code> statement
@@ -960,7 +993,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.mmap_size(bytes)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.mmap_size(<em>bytes</em>)</code><br>
 	 * setting the maximum number of bytes used for memory-mapped I/O on the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param bytes the desired size limit for memory-mapped I/O buffers, (zero to disable I/O mapping)
@@ -996,7 +1029,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.optimize</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.optimize</code><br>
 	 * performing the default optimization(s) on the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA optimize</code> statement
@@ -1007,7 +1040,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA optimize(mask)</code><br>
+	 * <code>PRAGMA optimize(<em>mask</em>)</code><br>
 	 * performing the selected optimization(s) on all the attached databases.
 	 * One may use {@link OptimizeMode} constants to form the mask.
 	 * @param mask the optimization modes mask
@@ -1019,7 +1052,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.optimize(mask)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.optimize(<em>mask</em>)</code><br>
 	 * performing the selected optimization(s) on the specified database.
 	 * One may use {@link OptimizeMode} constants to form the mask.
 	 * @param schemaName the name of the target schema
@@ -1042,7 +1075,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.page_count</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.page_count</code><br>
 	 * returning the total number of pages in the file of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA page_count</code> statement
@@ -1063,7 +1096,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.page_size</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.page_size</code><br>
 	 * returning the page size of the file of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA page_size</code> statement
@@ -1074,7 +1107,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA page_size(bytes)</code><br>
+	 * <code>PRAGMA page_size(<em>bytes</em>)</code><br>
 	 * setting the page size of the main database file.
 	 * @param bytes the page size, in bytes; must be a power of two between 512 and 65536
 	 * @return the <code>PRAGMA page_size</code> statement
@@ -1086,7 +1119,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.page_size(bytes)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.page_size(<em>bytes</em>)</code><br>
 	 * setting the page size of the file of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param bytes the page size, in bytes; must be a power of two between 512 and 65536
@@ -1153,7 +1186,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.quick_check</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.quick_check</code><br>
 	 * performing a subset of integrity checks on the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA quick_check</code> statement
@@ -1164,7 +1197,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA quick_check(maxErrors)</code><br>
+	 * <code>PRAGMA quick_check(<em>maxErrors</em>)</code><br>
 	 * performing a subset of integrity checks on the main database with non-default
 	 * error count limit.
 	 * @param maxErrors the maximum number of errors to be reported
@@ -1176,7 +1209,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.quick_check(maxErrors)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.quick_check(<em>maxErrors</em>)</code><br>
 	 * performing a subset of integrity checks on the specified database with non-default
 	 * error count limit.
 	 * @param schemaName the name of the target schema
@@ -1264,7 +1297,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.schema_version</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.schema_version</code><br>
 	 * returning the integer automatically incremented each time the specified database schema changes.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA schema_version</code> statement
@@ -1275,7 +1308,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schema_version(value)</code><br>
+	 * <code>PRAGMA schema_version(<em>value</em>)</code><br>
 	 * forcibly setting the main database schema version value.
 	 * @param value the value to be set by the <code>PRAGMA</code>
 	 * @return the <code>PRAGMA schema_version</code> statement
@@ -1286,7 +1319,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.schema_version(value)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.schema_version(<em>value</em>)</code><br>
 	 * forcibly setting the schema version value of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param value the value to be set by the <code>PRAGMA</code>
@@ -1308,7 +1341,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.secure_delete</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.secure_delete</code><br>
 	 * indicating the mode of clearing the deleted data in the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA secure_delete</code> statement
@@ -1330,7 +1363,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.secure_delete(OFF|FAST|ON)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.secure_delete(OFF|FAST|ON)</code><br>
 	 * setting the mode of clearing the deleted data in the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param mode the mode to switch to
@@ -1362,7 +1395,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA soft_heap_limit(bytes)</code><br>
+	 * <code>PRAGMA soft_heap_limit(<em>bytes</em>)</code><br>
 	 * setting the advised heap limit for SQLite or removing one.
 	 * @param bytes the soft heap limit, in bytes; {@literal null} if one whishes to remove the limit
 	 * @return the <code>PRAGMA soft_heap_limit</code> statement
@@ -1396,7 +1429,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.synchronous</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.synchronous</code><br>
 	 * returning the synchronization mode of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA synchronous</code> statement
@@ -1418,7 +1451,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.synchronous(OFF|NORMAL|FULL|EXTRA)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.synchronous(OFF|NORMAL|FULL|EXTRA)</code><br>
 	 * setting the synchronization mode of the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param mode the mode to switch to
@@ -1430,9 +1463,9 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA table_info(tableName)</code><br>
+	 * <code>PRAGMA table_info(<em>tableName</em>)</code><br>
 	 * retrieving per-column definition of a table/view from the main database.
-	 * @param tableName the name of target table
+	 * @param tableName the name of the target table
 	 * @return the <code>PRAGMA table_info</code> statement
 	 */
 	public static Pragma.ForName tableInfo(CharSequence tableName) {
@@ -1441,14 +1474,25 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.table_info(tableName)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.table_info(tableName)</code><br>
 	 * retrieving per-column definition of a table/view from the specified database.
 	 * @param schemaName the name of the target schema
-	 * @param tableName the name of target table
+	 * @param tableName the name of the target table
 	 * @return the <code>PRAGMA table_info</code> statement
 	 */
 	public static Pragma.ForName tableInfo(CharSequence schemaName, CharSequence tableName) {
 		return SqlStatements.pragma(schemaName, Pragma.Name.SYNCHRONOUS).forName(tableName);
+	}
+
+	/**
+	 * Produces the statement<br>
+	 * <code>PRAGMA [<em>schemaName</em>.]table_info(<em>tableName</em>)</code><br>
+	 * retrieving per-column definition of a table/view from the specified database.
+	 * @param table the name of the target table
+	 * @return the <code>PRAGMA table_info</code> statement
+	 */
+	public static Pragma.ForName tableInfo(Table table) {
+		return tableInfo(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -1484,7 +1528,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA threads(auxiliaryThreadCount)</code><br>
+	 * <code>PRAGMA threads(<em>auxiliaryThreadCount</em>)</code><br>
 	 * setting the maximum auxiliary thread count for the connection.
 	 * @param auxiliaryThreadCount the value to be set by the <code>PRAGMA</code>
 	 * @return the <code>PRAGMA threads</code> statement
@@ -1508,7 +1552,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA user_version(version)</code><br>
+	 * <code>PRAGMA user_version(<em>version</em>)</code><br>
 	 * setting a user-specified integer associated with the main database.
 	 * @param version the value to be set by the <code>PRAGMA</code>
 	 * @return the <code>PRAGMA user_version</code> statement
@@ -1519,7 +1563,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.user_version</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.user_version</code><br>
 	 * returning a user-specified integer associated with the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA user_version</code> statement
@@ -1530,7 +1574,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.user_version(version)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.user_version(<em>version</em>)</code><br>
 	 * setting a user-specified integer associated with the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param version the value to be set by the <code>PRAGMA</code>
@@ -1599,7 +1643,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA wal_autocheckpoint(maxPages)</code><br>
+	 * <code>PRAGMA wal_autocheckpoint(<em>maxPages</em>)</code><br>
 	 * setting the maximum number of WAL pages before an automatic checkpoint is run.
 	 * @param maxPages the maximum number of used WAL pages after which automatic checkpoint is run;
 	 * {@literal null} if automatic checkpoints have to be turned off
@@ -1636,7 +1680,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.wal_checkpoint</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.wal_checkpoint</code><br>
 	 * causing a checkpoint operation on the specified database.
 	 * @param schemaName the name of the target schema
 	 * @return the <code>PRAGMA wal_checkpoint</code> statement
@@ -1647,7 +1691,7 @@ public final class Pragmas {
 
 	/**
 	 * Produces the statement<br>
-	 * <code>PRAGMA schemaName.wal_checkpoint(PASSIVE|FULL|RESTART|TRUNCATE)</code><br>
+	 * <code>PRAGMA <em>schemaName</em>.wal_checkpoint(PASSIVE|FULL|RESTART|TRUNCATE)</code><br>
 	 * causing a checkpoint operation in the specified mode on the specified database.
 	 * @param schemaName the name of the target schema
 	 * @param mode the mode to switch to

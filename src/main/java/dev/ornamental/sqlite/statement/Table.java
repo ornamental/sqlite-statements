@@ -17,7 +17,7 @@ import java.util.function.Function;
  */
 public abstract class Table implements TableExpression {
 
-	protected final TableExpression table;
+	protected final UnaliasedTable table;
 
 	protected final Function<String, SqlExpression> columnFactory;
 
@@ -43,5 +43,17 @@ public abstract class Table implements TableExpression {
 	@Override
 	public TableExpression copy() {
 		return this;
+	}
+
+	String schemaName() {
+		return asString(table.getSchemaName());
+	}
+
+	String tableName() {
+		return asString(table.getTableName());
+	}
+
+	private String asString(CharSequence charSequence) {
+		return charSequence == null ? null : charSequence.toString();
 	}
 }

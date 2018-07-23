@@ -109,11 +109,30 @@ public final class SqlExpressions {
 
 	/**
 	 * Returns the <code>ROWID</code> column of the specified table (or table alias).
-	 * @param tableName the nameo of the source table (or an alias)
+	 * @param tableName the name of the source table (or an alias)
 	 * @return the <code><strong><em>tableName</em>."ROWID"</strong></code> column
 	 */
 	public static SqlExpression rowIdOf(CharSequence tableName) {
 		return column(tableName, "ROWID");
+	}
+
+	/**
+	 * Returns the <code>ROWID</code> column of the specified table.
+	 * @param schemaName the name of the schema
+	 * @param tableName the name of the source table
+	 * @return the <code><strong><em>schemaName</em>.<em>tableName</em>."ROWID"</strong></code> column
+	 */
+	public static SqlExpression rowIdOf(CharSequence schemaName, CharSequence tableName) {
+		return column(schemaName, tableName, "ROWID");
+	}
+
+	/**
+	 * Returns the <code>ROWID</code> column of the specified table.
+	 * @param table the source table
+	 * @return the <code><strong>[<em>schemaName</em>.]<em>tableName</em>."ROWID"</strong></code> column
+	 */
+	public static SqlExpression rowIdOf(Table table) {
+		return column(table.schemaName(), table.tableName(), "ROWID");
 	}
 
 	/**

@@ -901,6 +901,17 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
+	 * Creates an <code>IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> IN [<em>schemaName</em>.]<em>tableName</em></strong></code><br>
+	 * where <code><em>expression</em></code> is this expression.
+	 * @param table the table to search in
+	 * @return the <code>IN</code> expression
+	 */
+	default SqlExpression in(Table table) {
+		return in(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN <em>schemaName</em>.<em>tableName</em></strong></code><br>
 	 * where <code><em>expression</em></code> is this expression.
@@ -910,6 +921,17 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	 */
 	default SqlExpression notIn(CharSequence schemaName, CharSequence tableName) {
 		return new InExpression.ForTable(true, this, schemaName, tableName);
+	}
+
+	/**
+	 * Creates a <code>NOT IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT IN [<em>schemaName</em>.]<em>tableName</em></strong></code><br>
+	 * where <code><em>expression</em></code> is this expression.
+	 * @param table the table to search in
+	 * @return the <code>NOT IN</code> expression
+	 */
+	default SqlExpression notIn(Table table) {
+		return notIn(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -953,6 +975,19 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	}
 
 	/**
+	 * Creates an <code>IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> IN [<em>schemaName</em>.]<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
+	 * <em>arg<sub>i</sub></em>}])</strong></code><br>
+	 * where <code><em>expression</em></code> is this expression.
+	 * @param virtualTable the virtual table to search in
+	 * @param args the arguments to pass to the virtual table (the hidden columns filtering values)
+	 * @return the <code>IN</code> expression
+	 */
+	default SqlExpression inVirtual(Table virtualTable, SqlExpression... args) {
+		return inVirtual(virtualTable.schemaName(), virtualTable.tableName(), args);
+	}
+
+	/**
 	 * Creates a <code>NOT IN</code> expression having the form<br>
 	 * <code><strong><em>expression</em> NOT IN
 	 * <em>schemaName</em>.<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
@@ -965,5 +1000,19 @@ public interface SqlExpression extends Variable<SqlExpression>, ResultElement {
 	 */
 	default SqlExpression notInVirtual(CharSequence schemaName, CharSequence virtualTableName, SqlExpression... args) {
 		return new InExpression.ForTableFunction(true, this, schemaName, virtualTableName, Arrays.asList(args));
+	}
+
+	/**
+	 * Creates a <code>NOT IN</code> expression having the form<br>
+	 * <code><strong><em>expression</em> NOT IN
+	 * [<em>schemaName</em>.]<em>virtualTableName</em>([<em>arg<sub>0</sub></em>{,
+	 * <em>arg<sub>i</sub></em>}])</strong></code><br>
+	 * where <code><em>expression</em></code> is this expression.
+	 * @param virtualTable the virtual table to search in
+	 * @param args the arguments to pass to the virtual table (the hidden columns filtering values)
+	 * @return the <code>NOT IN</code> expression
+	 */
+	default SqlExpression notInVirtual(Table virtualTable, SqlExpression... args) {
+		return notInVirtual(virtualTable.schemaName(), virtualTable.tableName(), args);
 	}
 }

@@ -54,6 +54,16 @@ public final class SqlStatements {
 	}
 
 	/**
+	 * Creates an <code>ALTER TABLE</code> statement stub for the specified target table.
+	 * @param table the table to alter
+	 * @return the initial part of the <code>ALTER TABLE</code> statement:<br>
+	 * <code><strong>ALTER TABLE [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static AlterTable.Stub alterTable(Table table) {
+		return alterTable(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Creates an <code>ANALYZE</code> statement for the specified schema, table, or index.<br>
 	 * If there is an ambiguity, use the qualified object name
 	 * ({@link #analyze(CharSequence, CharSequence)}).<br>
@@ -203,6 +213,16 @@ public final class SqlStatements {
 
 	/**
 	 * Returns the initial part of a <code>CREATE TABLE</code> statement.
+	 * @param table the table to create
+	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br>
+	 * <code><strong>CREATE TABLE [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static CreateTable.Stub createTable(Table table) {
+		return createTable(table.schemaName(), table.tableName());
+	}
+
+	/**
+	 * Returns the initial part of a <code>CREATE TABLE</code> statement.
 	 * @param tableName the name of the table to create
 	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br>
 	 * <code><strong>CREATE TABLE IF NOT EXISTS <em>tableName</em></strong></code>
@@ -220,6 +240,16 @@ public final class SqlStatements {
 	 */
 	public static CreateTable.Stub createTableIfNotExists(CharSequence schemaName, CharSequence tableName) {
 		return new CreateTable.Stub(false, true, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the initial part of a <code>CREATE TABLE</code> statement.
+	 * @param table the table to create
+	 * @return the initial part of the <code>CREATE TABLE</code> statement:<br>
+	 * <code><strong>CREATE TABLE IF NOT EXISTS [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static CreateTable.Stub createTableIfNotExists(Table table) {
+		return createTableIfNotExists(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -389,6 +419,16 @@ public final class SqlStatements {
 
 	/**
 	 * Returns the initial part of a <code>CREATE VIRTUAL TABLE</code> statement.
+	 * @param virtualTable the virtual table to create
+	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
+	 * <code><strong>CREATE VIRTUAL TABLE [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static CreateVirtualTable.Stub createVirtualTable(Table virtualTable) {
+		return createVirtualTable(virtualTable.schemaName(), virtualTable.tableName());
+	}
+
+	/**
+	 * Returns the initial part of a <code>CREATE VIRTUAL TABLE</code> statement.
 	 * @param tableName the name of the virtual table to create
 	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
 	 * <code><strong>CREATE VIRTUAL TABLE IF NOT EXISTS <em>tableName</em></strong></code>
@@ -408,6 +448,17 @@ public final class SqlStatements {
 		CharSequence schemaName, CharSequence tableName) {
 
 		return new CreateVirtualTable.Stub(true, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the initial part of a <code>CREATE VIRTUAL TABLE</code> statement.
+	 * @param virtualTable the virtual table to create
+	 * @return the initial part of the <code>CREATE VIRTUAL TABLE</code> statement:<br>
+	 * <code><strong>CREATE VIRTUAL TABLE IF NOT EXISTS [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static CreateVirtualTable.Stub createVirtualTableIfNotExists(Table virtualTable) {
+
+		return createVirtualTable(virtualTable.schemaName(), virtualTable.tableName());
 	}
 
 	/**
@@ -434,6 +485,17 @@ public final class SqlStatements {
 	}
 
 	/**
+	 * Returns the basic form of <code>DELETE</code> statement clearing the table contents.<br>
+	 * The result is a complete SQL statement.
+	 * @param table the table to perform deletion from
+	 * @return the minimal form of <code>DELETE</code> statement:<br>
+	 * <code><strong>DELETE FROM [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Delete.All deleteFrom(Table table) {
+		return deleteFrom(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param tableName the name of the table to perform insertion into
 	 * @return the initial part of the <code>INSERT</code> statement:<br>
@@ -455,6 +517,16 @@ public final class SqlStatements {
 	}
 
 	/**
+	 * Returns the initial part of an <code>INSERT</code> statement.
+	 * @param table the table to perform insertion into
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
+	 * <code><strong>INSERT INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Insert.Into insertInto(Table table) {
+		return insertInto(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns the initial part of a <code>REPLACE</code> statement.
 	 * @param tableName the name of the table to perform insertion into
 	 * @return the initial part of the <code>REPLACE</code> statement:<br>
@@ -473,6 +545,16 @@ public final class SqlStatements {
 	 */
 	public static Insert.Into replaceInto(CharSequence schemaName, CharSequence tableName) {
 		return new Insert.Into(null, InsertVerb.REPLACE, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the initial part of a <code>REPLACE</code> statement.
+	 * @param table the table to perform insertion into
+	 * @return the initial part of the <code>REPLACE</code> statement:<br>
+	 * <code><strong>REPLACE INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Insert.Into replaceInto(Table table) {
+		return replaceInto(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -498,6 +580,16 @@ public final class SqlStatements {
 
 	/**
 	 * Returns the initial part of an <code>INSERT</code> statement.
+	 * @param table the table to perform insertion into
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
+	 * <code><strong>INSERT OR REPLACE INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Insert.Into insertOrReplaceInto(Table table) {
+		return insertOrReplaceInto(table.schemaName(), table.tableName());
+	}
+
+	/**
+	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param tableName the name of the table to perform insertion into
 	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR ABORT INTO <em>tableName</em></strong></code>
@@ -515,6 +607,16 @@ public final class SqlStatements {
 	 */
 	public static Insert.Into insertOrAbortInto(CharSequence schemaName, CharSequence tableName) {
 		return new Insert.Into(null, InsertVerb.INSERT_OR_ABORT, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the initial part of an <code>INSERT</code> statement.
+	 * @param table the table to perform insertion into
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
+	 * <code><strong>INSERT OR ABORT INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Insert.Into insertOrAbortInto(Table table) {
+		return insertOrAbortInto(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -540,6 +642,16 @@ public final class SqlStatements {
 
 	/**
 	 * Returns the initial part of an <code>INSERT</code> statement.
+	 * @param table the table to perform insertion into
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
+	 * <code><strong>INSERT OR ROLLBACK INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Insert.Into insertOrRollbackInto(Table table) {
+		return insertOrRollbackInto(table.schemaName(), table.tableName());
+	}
+
+	/**
+	 * Returns the initial part of an <code>INSERT</code> statement.
 	 * @param tableName the name of the table to perform insertion into
 	 * @return the initial part of the <code>INSERT</code> statement:<br>
 	 * <code><strong>INSERT OR FAIL INTO <em>tableName</em></strong></code>
@@ -557,6 +669,16 @@ public final class SqlStatements {
 	 */
 	public static Insert.Into insertOrFailInto(CharSequence schemaName, CharSequence tableName) {
 		return new Insert.Into(null, InsertVerb.INSERT_OR_FAIL, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the initial part of an <code>INSERT</code> statement.
+	 * @param table the table to perform insertion into
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
+	 * <code><strong>INSERT OR FAIL INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Insert.Into insertOrFailInto(Table table) {
+		return insertOrFailInto(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -581,6 +703,16 @@ public final class SqlStatements {
 	}
 
 	/**
+	 * Returns the initial part of an <code>INSERT</code> statement.
+	 * @param table the table to perform insertion into
+	 * @return the initial part of the <code>INSERT</code> statement:<br>
+	 * <code><strong>INSERT OR IGNORE INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Insert.Into insertOrIgnoreInto(Table table) {
+		return insertOrIgnoreInto(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param tableName the name of the table to perform the update of
 	 * @return the initial part of the <code>UPDATE</code> statement:<br>
@@ -595,10 +727,20 @@ public final class SqlStatements {
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
 	 * @return the initial part of the <code>UPDATE</code> statement:<br>
-	 * <code><strong>UPDATE <em>tableName</em></strong></code>
+	 * <code><strong>UPDATE <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Update.Stub update(CharSequence schemaName, CharSequence tableName) {
 		return new Update.Stub(null, UpdateVerb.UPDATE, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the initial part of an <code>UPDATE</code> statement.
+	 * @param table the table to perform the update of
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
+	 * <code><strong>UPDATE [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Update.Stub update(Table table) {
+		return update(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -616,11 +758,23 @@ public final class SqlStatements {
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
 	 * @return the initial part of the <code>UPDATE</code> statement:<br>
-	 * <code><strong>UPDATE OR ABORT <em>tableName</em></strong></code>
+	 * <code><strong>UPDATE OR ABORT <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrAbort(CharSequence schemaName, CharSequence tableName) {
 		return new Update.Stub(null, UpdateVerb.UPDATE_OR_ABORT, schemaName, tableName);
 	}
+
+
+	/**
+	 * Returns the initial part of an <code>UPDATE</code> statement.
+	 * @param table the table to perform the update of
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
+	 * <code><strong>UPDATE OR ABORT [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Update.Stub updateOrAbort(Table table) {
+		return updateOrAbort(table.schemaName(), table.tableName());
+	}
+
 
 	/**
 	 * Returns the initial part of an <code>UPDATE</code> statement.
@@ -637,10 +791,20 @@ public final class SqlStatements {
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
 	 * @return the initial part of the <code>UPDATE</code> statement:<br>
-	 * <code><strong>UPDATE OR FAIL <em>tableName</em></strong></code>
+	 * <code><strong>UPDATE OR FAIL <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrFail(CharSequence schemaName, CharSequence tableName) {
 		return new Update.Stub(null, UpdateVerb.UPDATE_OR_FAIL, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the initial part of an <code>UPDATE</code> statement.
+	 * @param table the table to perform the update of
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
+	 * <code><strong>UPDATE OR FAIL [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Update.Stub updateOrFail(Table table) {
+		return updateOrFail(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -658,17 +822,28 @@ public final class SqlStatements {
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
 	 * @return the initial part of the <code>UPDATE</code> statement:<br>
-	 * <code><strong>UPDATE OR IGNORE <em>tableName</em></strong></code>
+	 * <code><strong>UPDATE OR IGNORE <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrIgnore(CharSequence schemaName, CharSequence tableName) {
 		return new Update.Stub(null, UpdateVerb.UPDATE_OR_IGNORE, schemaName, tableName);
+	}
+
+
+	/**
+	 * Returns the initial part of an <code>UPDATE</code> statement.
+	 * @param table the table to perform the update of
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
+	 * <code><strong>UPDATE OR IGNORE [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Update.Stub updateOrIgnore(Table table) {
+		return updateOrIgnore(table.schemaName(), table.tableName());
 	}
 
 	/**
 	 * Returns the initial part of an <code>UPDATE</code> statement.
 	 * @param tableName the name of the table to perform the update of
 	 * @return the initial part of the <code>UPDATE</code> statement:<br>
-	 * <code><strong>UPDATE OR REPLACE<em>tableName</em></strong></code>
+	 * <code><strong>UPDATE OR REPLACE <em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrReplace(CharSequence tableName) {
 		return new Update.Stub(null, UpdateVerb.UPDATE_OR_REPLACE, null, tableName);
@@ -679,10 +854,20 @@ public final class SqlStatements {
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
 	 * @return the initial part of the <code>UPDATE</code> statement:<br>
-	 * <code><strong>UPDATE OR REPLACE<em>tableName</em></strong></code>
+	 * <code><strong>UPDATE OR REPLACE <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrReplace(CharSequence schemaName, CharSequence tableName) {
 		return new Update.Stub(null, UpdateVerb.UPDATE_OR_REPLACE, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the initial part of an <code>UPDATE</code> statement.
+	 * @param table the table to perform the update of
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
+	 * <code><strong>UPDATE OR REPLACE [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Update.Stub updateOrReplace(Table table) {
+		return updateOrReplace(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -700,10 +885,20 @@ public final class SqlStatements {
 	 * @param schemaName  the name of the schema containing the target database
 	 * @param tableName the name of the table to perform the update of
 	 * @return the initial part of the <code>UPDATE</code> statement:<br>
-	 * <code><strong>UPDATE OR ROLLBACK <em>tableName</em></strong></code>
+	 * <code><strong>UPDATE OR ROLLBACK <em>schemaName</em>.<em>tableName</em></strong></code>
 	 */
 	public static Update.Stub updateOrRollback(CharSequence schemaName, CharSequence tableName) {
 		return new Update.Stub(null, UpdateVerb.UPDATE_OR_ROLLBACK, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the initial part of an <code>UPDATE</code> statement.
+	 * @param table the table to perform the update of
+	 * @return the initial part of the <code>UPDATE</code> statement:<br>
+	 * <code><strong>UPDATE OR ROLLBACK [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Update.Stub updateOrRollback(Table table) {
+		return updateOrRollback(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -789,6 +984,17 @@ public final class SqlStatements {
 	/**
 	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br>
 	 * The result is a complete SQL statement.
+	 * @param table the table to drop
+	 * @return the statement having the form<br>
+	 * <code><strong>DROP TABLE [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Drop.Table dropTable(Table table) {
+		return dropTable(table.schemaName(), table.tableName());
+	}
+
+	/**
+	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br>
+	 * The result is a complete SQL statement.
 	 * @param tableName the name of the table to drop
 	 * @return the statement having the form<br>
 	 * <code><strong>DROP TABLE IF EXISTS <em>tableName</em></strong></code>
@@ -807,6 +1013,17 @@ public final class SqlStatements {
 	 */
 	public static Drop.Table dropTableIfExists(CharSequence schemaName, CharSequence tableName) {
 		return new Drop.Table(true, schemaName, tableName);
+	}
+
+	/**
+	 * Returns the <code>DROP TABLE</code> statement for the specified table.<br>
+	 * The result is a complete SQL statement.
+	 * @param table the table to drop
+	 * @return the statement having the form<br>
+	 * <code><strong>DROP TABLE IF EXISTS [<em>schemaName</em>.]<em>tableName</em></strong></code>
+	 */
+	public static Drop.Table dropTableIfExists(Table table) {
+		return dropTableIfExists(table.schemaName(), table.tableName());
 	}
 
 	/**

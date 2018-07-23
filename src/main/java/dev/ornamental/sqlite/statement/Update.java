@@ -11,46 +11,6 @@ import java.util.List;
 public final class Update {
 
 	/**
-	 * Represents the initial stage of construction of an <code>UPDATE</code> statement,
-	 * namely the part<br>
-	 * <code><strong>[WITH <em>cte</em>] UPDATE [OR REPLACE|ROLLBACK|ABORT|FAIL|IGNORE]</strong></code>.
-	 */
-	public static final class Verb {
-
-		private final CommonTableExpression cte; // nullable
-
-		private final UpdateVerb verb;
-
-		Verb(CommonTableExpression cte, UpdateVerb verb) {
-			this.cte = cte;
-			this.verb = verb;
-		}
-
-		/**
-		 * Appends the target table name to the statement being built.
-		 * @param tableName the target table name
-		 * @return the initial part of an <code>UPDATE</code> statement having the form<br>
-		 * <code>[WITH <em>cte</em>] UPDATE [OR REPLACE|ROLLBACK|ABORT|FAIL|IGNORE]
-		 * <strong>INTO <em>tableName</em></strong></code>
-		 */
-		public Stub into(CharSequence tableName) {
-			return new Stub(cte, verb, null, tableName);
-		}
-
-		/**
-		 * Appends the target table name to the statement being built.
-		 * @param schemaName the name of the schema containing the target table
-		 * @param tableName the target table name
-		 * @return the initial part of an <code>UPDATE</code> statement having the form<br>
-		 * <code>[WITH <em>cte</em>] UPDATE [OR REPLACE|ROLLBACK|ABORT|FAIL|IGNORE]
-		 * <strong>INTO <em>schemaName</em>.<em>tableName</em></strong></code>
-		 */
-		public Stub into(CharSequence schemaName, CharSequence tableName) {
-			return new Stub(cte, verb, schemaName, tableName);
-		}
-	}
-
-	/**
 	 * This interface may be used to add <code>ORDER BY</code> sorting keys
 	 * in a manner uniform both for an <code>UPDATE</code> statement not yet having
 	 * an <code>ORDER BY</code> clause and a limited <code>UPDATE</code> statement stub

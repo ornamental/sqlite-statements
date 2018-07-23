@@ -213,6 +213,21 @@ public final class CreateTrigger implements ExplicableStatement {
 			return new Targeted(this, schemaName, tableName);
 		}
 
+		/**
+		 * Specifies the table whose modification is meant to fire the trigger.
+		 * @param table the table watched by the trigger
+		 * @return the initial part of a <code>CREATE TRIGGER</code> statement ending with
+		 * an <code>ON [<em>schemaName</em>.]<em>tableName</em></code> clause
+		 */
+		public Targeted on(Table table) {
+			if (!previous.previous.temporary) {
+				throw new IllegalArgumentException(
+					"Schema name must not be specified unless the trigger is temporary.");
+			}
+
+			return on(table.schemaName(), table.tableName());
+		}
+
 		void appendTo(StringBuilder receptacle) {
 			previous.appendTo(receptacle);
 			receptacle.append(' ').append(event.toString());

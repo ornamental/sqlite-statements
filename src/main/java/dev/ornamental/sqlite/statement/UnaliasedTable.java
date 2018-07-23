@@ -63,4 +63,12 @@ public final class UnaliasedTable implements TableExpression {
 	public TableWithIndex notIndexed() {
 		return new TableWithIndex(this, null);
 	}
+
+	CharSequence getSchemaName() {
+		return schemaName;
+	}
+
+	CharSequence getTableName() {
+		return tableName;
+	}
 }

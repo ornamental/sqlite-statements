@@ -80,6 +80,26 @@ public final class CreateIndex {
 		public OnTable onTable(CharSequence tableName) {
 			return new OnTable(unique, ifNotExists, schemaName, indexName, tableName);
 		}
+
+		/**
+		 * Adds the target table name to the prefix of the <code>CREATE INDEX</code> statement
+		 * @param table the target table of the index
+		 * @return the initial part of <code>CREATE INDEX</code> statement containing
+		 * the target table name:<br>
+		 * <code>CREATE [UNIQUE] INDEX [IF NOT EXISTS]
+		 * [<em>schemaName</em>.]<em>indexName</em> <strong>ON <em>tableName</em></strong></code>
+		 */
+		public OnTable onTable(Table table) {
+			if (table.schemaName() != null
+				&& (schemaName == null && !"main".equalsIgnoreCase(table.schemaName())
+					|| schemaName != null && !table.schemaName().equalsIgnoreCase(schemaName.toString()))) {
+
+				throw new IllegalArgumentException(
+					"The table has a schema specified, and it is not the one of the trigger.");
+			}
+
+			return new OnTable(unique, ifNotExists, schemaName, indexName, table.tableName());
+		}
 	}
 
 	/**

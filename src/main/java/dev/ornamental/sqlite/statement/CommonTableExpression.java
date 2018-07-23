@@ -140,6 +140,21 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	}
 
 	/**
+	 * Returns the simplest <code>DELETE</code> statement preceded by this common table expression,
+	 * namely<br>
+	 * <code><strong>WITH <em>cte</em> DELETE FROM [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * Though in such a statement the <code>WITH</code> clause is useless, it may serve as a base for more
+	 * complex filtered and/or limited <code>DELETE</code> statement.
+	 * @param table the table to delete rows from
+	 * @return the <code>DELETE</code> statement having the form<br>
+	 * <code><strong>WITH <em>cte</em> DELETE FROM [<em>schemaName</em>.]<em>tableName</em></strong></code><br>
+	 * where <code><em>cte</em></code> is this common table expression
+	 */
+	public Delete.All deleteFrom(Table table) {
+		return deleteFrom(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns an <code>INSERT</code> statement stub using this common table expression.
 	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT INTO <em>tableName</em></strong></code>.
@@ -160,6 +175,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	 */
 	public Insert.Into insertInto(CharSequence schemaName, CharSequence tableName) {
 		return new Insert.Into(this, InsertVerb.INSERT, schemaName, tableName);
+	}
+
+	/**
+	 * Returns an <code>INSERT</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> INSERT INTO <em>[schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to insert rows into
+	 * @return the <code>INSERT</code> statement stub  using this common table expression
+	 */
+	public Insert.Into insertInto(Table table) {
+		return insertInto(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -186,6 +212,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	}
 
 	/**
+	 * Returns a <code>REPLACE</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> REPLACE INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to replace rows in
+	 * @return the <code>REPLACE</code> statement stub  using this common table expression
+	 */
+	public Insert.Into replaceInto(Table table) {
+		return replaceInto(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns an <code>INSERT OR REPLACE</code> statement stub using this common table expression.
 	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR REPLACE INTO <em>tableName</em></strong></code>.
@@ -206,6 +243,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	 */
 	public Insert.Into insertOrReplaceInto(CharSequence schemaName, CharSequence tableName) {
 		return new Insert.Into(this, InsertVerb.INSERT_OR_REPLACE, schemaName, tableName);
+	}
+
+	/**
+	 * Returns an <code>INSERT OR REPLACE</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> INSERT OR REPLACE INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to insert rows into
+	 * @return the <code>INSERT OR REPLACE</code> statement stub  using this common table expression
+	 */
+	public Insert.Into insertOrReplaceInto(Table table) {
+		return insertOrReplaceInto(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -232,6 +280,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	}
 
 	/**
+	 * Returns an <code>INSERT OR ABORT</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> INSERT OR ABORT INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to insert rows into
+	 * @return the <code>INSERT OR ABORT</code> statement stub  using this common table expression
+	 */
+	public Insert.Into insertOrAbortInto(Table table) {
+		return insertOrAbortInto(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns an <code>INSERT OR ROLLBACK</code> statement stub using this common table expression.
 	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR ROLLBACK INTO <em>tableName</em></strong></code>.
@@ -252,6 +311,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	 */
 	public Insert.Into insertOrRollbackInto(CharSequence schemaName, CharSequence tableName) {
 		return new Insert.Into(this, InsertVerb.INSERT_OR_ROLLBACK, schemaName, tableName);
+	}
+
+	/**
+	 * Returns an <code>INSERT OR ROLLBACK</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> INSERT OR ROLLBACK INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to insert rows into
+	 * @return the <code>INSERT OR ROLLBACK</code> statement stub  using this common table expression
+	 */
+	public Insert.Into insertOrRollbackInto(Table table) {
+		return insertOrRollbackInto(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -278,6 +348,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	}
 
 	/**
+	 * Returns an <code>INSERT OR FAIL</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> INSERT OR FAIL INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to insert rows into
+	 * @return the <code>INSERT OR FAIL</code> statement stub  using this common table expression
+	 */
+	public Insert.Into insertOrFailInto(Table table) {
+		return insertOrFailInto(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns an <code>INSERT OR IGNORE</code> statement stub using this common table expression.
 	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> INSERT OR IGNORE INTO <em>tableName</em></strong></code>.
@@ -298,6 +379,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	 */
 	public Insert.Into insertOrIgnoreInto(CharSequence schemaName, CharSequence tableName) {
 		return new Insert.Into(this, InsertVerb.INSERT_OR_IGNORE, schemaName, tableName);
+	}
+
+	/**
+	 * Returns an <code>INSERT OR IGNORE</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> INSERT OR IGNORE INTO [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to insert rows into
+	 * @return the <code>INSERT OR IGNORE</code> statement stub  using this common table expression
+	 */
+	public Insert.Into insertOrIgnoreInto(Table table) {
+		return insertOrIgnoreInto(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -324,6 +416,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	}
 
 	/**
+	 * Returns an <code>UPDATE</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> UPDATE [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to update rows in
+	 * @return the <code>UPDATE</code> statement stub  using this common table expression
+	 */
+	public Update.Stub update(Table table) {
+		return update(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns an <code>UPDATE OR ABORT</code> statement stub using this common table expression.
 	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR ABORT <em>tableName</em></strong></code>.
@@ -344,6 +447,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	 */
 	public Update.Stub updateOrAbort(CharSequence schemaName, CharSequence tableName) {
 		return new Update.Stub(this, UpdateVerb.UPDATE_OR_ABORT, schemaName, tableName);
+	}
+
+	/**
+	 * Returns an <code>UPDATE OR ABORT</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> UPDATE OR ABORT [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to update rows in
+	 * @return the <code>UPDATE OR ABORT</code> statement stub  using this common table expression
+	 */
+	public Update.Stub updateOrAbort(Table table) {
+		return updateOrAbort(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -370,6 +484,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	}
 
 	/**
+	 * Returns an <code>UPDATE OR FAIL</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> UPDATE OR FAIL [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to update rows in
+	 * @return the <code>UPDATE OR FAIL</code> statement stub  using this common table expression
+	 */
+	public Update.Stub updateOrFail(Table table) {
+		return updateOrFail(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns an <code>UPDATE OR IGNORE</code> statement stub using this common table expression.
 	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR IGNORE <em>tableName</em></strong></code>.
@@ -390,6 +515,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	 */
 	public Update.Stub updateOrIgnore(CharSequence schemaName, CharSequence tableName) {
 		return new Update.Stub(this, UpdateVerb.UPDATE_OR_IGNORE, schemaName, tableName);
+	}
+
+	/**
+	 * Returns an <code>UPDATE OR IGNORE</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> UPDATE OR IGNORE [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to update rows in
+	 * @return the <code>UPDATE OR IGNORE</code> statement stub  using this common table expression
+	 */
+	public Update.Stub updateOrIgnore(Table table) {
+		return updateOrIgnore(table.schemaName(), table.tableName());
 	}
 
 	/**
@@ -416,6 +552,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	}
 
 	/**
+	 * Returns an <code>UPDATE OR REPLACE</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> UPDATE OR REPLACE [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to update rows in
+	 * @return the <code>UPDATE OR REPLACE</code> statement stub  using this common table expression
+	 */
+	public Update.Stub updateOrReplace(Table table) {
+		return updateOrReplace(table.schemaName(), table.tableName());
+	}
+
+	/**
 	 * Returns an <code>UPDATE OR ROLLBACK</code> statement stub using this common table expression.
 	 * It corresponds to the following part of the statement:<br>
 	 * <code><strong>WITH <em>cte</em> UPDATE OR ROLLBACK <em>tableName</em></strong></code>.
@@ -436,6 +583,17 @@ public final class CommonTableExpression extends Select.ValueProducer implements
 	 */
 	public Update.Stub updateOrRollback(CharSequence schemaName, CharSequence tableName) {
 		return new Update.Stub(this, UpdateVerb.UPDATE_OR_ROLLBACK, schemaName, tableName);
+	}
+
+	/**
+	 * Returns an <code>UPDATE OR ROLLBACK</code> statement stub using this common table expression.
+	 * It corresponds to the following part of the statement:<br>
+	 * <code><strong>WITH <em>cte</em> UPDATE OR ROLLBACK [<em>schemaName</em>.]<em>tableName</em></strong></code>.
+	 * @param table the table to update rows in
+	 * @return the <code>UPDATE OR ROLLBACK</code> statement stub  using this common table expression
+	 */
+	public Update.Stub updateOrRollback(Table table) {
+		return updateOrRollback(table.schemaName(), table.tableName());
 	}
 
 	@Override
